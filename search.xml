@@ -21,7 +21,18 @@
   <entry>
     <title>搭建github博客</title>
     <url>/2021/10/25/my-first-blog/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="其他文件说明"><a href="#其他文件说明" class="headerlink" title="其他文件说明"></a>其他文件说明</h1><h1 id="1、package-json这是一些应用程序的信息，json格式，建议不要改动"><a href="#1、package-json这是一些应用程序的信息，json格式，建议不要改动" class="headerlink" title="1、package.json这是一些应用程序的信息，json格式，建议不要改动"></a>1、package.json这是一些应用程序的信息，json格式，建议不要改动</h1><h1 id="2、scaffolds文件夹-这是一个模板文件夹，当你新写了一片文章时，其显示格式都会以scaffolds中post-md的内容来加载"><a href="#2、scaffolds文件夹-这是一个模板文件夹，当你新写了一片文章时，其显示格式都会以scaffolds中post-md的内容来加载" class="headerlink" title="2、scaffolds文件夹  这是一个模板文件夹，当你新写了一片文章时，其显示格式都会以scaffolds中post.md的内容来加载"></a>2、scaffolds文件夹  这是一个模板文件夹，当你新写了一片文章时，其显示格式都会以scaffolds中post.md的内容来加载</h1><h1 id="3、source文件夹-这是一个资源文件夹。以-开头的文件都会被忽略，-md和-html文件会被解析并放到public，其他文件也会被拷贝过去-如果文件可以被渲染的话，会经过解析然后储存到-public-文件夹，否则会直接拷贝到-public-文件夹"><a href="#3、source文件夹-这是一个资源文件夹。以-开头的文件都会被忽略，-md和-html文件会被解析并放到public，其他文件也会被拷贝过去-如果文件可以被渲染的话，会经过解析然后储存到-public-文件夹，否则会直接拷贝到-public-文件夹" class="headerlink" title="3、source文件夹 这是一个资源文件夹。以_开头的文件都会被忽略，.md和.html文件会被解析并放到public，其他文件也会被拷贝过去 (如果文件可以被渲染的话，会经过解析然后储存到 public 文件夹，否则会直接拷贝到 public 文件夹)"></a>3、source文件夹 这是一个资源文件夹。以_开头的文件都会被忽略，.md和.html文件会被解析并放到public，其他文件也会被拷贝过去 (如果文件可以被渲染的话，会经过解析然后储存到 public 文件夹，否则会直接拷贝到 public 文件夹)</h1><h1 id="4、themes文件夹-主题文件夹，这部分请移步到其他文章"><a href="#4、themes文件夹-主题文件夹，这部分请移步到其他文章" class="headerlink" title="4、themes文件夹 主题文件夹，这部分请移步到其他文章"></a>4、themes文件夹 主题文件夹，这部分请移步到其他文章</h1><h1 id="5、关于文件名-Hexo-默认以标题做为文件名称，编辑-new-post-name-参数来改变默认的文件名称-提供以下参数"><a href="#5、关于文件名-Hexo-默认以标题做为文件名称，编辑-new-post-name-参数来改变默认的文件名称-提供以下参数" class="headerlink" title="5、关于文件名  Hexo 默认以标题做为文件名称，编辑 new_post_name 参数来改变默认的文件名称,提供以下参数"></a>5、关于文件名  Hexo 默认以标题做为文件名称，编辑 new_post_name 参数来改变默认的文件名称,提供以下参数</h1><pre><code># :title    标题（小写，空格将会被替换为短杠）
+# :year 建立的年份，比如， 2015
+# :month    建立的月份（有前导零），比如， 04
+# :i_month  建立的月份（无前导零），比如， 4
+# :day  建立的日期（有前导零），比如， 07
+# :i_day    建立的日期（无前导零），比如， 7
+</code></pre>
+<h1 id="6、关于模板-在新建文章时，Hexo-会根据-scaffolds-文件夹内相对应的文件来建立文件，例如：hexo-new-photo-“My-Gallery”，在执行这行指令时，Hexo-会尝试在-scaffolds-文件夹中寻找-photo-md模板，并根据其内容建立文章，默认使用-config-yml-中的-default-layout-参数post代替，模板文件中的参数有"><a href="#6、关于模板-在新建文章时，Hexo-会根据-scaffolds-文件夹内相对应的文件来建立文件，例如：hexo-new-photo-“My-Gallery”，在执行这行指令时，Hexo-会尝试在-scaffolds-文件夹中寻找-photo-md模板，并根据其内容建立文章，默认使用-config-yml-中的-default-layout-参数post代替，模板文件中的参数有" class="headerlink" title="6、关于模板  在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：hexo new photo “My Gallery”，在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md模板，并根据其内容建立文章，默认使用 _config.yml 中的 default_layout 参数post代替，模板文件中的参数有"></a>6、关于模板  在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：hexo new photo “My Gallery”，在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md模板，并根据其内容建立文章，默认使用 _config.yml 中的 default_layout 参数post代替，模板文件中的参数有</h1><pre><code># layout    布局
+# title 标题
+# date  文件建立日期
+</code></pre>
+<h1 id="7、tags文件夹-即标签页"><a href="#7、tags文件夹-即标签页" class="headerlink" title="7、tags文件夹          即标签页"></a>7、tags文件夹          即标签页</h1><h1 id="8、categories文件夹-即分类页"><a href="#8、categories文件夹-即分类页" class="headerlink" title="8、categories文件夹    即分类页"></a>8、categories文件夹    即分类页</h1>]]></content>
       <categories>
         <category>默认分类</category>
       </categories>
