@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -33,10 +33,6 @@
 
 
     
-    
-
-    
-        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
 
 
@@ -113,7 +109,7 @@
     
     <title>
           
-            Hexo
+            c-Aurora
         
     </title>
     
@@ -124,7 +120,7 @@
   <header class="mdui-appbar mdui-appbar-fixed">
   <div id="toolbar" class="mdui-toolbar mdui-color-theme">
     <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
-    <a href="/" class="mdui-typo-headline">Hexo</a>
+    <a href="/" class="mdui-typo-headline">c-Aurora</a>
     <a href="/" class="header-subtitle mdui-typo-headline"></a>
     <div class="mdui-toolbar-spacer"></div>
     <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
@@ -142,8 +138,8 @@
 
   <aside id="sidebar" class="mdui-drawer">
     <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
     </div>
 
     
@@ -155,39 +151,23 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-home"></i>
                     </div>
-                    <div class="mdui-list-item-content">Home</div>
-                </a>
-            
-                
-                <a href="/tags/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont bookmark"></i>
-                    </div>
-                    <div class="mdui-list-item-content">Tags</div>
+                    <div class="mdui-list-item-content">主页</div>
                 </a>
             
                 
                 <a href="/categories/" class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-icon">
-                        <i class="iconfont folder"></i>
+                        <i class="iconfont icon-folder"></i>
                     </div>
-                    <div class="mdui-list-item-content">Categories</div>
+                    <div class="mdui-list-item-content">分类</div>
                 </a>
             
                 
-                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
                     <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-archive"></i>
+                        <i class="iconfont icon-bookmark"></i>
                     </div>
-                    <div class="mdui-list-item-content">Archives</div>
-                </a>
-            
-                
-                <a href="/tools/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-tools"></i>
-                    </div>
-                    <div class="mdui-list-item-content">工具箱</div>
+                    <div class="mdui-list-item-content">标签</div>
                 </a>
             
                 
@@ -195,14 +175,22 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-user"></i>
                     </div>
-                    <div class="mdui-list-item-content">About</div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
                 </a>
             
             <div class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-icon">
                     <i class="iconfont icon-moon"></i>
                 </div>
-                <div class="mdui-list-item-content">Night Mode</div>
+                <div class="mdui-list-item-content">夜间模式</div>
                 <label class="mdui-switch" id="darkmode">
                   <input type="checkbox" id="nightmode_switch"/>
                   <i class="mdui-switch-icon"></i>
@@ -236,18 +224,6 @@
                     <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
                 </div>
             
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
-                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Steam</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
-                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Weibo</a>
-                </div>
-            
         </div>
         <ul class="mdui-list" mdui-collapse="{accordion: true}">
             <li class="mdui-collapse-item">
@@ -255,7 +231,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-link"></i>
                     </div>
-                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-list-item-content">友情链接</div>
                     <div class="mdui-collapse-item-arrow">
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
@@ -264,6 +240,14 @@
                     
                         <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
                             Meadow说明文档
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title1
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title2
                         </a>
                     
                 </ul>
@@ -286,15 +270,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2021-10-25
+      发布于:&nbsp;2021-10-25
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2021-10-26
+      更新于:&nbsp;2021-10-26
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;<a class="category-link" href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/">默认分类</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E9%BB%98%E8%AE%A4%E5%88%86%E7%B1%BB/">默认分类</a>
     </span>
     
   </div>
@@ -325,12 +309,12 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="其他文件说明"><a href="#其他文件说明" class="headerlink" title="其他文件说明"></a>其他文件说明</h1><h1 id="1、package-json这是一些应用程序的信息，json格式，建议不要改动"><a href="#1、package-json这是一些应用程序的信息，json格式，建议不要改动" class="headerlink" title="1、package.json这是一些应用程序的信息，json格式，建议不要改动"></a>1、package.json这是一些应用程序的信息，json格式，建议不要改动</h1...
+            <h1 id="其他文件说明1"><a href="#其他文件说明1" class="headerlink" title="其他文件说明1"></a>其他文件说明1</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">// 生成</span></span><br><span class="line">hexo s <span class="comment">// 启动服务</span></span><br><span class="line">hexo g -d <span class="comment">//提交到github上</span></span><br></pre></td></tr></table></figure>
           
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/10/25/my-first-blog/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/10/25/my-first-blog/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -343,15 +327,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      Posted on:&nbsp;2021-10-25
+      发布于:&nbsp;2021-10-25
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2021-10-25
+      更新于:&nbsp;2021-10-25
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      In:&nbsp;
+      分类于:&nbsp;
     </span>
     
   </div>
@@ -373,7 +357,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/10/25/hello-world/">Read More</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/10/25/hello-world/">阅读更多</a>
         </div>
       </div>
     </article>
@@ -408,10 +392,10 @@
     <div class="mdui-row">
       
         <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
         </div>
       
     </div>
