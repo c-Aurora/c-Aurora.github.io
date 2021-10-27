@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            js日常用到知识点汇总 | c-Aurora
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">c-Aurora</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">cc</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title1
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title2
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/">js日常用到知识点汇总</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2017-06-03
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-10-28
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=js日常用到知识点汇总&url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/&pic=http://example.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=js日常用到知识点汇总&url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/&via=cc" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/&title=js日常用到知识点汇总" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=c-Aurora&title=js日常用到知识点汇总&summary=&pics=http://example.com/null&url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://example.com/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/&text=js日常用到知识点汇总" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <hr>
+<span id="more"></span>
+
+<p><strong>1、js数字转化为千分位格式</strong><br>搜索了一些只有整数的千分位分割符，现在是不管整数，带小数(不分割小数点以后的数字)都可以分割</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toQfw</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> str=num.toString();<span class="comment">//转换为字符串</span></span><br><span class="line">    <span class="keyword">let</span> reg=str.indexOf(<span class="string">&#x27;.&#x27;</span>) &gt;-<span class="number">1</span> ? <span class="regexp">/(\d&#123;1,3&#125;)(?=(?:\d&#123;3&#125;)+\.)/g</span> : <span class="regexp">/(\d&#123;1,3&#125;)(?=(?:\d&#123;3&#125;)+$)/g</span>;<span class="comment">//千分符的正则</span></span><br><span class="line">    <span class="keyword">return</span> str.replace(reg, <span class="string">&#x27;$1,&#x27;</span>);<span class="comment">//千分位格式化;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log( toQfw(<span class="number">3708205.23</span>) ) <span class="comment">//3,708,205.23</span></span><br><span class="line"><span class="built_in">console</span>.log( toQfw(<span class="number">3708205</span>) ) <span class="comment">//3,708,205</span></span><br></pre></td></tr></table></figure>
+<p><strong>2、Array.from 方法用于将两类对象转为真正的数组</strong><br>这个方法不错，拆解后台数据的时候很好用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrayLike = &#123;<span class="string">&#x27;0&#x27;</span>: <span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;1&#x27;</span>: <span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;2&#x27;</span>: <span class="string">&#x27;c&#x27;</span>,<span class="attr">length</span>: <span class="number">3</span>&#125;;</span><br><span class="line"><span class="built_in">Array</span>.from(arrayLike, <span class="function">(<span class="params">v, k</span>) =&gt;</span> v); <span class="comment">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span></span><br><span class="line"><span class="built_in">Array</span>.from(arrayLike, <span class="function">(<span class="params">v, k</span>) =&gt;</span> k); <span class="comment">// [0, 1, 2]</span></span><br></pre></td></tr></table></figure>
+<p><strong>3、两种编程方式：命令式编程和声明式编程</strong><br><strong>命令式编程</strong>：命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现。<br><strong>声明式编程</strong>：告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)。</p>
+<p>例如：让一个数组里的数值翻倍</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//命令式编程风格实现：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> doubled = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">	<span class="keyword">var</span> newNumber = numbers[i] * <span class="number">2</span></span><br><span class="line"> 	doubled.push (newNumber)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log (doubled) <span class="comment">//=&gt; [2,4,6,8,10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//我们直接遍历整个数组，取出每个元素，乘以二，</span></span><br><span class="line"><span class="comment">//然后把翻倍后的值放入新数组，每次都要操作这个双倍数组，直到计算完所有元素</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明式编程方法：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> doubled = numbers.map (<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> n * <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log (doubled) <span class="comment">//=&gt; [2,4,6,8,10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//map利用当前的数组创建了一个新数组，新数组里的每个元素</span></span><br><span class="line"><span class="comment">//都是经过了传入map的函数(这里是function (n) &#123; return n*2 &#125;)的处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//map函数所做的事情是将直接遍历整个数组的过程归纳抽离出来，</span></span><br><span class="line"><span class="comment">//让我们专注于描述我们想要的是什么(what)。注意，我们传入map的是一个纯函数；</span></span><br><span class="line"><span class="comment">//它不具有任何副作用(不会改变外部状态)，它只是接收一个数字，返回乘以二后的值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>再例如： 求一个list里所有值的和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//命令式编程：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">  	total += numbers[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log (total) <span class="comment">//=&gt; 15</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明式编程：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = numbers.reduce (<span class="function"><span class="keyword">function</span> (<span class="params">sum, n</span>) </span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> sum + n</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log (total) <span class="comment">//=&gt; 15</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">声明式编程的总结</span><br><span class="line"></span><br><span class="line">　　声明式编程让我们去描述我们想要的是什么，让底层的软件/计算机/等去解决如何去实现它们。</span><br><span class="line"></span><br><span class="line">　　在很多情况中，就像我们看到的一样，声明式编程能给我们的编程带来真正的提升，通过站在更高层面写代码，我们可以更多的专注于what，而这正是我们开发软件真正的目标。</span><br><span class="line"></span><br><span class="line">　　问题是，程序员习惯了去描述how，这让我们感觉很好很舒服——强力——能够控制事情的发生发展，不放走任何我们不能看见不能理解的处理过程。</span><br><span class="line"></span><br><span class="line">　　有时候这种紧盯着how不放的做法是没问题的。如果我需要对代码进行更高性能的优化，我需要对what进行更深一步的描述来指导how。有时候对于某个业务逻辑没有任何可以归纳提取的通用实现，我们只能写命令式编程代码。</span><br><span class="line"></span><br><span class="line">　　但大多数时候，我们可以、而且应该寻求声明式的写代码方式，如果没有发现现成的归纳提取好的实现，我们应该自己去创建。起初这会很难，必定的，但就像我们使用SQL和D3.js， 我们会长期从中获得巨大的回报！</span><br></pre></td></tr></table></figure>
+<p>4、点击空白处关闭弹窗几种方法</p>
+<p>4.1jQuery 写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).mouseup(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _con = $(<span class="string">&#x27; 目标区域 &#x27;</span>);   <span class="comment">// 设置目标区域</span></span><br><span class="line"> 	<span class="keyword">if</span>(!_con.is(e.target) &amp;&amp; _con.has(e.target).length === <span class="number">0</span>)&#123; <span class="comment">// Mark 1</span></span><br><span class="line">    	some code...   <span class="comment">// 功能代码</span></span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>4.2vue.js 写法（写在mounted里面）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&#x27;mouseup&#x27;</span>,<span class="function">(<span class="params">e</span>) =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _con = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;more-oprate&#x27;</span>)</span><br><span class="line">	<span class="keyword">if</span>(_con) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!_con.contains(e.target)) &#123;</span><br><span class="line">			<span class="built_in">this</span>.isShowBtn = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>持续更新中……</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2017/05/20/%E9%82%A3%E4%BA%9B%E5%B9%B4%E8%B8%A9%E5%BE%97%E5%9D%91...toFixed()%E5%B9%B6%E4%B8%8D%E6%98%AF%E7%9C%9F%E7%9A%84%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5/">
+        <span>那些年踩得坑...toFixed()并不是真的四舍五入</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2017/06/03/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        cc
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
