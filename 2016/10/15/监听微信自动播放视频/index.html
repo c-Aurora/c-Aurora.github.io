@@ -1,400 +1,393 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
-    
-    
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
-        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
-    
-    
-    
-        <link rel="shortcut icon" href="/icons/favicon.ico">
-    
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    
-    
-        
-<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
-
-    
-    
 <link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/iconfont.css">
 
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="监听微信自动播放视频">
+<meta property="og:url" content="http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/index.html">
+<meta property="og:site_name" content="c-Aurora">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-10-15T09:00:33.000Z">
+<meta property="article:modified_time" content="2021-10-28T15:32:36.000Z">
+<meta property="article:author" content="c-Aurora">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>监听微信自动播放视频 | c-Aurora</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">c-Aurora</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
     
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="c-Aurora">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="c-Aurora">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          监听微信自动播放视频
+        </h1>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-
-
-
-
-
-
-
+              <time title="创建时间：2016-10-15 17:00:33" itemprop="dateCreated datePublished" datetime="2016-10-15T17:00:33+08:00">2016-10-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-28 23:32:36" itemprop="dateModified" datetime="2021-10-28T23:32:36+08:00">2021-10-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
+            </span>
 
           
 
-
-    
-    
-    <title>
-        
-            监听微信自动播放视频 | c-Aurora
-        
-    </title>
-    
-    
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body
-  class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
-  
-  <header class="mdui-appbar mdui-appbar-fixed">
-  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
-    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
-    <a href="/" class="mdui-typo-headline">c-Aurora</a>
-    <a href="/" class="header-subtitle mdui-typo-headline"></a>
-    <div class="mdui-toolbar-spacer"></div>
-    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
-  </div>
-</header>
-
-<div class="mdui-dialog" id="search">
-  
-    <div class="search-form">
-      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
-    </div>
-    <div class="search-result" data-resource="/search.xml"></div>
-  
-</div>
-
-  <aside id="sidebar" class="mdui-drawer">
-    <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
-    </div>
-
-    
-    <div id="sidebar-tab1" class="mdui-p-a-1">
-        <div class="mdui-list">
-            
-                
-                <a href="/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-home"></i>
-                    </div>
-                    <div class="mdui-list-item-content">主页</div>
-                </a>
-            
-                
-                <a href="/categories/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-folder"></i>
-                    </div>
-                    <div class="mdui-list-item-content">分类</div>
-                </a>
-            
-                
-                <a href="/tags/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-bookmark"></i>
-                    </div>
-                    <div class="mdui-list-item-content">标签</div>
-                </a>
-            
-                
-                <a href="/about/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-user"></i>
-                    </div>
-                    <div class="mdui-list-item-content">关于</div>
-                </a>
-            
-                
-                <a href="/archives/" class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-archive"></i>
-                    </div>
-                    <div class="mdui-list-item-content">归档</div>
-                </a>
-            
-            <div class="mdui-list-item mdui-ripple">
-                <div class="mdui-list-item-icon">
-                    <i class="iconfont icon-moon"></i>
-                </div>
-                <div class="mdui-list-item-content">夜间模式</div>
-                <label class="mdui-switch" id="darkmode">
-                  <input type="checkbox" id="nightmode_switch"/>
-                  <i class="mdui-switch-icon"></i>
-                </label>
-            </div>           
         </div>
-    </div>
-
-    
-    <div id="sidebar-tab2" class="mdui-p-a-1">
-        <div class="sidebar-overview">
-            <div class="sidebar-avatar">
-                
-                    <img src="/icons/avatar.gif"/>
-                
-            </div>
-            <div class="sidebar-author-name">c-Aurora</div>
-            <div class="sidebar-description">留一片空白，随时浓墨重彩</div>
-        </div>
-        <div class="sidebar-links">
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
-                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
-                </div>
-            
-                
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
-                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
-                </div>
-            
-        </div>
-        <ul class="mdui-list" mdui-collapse="{accordion: true}">
-            <li class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-icon">
-                        <i class="iconfont icon-link"></i>
-                    </div>
-                    <div class="mdui-list-item-content">友情链接</div>
-                    <div class="mdui-collapse-item-arrow">
-                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
-                    </div>
-                </div>
-                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                    
-                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
-                            Meadow说明文档
-                        </a>
-                    
-                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
-                            Title1
-                        </a>
-                    
-                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
-                            Title2
-                        </a>
-                    
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="mdui-divider"></div>
-    
-    
-</aside>
-  
-  <main id="main-contain" class="mdui-container mdui-m-t-5">
-    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
-  <header class="mdui-card-media">
-    
-    
-      <div class="post-header"> 
-  <a class="post-header-title" href="/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/">监听微信自动播放视频</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2016-10-15
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-10-28
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/JS/">JS</a>
-    </span>
-    
-      <span>
-        <span class="iconfont icon-eye"></span>
-        阅读次数:&nbsp;
-        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
-      </span>
-    
-  </div>
-</div>   
-    
-
-
+      </header>
 
     
     
-    <div class="mdui-card-menu">
     
-      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
-      <ul class="mdui-menu" id="share_menu">
-        <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=监听微信自动播放视频&url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/&pic=http://example.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=监听微信自动播放视频&url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/&via=c-Aurora" target="_blank" class="mdui-ripple">分享到 Twitter</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://plus.google.com/share?url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" target="_blank" class="mdui-ripple">分享到 Google+</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/&title=监听微信自动播放视频" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=c-Aurora&title=监听微信自动播放视频&summary=留一片空白，随时浓墨重彩&pics=http://example.com/null&url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" target="_blank" class="mdui-ripple">分享到 QQ</a>
-        </li>
-        <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=http://example.com/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/&text=监听微信自动播放视频" target="_blank" class="mdui-ripple">分享到 Telegram</a>
-        </li>
-      </ul>
-    
-  </div>
-  </header>
-  
-  
-  
-  
-  
-  <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <hr>
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
 <span id="more"></span>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//视频音频同理</span></span><br><span class="line">&lt;video id=<span class="string">&#x27;Jvideo&#x27;</span> src=<span class="string">&#x27;&#123;&#123;env(&#x27;</span>CDN_DOMAIN_NAME<span class="string">&#x27;) &#125;&#125;/upload_video/&quot;+detail_data[i][2]+&quot;&#x27;</span>  preload=<span class="string">&#x27;auto&#x27;</span>  webkit-playsinline=<span class="string">&#x27;webkit-playsinline&#x27;</span> playsinline=<span class="string">&#x27;playsinline&#x27;</span> autoplay=<span class="string">&#x27;true&#x27;</span> poster type=<span class="string">&#x27;video/mp4&#x27;</span>  style=<span class="string">&#x27;width:100%;height:100%;&#x27;</span>&gt;&lt;/video&gt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">videoAutoPlay</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> video = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">        video.play();</span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">&quot;WeixinJSBridgeReady&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            video.play();</span><br><span class="line">        &#125;, <span class="literal">false</span>);</span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;YixinJSBridgeReady&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            video.play();</span><br><span class="line">        &#125;, <span class="literal">false</span>);</span><br><span class="line">        video.onended = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//播放结束</span></span><br><span class="line">            $(<span class="string">&quot;.video_play&quot;</span>).show();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    videoAutoPlay(<span class="string">&#x27;Jvideo&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">    $(<span class="built_in">document</span>).on(<span class="string">&quot;click&quot;</span>,<span class="string">&quot;.video_play&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//播放完点击播放</span></span><br><span class="line">        $(<span class="string">&quot;.video_play&quot;</span>).hide();</span><br><span class="line">        videoAutoPlay(<span class="string">&#x27;Jvideo&#x27;</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-  </div>
-  <!--文末结束语-->
-  
-    <div style="text-align:center;color: #ccc;font-size:24px;"> --- The End --- </div>
-  
-  <!--页脚广告-->
-  
-  <div class="mdui-divider"></div>
-  
-  <nav>
-    
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/2016/10/30/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%BD%93%E5%89%8D%E5%9F%8E%E5%B8%82%EF%BC%9F/">
-        <i class="iconfont icon-angle-left"></i>
-        <span>如何获取用户当前城市？</span>
-      </a>
+    </div>
+
     
     
-      <a rel="next" class="post-nav-item mdui-float-right" href="/2016/10/12/%E7%A6%81%E6%AD%A2%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E3%80%81%E5%BC%BA%E5%88%B6%E6%A8%AA%E7%AB%96%E5%B1%8F/">
-        <span>禁止横竖屏切换、强制横竖屏</span>
-        <i class="iconfont icon-angle-right"></i>
-      </a>
     
-  </nav>
-</article>
 
+      <footer class="post-footer">
 
-
-
-  <div class="toc-button"  style="z-index: 100;">
-    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
-    <ul class="mdui-menu" id="toc">
-      <li class="mdui-menu-item">
-        <a href="/2016/10/15/%E7%9B%91%E5%90%AC%E5%BE%AE%E4%BF%A1%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91/" id="toc-header" class="mdui-ripple">文章目录</a>
         
-      </li>
-    </ul>
-  </div>
 
 
-
-  </main>
-  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-      
-      <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
-      
-      <span>
-        &copy; 2015 - 2021
-      
-      <span style="color:#d9333f" class="iconfont icon-heart"></span>
-      
-        c-Aurora
-      </span>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/10/12/%E7%A6%81%E6%AD%A2%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E3%80%81%E5%BC%BA%E5%88%B6%E6%A8%AA%E7%AB%96%E5%B1%8F/" rel="prev" title="禁止横竖屏切换、强制横竖屏">
+      <i class="fa fa-chevron-left"></i> 禁止横竖屏切换、强制横竖屏
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/10/30/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%BD%93%E5%89%8D%E5%9F%8E%E5%B8%82%EF%BC%9F/" rel="next" title="如何获取用户当前城市？">
+      如何获取用户当前城市？ <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-    <div class="mdui-row">
-      <!-- 
-        <div class="mdui-col-xs-6 mdui-text-right">
-          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
-        </div>
-        <div class="mdui-col-xs-6 mdui-text-left">
-          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
-        </div>
-       -->
-    </div>
-    <div class="mdui-row">
-      
-      <div class="mdui-col-xs-6 mdui-text-right">
-        <span id="busuanzi_container_site_uv" style="display: none;"> <span
-            class="iconfont icon-user"></span>总访客量 <span
-            id="busuanzi_value_site_uv"></span></span>
-      </div>
-      <div class="mdui-col-xs-6 mdui-text-left">
-        <span id="busuanzi_container_site_pv" style="display: none;"> <span
-            class="iconfont icon-eye"></span>总访问量 <span
-            id="busuanzi_value_site_pv"></span></span>
-      </div>
-      
-    </div>
-  </div>
-</footer>
-  
-  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i
-      class="iconfont icon-arrowup"></i></button>
-  
-  
-
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({
-        startOnLoad: true,
-        theme: "default"
-    });</script>
-
-
-
-
+      </footer>
     
-<script src="/js/mdui.min.v1.0.0.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">c-Aurora</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
 
 
 
 
-<script src="/js/meadow.js"></script>
 
-  <script type="text/javascript" src="/js/jquery.js"></script>
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  <!-- 鼠标点击显示字体效果 -->
-  <script type="text/javascript" src="/js/click_show_text.js"></script>
-  <!-- 雪花特效 -->
-  <script type="text/javascript" src="/js/snow.js"></script>
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
-
 </html>
