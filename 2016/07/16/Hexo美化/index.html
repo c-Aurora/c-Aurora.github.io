@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            Hexo美化 | c-Aurora
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body
+  class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">c-Aurora</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">c-Aurora</div>
+            <div class="sidebar-description">留一片空白，随时浓墨重彩</div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title1
+                        </a>
+                    
+                        <a href="http://example.com" class="mdui-list-item mdui-ripple">
+                            Title2
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/">Hexo美化</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2016-07-16
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-10-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%90%AD%E5%BB%BA/">搭建</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Hexo美化&url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/&pic=http://example.com/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Hexo美化&url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/&via=c-Aurora" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/&title=Hexo美化" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=c-Aurora&title=Hexo美化&summary=留一片空白，随时浓墨重彩&pics=http://example.com/null&url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=http://example.com/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/&text=Hexo美化" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <hr>
+<span id="more"></span>
+
+<h3 id="下面是我比较喜欢的美化，亲测有效"><a href="#下面是我比较喜欢的美化，亲测有效" class="headerlink" title="下面是我比较喜欢的美化，亲测有效"></a>下面是我比较喜欢的美化，亲测有效</h3><h3 id="1、添加鼠标点击显示字体效果"><a href="#1、添加鼠标点击显示字体效果" class="headerlink" title="1、添加鼠标点击显示字体效果"></a>1、添加鼠标点击显示字体效果</h3><p>在 /themes/hexo-Meadow/source/js 下新建文件 click_show_text.js，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a_idx = <span class="number">0</span>;</span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&quot;body&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span></span><br><span class="line">        (<span class="string">&quot;Js&quot;</span>, <span class="string">&quot;Css&quot;</span>, <span class="string">&quot;HTML&quot;</span>, <span class="string">&quot;Json&quot;</span>, <span class="string">&quot;Vue&quot;</span>, <span class="string">&quot;Node&quot;</span>, <span class="string">&quot;Webpack&quot;</span>, <span class="string">&quot;git&quot;</span>, <span class="string">&quot;Jquery&quot;</span>, <span class="string">&quot;Html5&quot;</span>, <span class="string">&quot;Css3&quot;</span>, <span class="string">&quot;react&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> $i = $(<span class="string">&quot;&lt;span/&gt;&quot;</span>).text(a[a_idx]);</span><br><span class="line">        a_idx = (a_idx + <span class="number">1</span>) % a.length;</span><br><span class="line">        <span class="keyword">var</span> x = e.pageX,</span><br><span class="line">        y = e.pageY;</span><br><span class="line">        $i.css(&#123;</span><br><span class="line">            <span class="string">&quot;z-index&quot;</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">&quot;top&quot;</span>: y - <span class="number">20</span>,</span><br><span class="line">            <span class="string">&quot;left&quot;</span>: x,</span><br><span class="line">            <span class="string">&quot;position&quot;</span>: <span class="string">&quot;absolute&quot;</span>,</span><br><span class="line">            <span class="string">&quot;font-weight&quot;</span>: <span class="string">&quot;bold&quot;</span>,</span><br><span class="line">            <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#FF0000&quot;</span></span><br><span class="line">        &#125;);</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).append($i);</span><br><span class="line">        $i.animate(&#123;</span><br><span class="line">            <span class="string">&quot;top&quot;</span>: y - <span class="number">180</span>,</span><br><span class="line">            <span class="string">&quot;opacity&quot;</span>: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">			<span class="number">3000</span>,</span><br><span class="line">			<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			    $i.remove();</span><br><span class="line">			&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="string">&#x27;delay()&#x27;</span>, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delay</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&quot;.buryit&quot;</span>).removeAttr(<span class="string">&quot;onclick&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>想要每次点击显示的文字为不同颜色，可以将其中 color 值进行如下更改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;color&quot;</span>: <span class="string">&quot;rgb(&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;,&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;,&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后在 \themes\hexo-Meadow\layout\layout.ejs 文件<body></body>中添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/click_show_text.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>最最最（重要的字说三遍）重要的来了，<br>可能你会报错JQ找不到，那是没引入JQ，在上面之前引入JQ即可，即：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;http://libs.baidu.com/jquery/1.8.3/jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;http://libs.baidu.com/jquery/1.8.3/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/js/click_show_text.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、添加网站雪花飘落效果"><a href="#2、添加网站雪花飘落效果" class="headerlink" title="2、添加网站雪花飘落效果"></a>2、添加网站雪花飘落效果</h3><p>在 /themes/hexo-Meadow/source/js 下新建文件 snow.js，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">	$.fn.snow = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> $flake = $(<span class="string">&#x27;&lt;div id=&quot;snowbox&quot; /&gt;&#x27;</span>).css(&#123;<span class="string">&#x27;position&#x27;</span>: <span class="string">&#x27;absolute&#x27;</span>,<span class="string">&#x27;z-index&#x27;</span>:<span class="string">&#x27;9999&#x27;</span>, <span class="string">&#x27;top&#x27;</span>: <span class="string">&#x27;-50px&#x27;</span>&#125;).html(<span class="string">&#x27;&amp;#10052;&#x27;</span>),</span><br><span class="line">	documentHeight 	= $(<span class="built_in">document</span>).height(),</span><br><span class="line">	documentWidth	= $(<span class="built_in">document</span>).width(),</span><br><span class="line">	defaults = &#123;</span><br><span class="line">		<span class="attr">minSize</span>		: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">maxSize</span>		: <span class="number">20</span>,</span><br><span class="line">		<span class="attr">newOn</span>		: <span class="number">1000</span>,</span><br><span class="line">		<span class="attr">flakeColor</span>	: <span class="string">&quot;#AFDAEF&quot;</span> <span class="comment">/* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */</span></span><br><span class="line">	&#125;,</span><br><span class="line">	options	= $.extend(&#123;&#125;, defaults, options);</span><br><span class="line">	<span class="keyword">var</span> interval= <span class="built_in">setInterval</span>( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> startPositionLeft = <span class="built_in">Math</span>.random() * documentWidth - <span class="number">100</span>,</span><br><span class="line">	startOpacity = <span class="number">0.5</span> + <span class="built_in">Math</span>.random(),</span><br><span class="line">	sizeFlake = options.minSize + <span class="built_in">Math</span>.random() * options.maxSize,</span><br><span class="line">	endPositionTop = documentHeight - <span class="number">200</span>,</span><br><span class="line">	endPositionLeft = startPositionLeft - <span class="number">500</span> + <span class="built_in">Math</span>.random() * <span class="number">500</span>,</span><br><span class="line">	durationFall = documentHeight * <span class="number">10</span> + <span class="built_in">Math</span>.random() * <span class="number">5000</span>;</span><br><span class="line">	$flake.clone().appendTo(<span class="string">&#x27;body&#x27;</span>).css(&#123;</span><br><span class="line">		<span class="attr">left</span>: startPositionLeft,</span><br><span class="line">		<span class="attr">opacity</span>: startOpacity,</span><br><span class="line">		<span class="string">&#x27;font-size&#x27;</span>: sizeFlake,</span><br><span class="line">		<span class="attr">color</span>: options.flakeColor</span><br><span class="line">	&#125;).animate(&#123;</span><br><span class="line">		<span class="attr">top</span>: endPositionTop,</span><br><span class="line">		<span class="attr">left</span>: endPositionLeft,</span><br><span class="line">		<span class="attr">opacity</span>: <span class="number">0.2</span></span><br><span class="line">	&#125;,durationFall,<span class="string">&#x27;linear&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		$(<span class="built_in">this</span>).remove()</span><br><span class="line">	&#125;);</span><br><span class="line">	&#125;, options.newOn);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)(jQuery);</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $.fn.snow(&#123; </span><br><span class="line">	    <span class="attr">minSize</span>: <span class="number">5</span>, <span class="comment">/* 定义雪花最小尺寸 */</span></span><br><span class="line">	    <span class="attr">maxSize</span>: <span class="number">50</span>,<span class="comment">/* 定义雪花最大尺寸 */</span></span><br><span class="line">	    <span class="attr">newOn</span>: <span class="number">300</span>  <span class="comment">/* 定义密集程度，数字越小越密集 */</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后在 \themes\hexo-Meadow\layout\layout.ejs 文件<body></body>中添加以下代码<br>如遇到JQ找不到，参考第一种特效解决方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;\js\snow.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、隐藏网页底部-Powered-by-Hexo-Theme-Meadow"><a href="#3、隐藏网页底部-Powered-by-Hexo-Theme-Meadow" class="headerlink" title="3、隐藏网页底部 Powered by Hexo Theme: Meadow"></a>3、隐藏网页底部 Powered by Hexo Theme: Meadow</h3><p> 打开themes/layout/_partials/footer.ejs,使用<!-- -->注释或者删除 下面代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;mdui-row&quot;</span>&gt;</span><br><span class="line">    &lt;%<span class="keyword">if</span>(theme.footer.powered &amp;&amp; theme.footer.theme)&#123;%&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mdui-col-xs-6 mdui-text-right&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>Powered by <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://hexo.io/&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>Hexo<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;mdui-col-xs-6 mdui-text-left&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>Theme: <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/kb1000fx/Meadow&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>Meadow<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;%&#125;<span class="keyword">else</span> <span class="keyword">if</span>(theme.footer.powered)&#123;%&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Powered by <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://hexo.io/&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>Hexo<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;%&#125;<span class="keyword">else</span>&#123;%&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Theme: <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/kb1000fx/hexo-theme-meadow&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;noopener&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>Meadow<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    &lt;%&#125;%&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、侧边栏背景设置"><a href="#4、侧边栏背景设置" class="headerlink" title="4、侧边栏背景设置"></a>4、侧边栏背景设置</h3><p>打开themes\hexo-Meadow\source\css_partial\sidebar.styl<br>此配置文件中，可以找到 .sidebar(我的没有只有#sidebar,所以我f12查看了标签找到新的id,即如下)，修改其内部的属性参数即可实现设置侧边栏背景图片和字体颜色的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.mdui-drawer &#123;</span><br><span class="line">    <span class="comment">//设置背景图片，图片放在Hexo\themes\theme-Meadow\source\images目录下</span></span><br><span class="line">    <span class="attr">background</span>:url(<span class="regexp">/images/</span>sidebar.jpg);	</span><br><span class="line">    background-size: cover;</span><br><span class="line">    background-position:center;</span><br><span class="line">    background-repeat:no-repeat;</span><br><span class="line">    bottom: <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (not hexo-config(<span class="string">&#x27;back2top.sidebar&#x27;</span>)) &#123;</span><br><span class="line">        box-shadow: inset <span class="number">0</span> 2px 6px black;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attr">position</span>: fixed;</span><br><span class="line">    top: <span class="number">0</span>;</span><br><span class="line">    transition: all $transition-ease-out;</span><br><span class="line">    width: $sidebar-desktop;</span><br><span class="line">    z-index: $zindex-<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    a &#123;</span><br><span class="line">        <span class="comment">//设置文字颜色</span></span><br><span class="line">        border-bottom-color: #FFFFFF;</span><br><span class="line">        color: #FFFFFF;</span><br><span class="line">        &amp;:hover &#123;</span><br><span class="line">            border-bottom-color: $FFFFFF;</span><br><span class="line">            color: #FFFFFF;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、更换背景"><a href="#5、更换背景" class="headerlink" title="5、更换背景"></a>5、更换背景</h3><p>在themes\next\source\css\main.styl文件中找到如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">  <span class="attr">background</span>: background-body;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//更换为</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>:url(<span class="regexp">/images/</span>bg01.jpg);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:<span class="number">50</span>% <span class="number">50</span>%;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>….后续更新</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/2016/08/18/%E4%BD%BF%E7%94%A8CSS%E5%B0%86%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2%E6%88%90%E9%BB%91%E7%99%BD(%E7%81%B0%E8%89%B2%E3%80%81%E7%BD%AE%E7%81%B0)/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>使用CSS将图片转换成黑白(灰色、置灰)</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2016/07/05/markdown%E8%AF%AD%E6%B3%95/">
+        <span>markdown语法</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AF%E6%88%91%E6%AF%94%E8%BE%83%E5%96%9C%E6%AC%A2%E7%9A%84%E7%BE%8E%E5%8C%96%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88"><span class="toc-number">1.</span> <span class="toc-text">下面是我比较喜欢的美化，亲测有效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%98%BE%E7%A4%BA%E5%AD%97%E4%BD%93%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">1、添加鼠标点击显示字体效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E9%9B%AA%E8%8A%B1%E9%A3%98%E8%90%BD%E6%95%88%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">2、添加网站雪花飘落效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E9%9A%90%E8%97%8F%E7%BD%91%E9%A1%B5%E5%BA%95%E9%83%A8-Powered-by-Hexo-Theme-Meadow"><span class="toc-number">4.</span> <span class="toc-text">3、隐藏网页底部 Powered by Hexo Theme: Meadow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">4、侧边栏背景设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E6%9B%B4%E6%8D%A2%E8%83%8C%E6%99%AF"><span class="toc-number">6.</span> <span class="toc-text">5、更换背景</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+      <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021
+      
+      <span style="color:#d9333f" class="iconfont icon-heart"></span>
+      
+        c-Aurora
+      </span>
+    </div>
+    <div class="mdui-row">
+      <!-- 
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+       -->
+    </div>
+    <div class="mdui-row">
+      
+      <div class="mdui-col-xs-6 mdui-text-right">
+        <span id="busuanzi_container_site_uv" style="display: none;"> <span
+            class="iconfont icon-user"></span>总访客量 <span
+            id="busuanzi_value_site_uv"></span></span>
+      </div>
+      <div class="mdui-col-xs-6 mdui-text-left">
+        <span id="busuanzi_container_site_pv" style="display: none;"> <span
+            class="iconfont icon-eye"></span>总访问量 <span
+            id="busuanzi_value_site_pv"></span></span>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i
+      class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <script type="text/javascript" src="/js/snow.js"></script>
+
+</body>
+
+</html>
