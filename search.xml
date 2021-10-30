@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS居中的方式</title>
-    <url>/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<p>01、内联元素水平居中</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/01.jpg" alt="01"></p>
-<p>02、块级元素水平居中</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/02.jpg" alt="02"></p>
-<p>03、多块级元素水平居中(利用inline-block)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/03.jpg" alt="03"></p>
-<p>04、多块级元素水平居中(利用display: flex)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/04.jpg" alt="04"></p>
-<p>05、垂直居中(单行内联(line-height)元素垂直居中)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/05.jpg" alt="05"></p>
-<p>06、垂直居中(多行元素垂直居中利用表布局（table vertical-align: middle）)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/06.jpg" alt="06"></p>
-<p>07、垂直居中(多行元素垂直居中利用flex布局（flex-direction: column）)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/07.jpg" alt="07"></p>
-<p>08、伪元素—利用“精灵元素”(ghost element)技术实现垂直居中，即在父容器内放一个100%高度的伪元素，让文本和伪元素垂直对齐，从而达到垂直居中的目的</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/08.jpg" alt="08"></p>
-<p>09、块级元素垂直居中(固定高度的块级元素)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/09.jpg" alt="09"></p>
-<p>10、块级元素垂直居中(未知高度的块级元素)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/10.jpg" alt="10"></p>
-<p>11、水平垂直居中(固定宽高元素水平垂直居中)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/11.jpg" alt="11"></p>
-<p>12、水平垂直居中(未知宽高元素水平垂直居中)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/12.jpg" alt="12"></p>
-<p>13、水平垂直居中(利用flex布局)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/13.jpg" alt="13"></p>
-<p>14、水平垂直居中(利用grid布局)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/14.jpg" alt="14"></p>
-<p>15、水平垂直居中(屏幕上水平垂直居中)</p>
-<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/15.jpg" alt="15"></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hexo美化</title>
     <url>/2016/07/16/Hexo%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<hr>
@@ -80,6 +40,46 @@
 ]]></content>
       <categories>
         <category>搭建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS居中的方式</title>
+    <url>/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<p>01、内联元素水平居中</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/01.jpg" alt="01"></p>
+<p>02、块级元素水平居中</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/02.jpg" alt="02"></p>
+<p>03、多块级元素水平居中(利用inline-block)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/03.jpg" alt="03"></p>
+<p>04、多块级元素水平居中(利用display: flex)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/04.jpg" alt="04"></p>
+<p>05、垂直居中(单行内联(line-height)元素垂直居中)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/05.jpg" alt="05"></p>
+<p>06、垂直居中(多行元素垂直居中利用表布局（table vertical-align: middle）)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/06.jpg" alt="06"></p>
+<p>07、垂直居中(多行元素垂直居中利用flex布局（flex-direction: column）)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/07.jpg" alt="07"></p>
+<p>08、伪元素—利用“精灵元素”(ghost element)技术实现垂直居中，即在父容器内放一个100%高度的伪元素，让文本和伪元素垂直对齐，从而达到垂直居中的目的</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/08.jpg" alt="08"></p>
+<p>09、块级元素垂直居中(固定高度的块级元素)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/09.jpg" alt="09"></p>
+<p>10、块级元素垂直居中(未知高度的块级元素)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/10.jpg" alt="10"></p>
+<p>11、水平垂直居中(固定宽高元素水平垂直居中)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/11.jpg" alt="11"></p>
+<p>12、水平垂直居中(未知宽高元素水平垂直居中)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/12.jpg" alt="12"></p>
+<p>13、水平垂直居中(利用flex布局)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/13.jpg" alt="13"></p>
+<p>14、水平垂直居中(利用grid布局)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/14.jpg" alt="14"></p>
+<p>15、水平垂直居中(屏幕上水平垂直居中)</p>
+<p><img src="/2017/04/15/CSS%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/15.jpg" alt="15"></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
       </categories>
   </entry>
   <entry>
