@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f41681;
+  background: #bb8208;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2635,4 +2635,27 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("/images/bg01.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  color: var(--text-color);
+  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 1em;
+  line-height: 2;
+}
+.header-inner {
+  border-radius: 20px 20px 20px 20px;
+  opacity: 0.8;
+}
+.sidebar {
+  transition-duration: 0.4s;
+  opacity: 0.8;
+  border-radius: 10px 10px 10px 10px;
+}
+.content {
+  padding-top: 15px;
+  opacity: 0.8;
 }
