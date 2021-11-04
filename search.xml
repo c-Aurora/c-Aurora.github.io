@@ -94,9 +94,8 @@
 <h3 id="11、去掉博客顶部黑线"><a href="#11、去掉博客顶部黑线" class="headerlink" title="11、去掉博客顶部黑线"></a>11、去掉博客顶部黑线</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//去掉博客顶部黑线</span></span><br><span class="line">.headband &#123;<span class="attr">display</span>:none;&#125;</span><br></pre></td></tr></table></figure>
 
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="12、改掉题头颜色"><a href="#12、改掉题头颜色" class="headerlink" title="12、改掉题头颜色"></a>12、改掉题头颜色</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//改掉题头颜色</span></span><br><span class="line">.site-brand-container &#123;</span><br><span class="line">  <span class="attr">background</span>: ; <span class="comment">//修改为自己喜欢的颜色</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>….后续更新</p>
 ]]></content>
