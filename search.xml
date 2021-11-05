@@ -39,6 +39,10 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>水平居中</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo美化</title>
@@ -103,7 +107,7 @@
         <category>搭建</category>
       </categories>
       <tags>
-        <tag>next模板</tag>
+        <tag>next7.8</tag>
         <tag>主题</tag>
       </tags>
   </entry>
@@ -133,6 +137,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>onchange事件</tag>
+      </tags>
   </entry>
   <entry>
     <title>Mac终端命令</title>
@@ -142,6 +149,10 @@
       <categories>
         <category>Mac终端</category>
       </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>指令</tag>
+      </tags>
   </entry>
   <entry>
     <title>css清除默认样式和设置公共样式</title>
@@ -152,6 +163,10 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>公共样式</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo搭建github博客</title>
@@ -195,6 +210,10 @@
       <categories>
         <category>搭建</category>
       </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>github</tag>
+      </tags>
   </entry>
   <entry>
     <title>js怎样读取json里面的数据</title>
@@ -205,6 +224,10 @@
       <categories>
         <category>JSON</category>
       </categories>
+      <tags>
+        <tag>json</tag>
+        <tag>数据</tag>
+      </tags>
   </entry>
   <entry>
     <title>js日常用到知识点汇总</title>
@@ -237,6 +260,10 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>数组</tag>
+      </tags>
   </entry>
   <entry>
     <title>js获取小数点的问题</title>
@@ -254,6 +281,11 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>字符串</tag>
+        <tag>四舍五入</tag>
+        <tag>小数点</tag>
+      </tags>
   </entry>
   <entry>
     <title>mac安装webpack</title>
@@ -265,6 +297,9 @@
       <categories>
         <category>Webpack</category>
       </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
   </entry>
   <entry>
     <title>markdown语法</title>
@@ -326,6 +361,9 @@
       <categories>
         <category>语法</category>
       </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title>px转rem</title>
@@ -336,6 +374,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>rem</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用CSS将图片转换成黑白(灰色、置灰)</title>
@@ -351,6 +392,9 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>图片转换</tag>
+      </tags>
   </entry>
   <entry>
     <title>使用jq刷新页面及一些js函数</title>
@@ -362,6 +406,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>刷新页面</tag>
+      </tags>
   </entry>
   <entry>
     <title>关于meta</title>
@@ -381,6 +428,9 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>meta</tag>
+      </tags>
   </entry>
   <entry>
     <title>分享点自己搜集的前端有用的链接</title>
@@ -397,6 +447,10 @@
       <categories>
         <category>链接</category>
       </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>链接</tag>
+      </tags>
   </entry>
   <entry>
     <title>如何获取用户当前城市？</title>
@@ -408,6 +462,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>获取当前城市</tag>
+      </tags>
   </entry>
   <entry>
     <title>小tips</title>
@@ -419,6 +476,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>tips</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用正则表达式</title>
@@ -429,6 +489,9 @@
       <categories>
         <category>正则</category>
       </categories>
+      <tags>
+        <tag>正则</tag>
+      </tags>
   </entry>
   <entry>
     <title>监听微信自动播放视频</title>
@@ -439,6 +502,11 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>监听</tag>
+        <tag>自动播放</tag>
+        <tag>微信</tag>
+      </tags>
   </entry>
   <entry>
     <title>禁止横竖屏切换、强制横竖屏</title>
@@ -451,6 +519,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>横竖屏切换</tag>
+      </tags>
   </entry>
   <entry>
     <title>移动端上拉加载demo</title>
@@ -461,6 +532,10 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>移动端</tag>
+        <tag>上拉加载</tag>
+      </tags>
   </entry>
   <entry>
     <title>自己写的一些复用样式</title>
@@ -471,6 +546,10 @@
       <categories>
         <category>CSS</category>
       </categories>
+      <tags>
+        <tag>css复用</tag>
+        <tag>js复用</tag>
+      </tags>
   </entry>
   <entry>
     <title>那些年踩得坑...toFixed()并不是真的四舍五入</title>
@@ -487,5 +566,9 @@
       <categories>
         <category>JS</category>
       </categories>
+      <tags>
+        <tag>toFixed()</tag>
+        <tag>采坑</tag>
+      </tags>
   </entry>
 </search>
