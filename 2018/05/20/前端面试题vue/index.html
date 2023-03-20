@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题-vue(补充中...)">
+<meta property="og:url" content="http://example.com/2018/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98vue/index.html">
+<meta property="og:site_name" content="得鹿梦鱼">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-20T09:23:59.000Z">
+<meta property="article:modified_time" content="2023-03-20T14:59:56.379Z">
+<meta property="article:author" content="c-Aurora">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2018/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98vue/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端面试题-vue(补充中...) | 得鹿梦鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">得鹿梦鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">39</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">27</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="c-Aurora">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="得鹿梦鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端面试题-vue(补充中...)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-05-20 17:23:59" itemprop="dateCreated datePublished" datetime="2018-05-20T17:23:59+08:00">2018-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+
+<p><strong>vue优点？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">轻量级框架: 只关注视图层，是一个构建数据的视图集合，大小只有几十kb；</span><br><span class="line"></span><br><span class="line">简单易学: 国人开发，中文文档，不存在语言障碍 ，易于理解和学习；</span><br><span class="line"></span><br><span class="line">双向数据绑定: 保留了angular的特点，在数据操作方面更为简单；</span><br><span class="line"></span><br><span class="line">组件化: 保留了react的优点，实现了html的封装和重用，在构建单页面应用方面有着独特的优势；</span><br><span class="line"></span><br><span class="line">视图，数据，结构分离: 使数据的更改更为简单，不需要进行逻辑代码的修改，只需要操作数据就能完成相关操作；</span><br><span class="line"></span><br><span class="line">虚拟DOM: dom操作是非常耗费性能的， 不再使用原生的dom操作节点，极大解放dom操作，但具体操作的还是dom不过是换了另一种方式；</span><br><span class="line"></span><br><span class="line">运行速度更快: 相比较与react而言，同样是操作虚拟dom，就性能而言，vue存在很大的优势。</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么说vue是一个渐进式的javascript框架，渐进式是什么意思？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">vue允许你将一个页面分割成可复用的组件，每个组件都包含属于自己的html、css、js用来渲染网页中相应的地方。</span><br><span class="line">对于vue的使用可大可小，它都会有相应的方式来整合到你的项目中。所以说它是一个渐进式的框架。</span><br><span class="line"></span><br><span class="line">vue是响应式的（reactive）这是vue最独特的特性，也就是说当我们的数据变更时，vue会帮你更新所有网页中用到它的地方。</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue的性能优化</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">路由懒加载、图片懒加载、第三方组件库按需引入、keep-alive缓存页面、使用v-show复用DOM、避免v-<span class="keyword">if</span>与v-<span class="keyword">for</span>同时使用</span><br></pre></td></tr></table></figure>
+<p><strong>为什么避免v-for和v-if同时使用？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">for</span>比v-<span class="keyword">if</span>优先级高，使用的话每次v-<span class="keyword">for</span>都会v-<span class="keyword">if</span>判断，影响性能</span><br></pre></td></tr></table></figure>
+<p><strong>vue的两个核心点</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据驱动、组件系统</span><br><span class="line"></span><br><span class="line">数据驱动：ViewModel，保证数据和视图的一致性。</span><br><span class="line">组件系统：应用类UI可以看作全部是由组件树构成的</span><br></pre></td></tr></table></figure>
+<p><strong>为什么使用虚拟DOM</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">创建真实DOM的代价高，虚拟dom由于本质是一个js对象，因此天生具备跨平台的能力，可以实现在不同平台的准确显示。</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>) 虚拟dom是什么？</span><br><span class="line">    vue2.x才有的虚拟dom；本质是js对象；</span><br><span class="line">(<span class="number">2</span>) 虚拟dom在vue中做了什么？</span><br><span class="line">    [<span class="number">1</span>].将真实dom转化虚拟dom（js对象）;</span><br><span class="line">    [<span class="number">2</span>].更新的时候做对比；</span><br><span class="line">(<span class="number">3</span>) 虚拟dom是如何提升vue的渲染效率的？</span><br><span class="line">    [<span class="number">1</span>].局部更新(节点更新)；</span><br><span class="line">    [<span class="number">2</span>].将直接操作dom的地方拿到两个js对象之中去做比较</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>MVC和MVVM</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MVC包括view视图层、controller控制层、model数据层。各部分之间的通信都是单向的</span><br><span class="line"></span><br><span class="line">MVVM包括view视图层、model数据层、viewmodel层。各部分通信都是双向的</span><br></pre></td></tr></table></figure>
+
+<p><strong>v-model的原理/双向数据绑定原理</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vue 双向数据绑定是通过 数据劫持 结合 发布订阅模式的方式来实现的， 也就是说数据和视图同步，数据发生变化，视图跟着变化，视图变化，数据也随之发生改变；</span><br><span class="line">核心：关于VUE双向数据绑定，其核心是 <span class="built_in">Object</span>.defineProperty()方法。</span><br><span class="line"></span><br><span class="line">v-model用于表单数据的双向绑定，其实它就是一个语法糖，这个背后就做了两个操作：</span><br><span class="line">v-bind绑定一个value属性；</span><br><span class="line">v-on指令给当前元素绑定input事件</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>vue生命周期</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">什么是vue生命周期?</span><br><span class="line"></span><br><span class="line">    Vue实例从创建到销毁的过程，就是生命周期</span><br><span class="line"></span><br><span class="line">Vue声明周期的作用是什么？</span><br><span class="line">    它的生命周期中有多个事件钩子，让我们在控制整个Vue实例的过程时更容易形成好的逻辑</span><br><span class="line"></span><br><span class="line">Vue生命周期总共有几个阶段？(创建-&gt;加载-&gt;更新-&gt;销毁)</span><br><span class="line">  <span class="number">8</span>个阶段：</span><br><span class="line">    创建前 beforeCreate / 创建前后 created，</span><br><span class="line">    载入前 beforeMount  / 载入后   mounted，</span><br><span class="line">    更新前 beforeUpdate / 更新后   updated，</span><br><span class="line">    销毁前 beforeDestory/ 销毁后   destroyed。</span><br><span class="line"></span><br><span class="line">第一次页面加载会触发那几个钩子？</span><br><span class="line">    第一次页面加载时会触发 </span><br><span class="line">        beforeCreate,created,</span><br><span class="line">        beforeMount,mounted  这几个钩子</span><br><span class="line"></span><br><span class="line">每个生命周期适合那些场景？</span><br><span class="line"><span class="number">1</span>、beforeCreate（创建前） ：数据观测和初始化事件还未开始，此时 data 的响应式追踪、event/watcher 都还没有被设置，也就是说不能访问到data、computed、watch、methods上的方法和数据。</span><br><span class="line"><span class="number">2</span>、created（创建后） ：实例创建完成，实例上配置的 options 包括 data、computed、watch、methods 等都配置完成，但是此时渲染得节点还未挂载到 DOM，所以不能访问到 $el 属性。</span><br><span class="line"><span class="number">3</span>、beforeMount（挂载前） ：在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。此时还没有挂载html到页面上。</span><br><span class="line"><span class="number">4</span>、mounted（挂载后） ：在el被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html 页面中。此过程中进行ajax交互。</span><br><span class="line"><span class="number">5</span>、beforeUpdate（更新前） ：响应式数据更新时调用，此时虽然响应式数据更新了，但是对应的真实 DOM 还没有被渲染。</span><br><span class="line"><span class="number">6</span>、updated（更新后）：在由于数据更改导致的虚拟DOM重新渲染和打补丁之后调用。此时 DOM 已经根据响应式数据的变化更新了。调用时，组件 DOM已经更新，所以可以执行依赖于DOM的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。</span><br><span class="line"><span class="number">7</span>、beforeDestroy（销毁前） ：实例销毁之前调用。这一步，实例仍然完全可用，<span class="built_in">this</span> 仍能获取到实例。</span><br><span class="line"><span class="number">8</span>、destroyed（销毁后） ：实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务端渲染期间不被调用。</span><br><span class="line">另外还有 keep-alive 独有的生命周期，分别为 activated 和 deactivated 。用 keep-alive 包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行 deactivated 钩子函数，命中缓存渲染后会执行 activated 钩子函数    </span><br></pre></td></tr></table></figure>
+<p><strong>第一次页面加载会触发哪几个钩子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">beforeCreate， created， beforeMount， mounted</span><br></pre></td></tr></table></figure>
+<p><strong>vue获取数据在哪个周期函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一般 created/beforeMount/mounted 皆可.</span><br><span class="line">比如如果你要操作 DOM , 那肯定 mounted 时候才能操作</span><br></pre></td></tr></table></figure>
+<p><strong>Vue的父子组件生命周期钩子函数执行顺序</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 加载渲染过程 --&gt;</span><br><span class="line">&lt;!-- 父beforeCreate -&gt; 父created -&gt; 父beforeMount -&gt; 子beforeCreate -&gt; 子created -&gt; 子beforeMount -&gt; 子mounted -&gt; 父mounted --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 子组件更新过程 --&gt;</span><br><span class="line">&lt;!-- 父beforeUpdate -&gt; 子beforeUpdate -&gt; 子updaed -&gt; 父updated --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 父组件跟新过程 --&gt;</span><br><span class="line">&lt;!-- 父beforeUpdate -&gt; 父updated --&gt;</span><br><span class="line">&lt;!-- 销毁过程 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 父beforeDestroy -&gt; 子beforeDestroy -&gt; 子destroyed -&gt;父destroyed --&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Vue组件通信</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">props、$emit、$refs、bus、vuex、provide / inject</span><br><span class="line"></span><br><span class="line">父传子：</span><br><span class="line">在父组件中，用v-bind动态绑定一个自定义属性，给子组件传递数据。</span><br><span class="line">在子组件中，使用props接收父组件传过来的数据。</span><br><span class="line"></span><br><span class="line">子传父：</span><br><span class="line">子组件通过事件的方式，利用$emit给父组件传值。($emit的第一个参数是父组件自定义事件的方法名，后面的“value”是子组件要给父组件传递的数据）。</span><br><span class="line">在父组件中，绑定一个自定义事件，用来接收子组件传来的值。</span><br><span class="line"></span><br><span class="line">$parent 可以用来从一个子组件访问父组件的实例</span><br><span class="line">$ref 可以用来获取子组件的数据（ref只在dom渲染完后才会有，可以在生命周期<span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span>&#123;&#125;钩子中调用，或者在<span class="built_in">this</span>.$nextTick(<span class="function">()=&gt;</span>&#123;&#125;)中调用）。</span><br><span class="line"></span><br><span class="line">provide / inject：</span><br><span class="line">传递的时候：以对象形式传递过去</span><br><span class="line"><span class="function"><span class="title">provide</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">sonDate</span>: <span class="string">&#x27;子组件数据&#x27;</span>,</span><br><span class="line">      <span class="attr">childDate</span>: <span class="string">&#x27;孙组件数据&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"> 接收的时候和props接收方式一样：</span><br><span class="line"> <span class="attr">inject</span>:[<span class="string">&#x27;参数&#x27;</span>]</span><br><span class="line"></span><br><span class="line">Bus</span><br><span class="line">bus.js</span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> bus = <span class="keyword">new</span> Vue()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> bus </span><br><span class="line">使用：先引入bus文件</span><br><span class="line">传递：bus.$emit(<span class="string">&#x27;message&#x27;</span>,<span class="string">&#x27;传递的值&#x27;</span>)</span><br><span class="line">接收：bus.$on(<span class="string">&#x27;message&#x27;</span>,<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;e就是获取到的值&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>v-if与v-show的区别？使用场景分别是什么？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">if</span>：显示隐藏是将dom元素整个添加或删除；适用于运行时条件很少改变。</span><br><span class="line"></span><br><span class="line">v-show：隐藏则是为该元素添加css–display:none，dom元素依旧还在；适用于非常频繁地切换。（不能用于权限操作）</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue组件中的data()为什么是函数？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">每一个组件都有自己的私有作用域，确保各组件数据不会被干扰。</span><br><span class="line"></span><br><span class="line">单纯的写成对象形式，就是所有的组件实例共用了一个data，这样改一个全都改了。</span><br></pre></td></tr></table></figure>
+
+<p><strong>router和route的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">route是当前正在跳转的路由对象，可以从route里面获取hash,name,path,query,mathsr等属性方法（接收参数时使用）</span><br><span class="line"></span><br><span class="line">router跳转连接就可以使用</span><br></pre></td></tr></table></figure>
+
+<p><strong>computed 计算属性和watch监听区别?</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">computed:</span><br><span class="line">　　　　当一个属性受多个属性影响的时候就需要用到computed</span><br><span class="line">　　　　最典型的栗子： 购物车商品结算的时候</span><br><span class="line"><span class="attr">watch</span>:</span><br><span class="line">　　　　当一条数据影响多条数据的时候就需要用watch</span><br><span class="line">　　　　栗子：搜索数据</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>怎么重定向页面？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">	<span class="attr">routes</span>:[</span><br><span class="line">		&#123; <span class="attr">path</span>: <span class="string">&#x27;/a&#x27;</span>, <span class="attr">redirect</span>: <span class="string">&#x27;/b&#x27;</span> &#125;</span><br><span class="line">	]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">怎么配置<span class="number">404</span>页面？</span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">	<span class="attr">routes</span>:[</span><br><span class="line">		&#123; </span><br><span class="line">			<span class="attr">path</span>: <span class="string">&#x27;*&#x27;</span>, <span class="attr">redirect</span>: &#123;<span class="attr">path</span>:<span class="string">&#x27;/&#x27;</span>&#125;</span><br><span class="line">		 &#125;</span><br><span class="line">	]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue-router 有哪几种导航守卫?</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">全局守卫、路由独享守卫、路由组件内的守卫</span><br><span class="line"></span><br><span class="line"><span class="comment">//路由的钩子函数总结有6个</span></span><br><span class="line"></span><br><span class="line">全局的路由钩子函数：</span><br><span class="line">    beforeEach 全局前置守卫，进入路由之前</span><br><span class="line">    afterEach  全局后置钩子，进入路由之后</span><br><span class="line"></span><br><span class="line">单个的路由钩子函数：</span><br><span class="line">    beforeEnter</span><br><span class="line"></span><br><span class="line">组件内的路由钩子函数：</span><br><span class="line">    beforeRouteEnter   进入路由前</span><br><span class="line">    beforeRouteLeave   离开当前路由时</span><br><span class="line">    beforeRouteUpdate  路由复用同一个组件时</span><br></pre></td></tr></table></figure>
+<p><strong>$ nextTick的使用？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当你修改了data的值然后马上获取这个dom元素的值，是不能获取到更新后的值，</span><br><span class="line">你需要使用$nextTick这个回调，让修改后的data值渲染更新到dom元素之后在获取，才能成功</span><br></pre></td></tr></table></figure>
+<p><strong>异步请求适合在哪个生命周期调用？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。</span><br><span class="line"></span><br><span class="line">我一般在 created 钩子函数中调用异步请求，能更快获取到服务端数据，减少页面 loading 时间；</span><br></pre></td></tr></table></figure>
+<p><strong>过滤器的作用？如何实现一个过滤器？使用场景？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">过滤器是用来过滤数据的，在vue中使用filters来过滤数据；使用场景：例如(时间/日期 格式化)</span><br></pre></td></tr></table></figure>
+<p><strong>Vue中key是用来做什么的？为什么不推介使用index作为key</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、使用key来给每个节点做一个唯一标识，key的作用主要是为了高效的更新虚拟DOM</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、当以数组的下标index作为index值时，其中一个元素（如增删改查）发生了变化就有可能导致所有元素的key值发生变化</span><br></pre></td></tr></table></figure>
+<p><strong>vue 常用事件修饰符</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.stop 阻止点击事件冒泡</span><br><span class="line"></span><br><span class="line">.prevent 阻止默认事件</span><br><span class="line"></span><br><span class="line">.once 只执行一次</span><br><span class="line"></span><br><span class="line">.self 只在元素本身触发</span><br></pre></td></tr></table></figure>
+<p><strong>如何让CSS只在当前组件中起作用？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在组件中的style前面加上scoped</span><br></pre></td></tr></table></figure>
+<p><strong>keep-alive的作用是什么?</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染  (后台管理系统的 面包屑)</span><br></pre></td></tr></table></figure>
+<p><strong>Vue 如何获取dom?</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref=“domName” 用法：<span class="built_in">this</span>.$refs.domName</span><br></pre></td></tr></table></figure>
+<p><strong>说出几种vue当中的指令和它的用法？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v-model双向数据绑定；</span><br><span class="line">v-<span class="keyword">for</span>循环；</span><br><span class="line">v-<span class="keyword">if</span> v-show 显示与隐藏；</span><br><span class="line">v-on事件；v-once: 只绑定一次。</span><br></pre></td></tr></table></figure>
+<p><strong>vue-loader是什么？使用它的用途有哪些？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vue文件的一个加载器，将template/js/style转换成js模块。</span><br><span class="line"></span><br><span class="line">用途：js可以写es6、style样式可以scss或less、template可以加jade等</span><br></pre></td></tr></table></figure>
+<p><strong>请说出vue.cli项目中src目录每个文件夹和文件的用法？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">assets文件夹是放静态资源；</span><br><span class="line">components是放组件；</span><br><span class="line">router是定义路由相关的配置; </span><br><span class="line">app.vue是一个应用主组件；</span><br><span class="line">main.js是入口文件。</span><br></pre></td></tr></table></figure>
+<p><strong>assets和static的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">相同点：assets和<span class="keyword">static</span>两个都是存放静态资源文件。</span><br><span class="line"></span><br><span class="line">不相同点：assets中存放的静态资源文件在项目打包时，会将assets中放置的静态资源文件进行打包上传，而压缩后的静态资源文件最终也都会放置在<span class="keyword">static</span>文件中跟着index.html一同上传至服务器。<span class="keyword">static</span>中放置的静态资源文件就不会要走打包压缩格式化等流程，而是直接进入打包好的目录，直接上传至服务器。因为避免了压缩直接进行上传，在打包时会提高一定的效率，但是<span class="keyword">static</span>中的资源文件由于没有进行压缩等操作，所以文件的体积也就相对于assets中打包后的文件提交较大点。在服务器中就会占据更大的空间。</span><br><span class="line"></span><br><span class="line">建议：将项目中template需要的样式文件js文件等都可以放置在assets中，走打包这一流程。减少体积。而项目中引入的第三方的资源文件如iconfoont.css等文件可以放置在<span class="keyword">static</span>中，因为这些引入的第三方文件已经经过处理，我们不再需要处理，直接上传</span><br></pre></td></tr></table></figure>
+<p><strong>vue-router 是什么?它有哪些组件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue用来写路由一个插件。router-link、router-view</span><br></pre></td></tr></table></figure>
+<p><strong>active-class 是哪个组件的属性？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue-router模块的router-link组件。children数组来定义子路由</span><br></pre></td></tr></table></figure>
+<p><strong>怎么定义 vue-router 的动态路由? 怎么获取传过来的值？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在router目录下的index.js文件中，对path属性加上/:id。 使用router对象的params.id</span><br></pre></td></tr></table></figure>
+<p><strong>vue-router的两种模式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hash模式： 即地址栏 URL 中的 # 符号；</span><br><span class="line">history模式</span><br></pre></td></tr></table></figure>
+<p><strong>vue-router实现路由懒加载（ 动态加载路由 ）</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">三种方式</span><br><span class="line">第一种：vue异步组件技术 ==== 异步加载，vue-router配置路由 , 使用vue的异步组件技术 , 可以实现按需加载 .但是,这种情况下一个组件生成一个js文件。</span><br><span class="line"></span><br><span class="line">第二种：路由懒加载(使用<span class="keyword">import</span>)。</span><br><span class="line"></span><br><span class="line">第三种：webpack提供的<span class="built_in">require</span>.ensure()，vue-router配置路由，使用webpack的<span class="built_in">require</span>.ensure技术，也可以实现按需加载。这种情况下，多个路由指定相同的chunkName，会合并打包成一个js文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>引进组件的步骤</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在template中引入组件；</span><br><span class="line">在script的第一行用<span class="keyword">import</span>引入路径；</span><br><span class="line">用component中写上组件名称</span><br></pre></td></tr></table></figure>
+<p><strong>delete和Vue.delete删除数组的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span>只是被删除的元素变成了 empty/<span class="literal">undefined</span> 其他的元素的键值还是不变。</span><br><span class="line"></span><br><span class="line">Vue.delete 直接删除了数组 改变了数组的键值</span><br></pre></td></tr></table></figure>
+<p><strong>SPA首屏加载慢如何解决</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、路由懒加载</span><br><span class="line"><span class="number">2</span>、组件库局部引用</span><br><span class="line"><span class="number">3</span>、节流防抖</span><br><span class="line"><span class="number">4</span>、提升代码复用，封装自定义组件</span><br><span class="line"><span class="number">5</span>、预处理器，预加载</span><br><span class="line"><span class="number">6</span>、图片不放本地，放服务器存储，后端返回网址访问</span><br><span class="line"><span class="number">7</span>、使用CDN资源</span><br></pre></td></tr></table></figure>
+<p><strong>vue slot</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简单来说，假如父组件需要在子组件内放一些DOM，那么这些DOM是显示、不显示、在哪个地方显示、如何显示，就是slot分发负责的活</span><br></pre></td></tr></table></figure>
+<p><strong>你们vue项目是打包了一个js文件，一个css文件，还是有多个文件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据vue-cli脚手架规范，一个js文件，一个CSS文件</span><br></pre></td></tr></table></figure>
+<p><strong>Vue里面router-link在电脑上有用，在安卓上没反应怎么解决</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue路由在Android机上有问题，babel问题，安装babel polypill插件解决</span><br></pre></td></tr></table></figure>
+<p><strong>Vue2中注册在router-link上事件无效解决方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用@click.native。原因：router-link会阻止click事件，.native指直接监听一个原生事件</span><br></pre></td></tr></table></figure>
+<p><strong>RouterLink在IE和Firefox中不起作用（路由不跳转）的问题</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法一：只用a标签，不适用button标签；</span><br><span class="line">方法二：使用button标签和Router.navigate方法</span><br></pre></td></tr></table></figure>
+<p><strong>请说下封装 vue 组件的过程</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 建立组件的模板，先把架子搭起来，写写样式，考虑好组件的基本逻辑。(os：思考<span class="number">1</span>小时，码码<span class="number">10</span>分钟，程序猿的准则。)</span><br><span class="line"><span class="number">2.</span> 准备好组件的数据输入。即分析好逻辑，定好 props 里面的数据、类型。</span><br><span class="line"><span class="number">3.</span> 准备好组件的数据输出。即根据组件逻辑，做好要暴露出来的方法。</span><br><span class="line"><span class="number">4.</span> 封装完毕了，直接调用即可</span><br></pre></td></tr></table></figure>
+<p><strong>params和query的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">用法：</span><br><span class="line">    query要用path来引入，</span><br><span class="line">    params要用name来引入，</span><br><span class="line"></span><br><span class="line">    接收参数都是类似的，分别是</span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>.$route.query.name 和</span><br><span class="line">    <span class="built_in">this</span>.$route.params.name。</span><br><span class="line"></span><br><span class="line">url地址显示：</span><br><span class="line">    query更加类似于我们ajax中get传参，</span><br><span class="line">    params则类似于post，说的再简单一点，前者在浏览器地址栏中显示参数，后者则不显示</span><br><span class="line"></span><br><span class="line">注意点： query刷新不会丢失query里面的数据</span><br><span class="line">        params刷新 会 丢失 params里面的数据</span><br></pre></td></tr></table></figure>
+<p><strong>vue初始化页面闪动问题</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用vue开发时，在vue初始化之前，由于div是不归vue管的，所以我们写的代码在还没有解析的情况下会容易出现花屏现象，看到类似于&#123;&#123;message&#125;&#125;的字样，虽然一般情况下这个时间很短暂，但是我们还是有必要让解决这个问题的。</span><br><span class="line">首先：</span><br><span class="line"></span><br><span class="line">在css里加上[v-cloak] &#123;<span class="attr">display</span>: none;&#125;。</span><br><span class="line"></span><br><span class="line">如果没有彻底解决问题，则在根元素加上style=<span class="string">&quot;display: none;&quot;</span> :style=<span class="string">&quot;&#123;display: &#x27;block&#x27;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>vue修改打包后静态资源路径的修改</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cli2版本：将 config/index.js 里的 assetsPublicPath 的值改为 <span class="string">&#x27;./&#x27;</span> 。</span><br><span class="line"><span class="attr">build</span>: &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">assetsPublicPath</span>: <span class="string">&#x27;./&#x27;</span>,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cli3版本：在根目录下新建vue.config.js 文件，然后加上以下内容：（如果已经有此文件就直接修改）</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="attr">publicPath</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">// 相对于 HTML 页面（目录相同） </span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>vue项目中用v-for循环本地图片，图片不显示，解决办法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用<span class="built_in">require</span>动态引入图片，或者将图片放入<span class="keyword">static</span>文件夹里面</span><br><span class="line">&lt;img v-bind:src=<span class="string">&#x27;require(item.imgurl())&#x27;</span> &gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p><strong>vue中 async与await的使用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">VUE中，我们时常会遇到一种实际应用情况：B处的渲染需要依赖A处的接口返回，但是由于种种原因，不能将B直接放在A接口返回后的代码处理里面。这时候我们就需要使用<span class="keyword">async</span>/<span class="keyword">await</span>阻塞进程，告诉B，等A有返回后你再执行</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>prominse的三种状态分别是什么</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  pedding 等待</span><br><span class="line">  resolve 成功  成功执行.then回调</span><br><span class="line">  reject  失败  失败执行.catch回调  </span><br><span class="line">  </span><br><span class="line">  .finall无论成功或者失败都执行回调</span><br><span class="line">  两个常用方法  prominse.all()   同时拿到几个请求数据 进行对应操作</span><br><span class="line">               prominse.race()  赛跑机制，取得一个最先拿到的数据</span><br><span class="line">[场景](https:<span class="comment">//blog.csdn.net/web2022050901/article/details/125182909)               </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<p><strong>vue , 微信小程序 , uni-app属性的绑定</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vue和uni-app动态绑定一个变量的值为元素的某个属性的时候，会在属性前面加上冒号<span class="string">&quot;:&quot;</span>;</span><br><span class="line"></span><br><span class="line">小程序 绑定某个变量的值为元素属性时，会用两个大括号&#123;&#123;&#125;&#125;括起来，如果不加括号，为被认为是字符串。</span><br></pre></td></tr></table></figure>
+<p><strong>vue , 微信小程序 , uni-app的页面生命周期函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vue：</span><br><span class="line">	beforeCreate（创建前）</span><br><span class="line">	created（创建后）</span><br><span class="line">	beforeMount(载入前，挂载）</span><br><span class="line">	mounted（载入后）</span><br><span class="line">	beforeUpdate（更新前）</span><br><span class="line">	updated（更新后）</span><br><span class="line">	beforeDestroy（销毁前）</span><br><span class="line">	destroyed（销毁后）</span><br><span class="line">小程序/uni-app： </span><br><span class="line">	<span class="number">1.</span> onLoad：首次进入页面加载时触发，可以在 onLoad 的参数中获取打开当前页面路径中的参数。</span><br><span class="line">	<span class="number">2.</span> onShow：加载完成后、后台切到前台或重新进入页面时触发</span><br><span class="line">	<span class="number">3.</span> onReady：页面首次渲染完成时触发</span><br><span class="line">	<span class="number">4.</span> onHide：从前台切到后台或进入其他页面触发</span><br><span class="line">	<span class="number">5.</span> onUnload：页面卸载时触发</span><br><span class="line">	<span class="number">6.</span> onPullDownRefresh：监听用户下拉动作</span><br><span class="line">	<span class="number">7.</span> onReachBottom：页面上拉触底事件的处理函数</span><br><span class="line">	<span class="number">8.</span> onShareAppMessage：用户点击右上角转发</span><br></pre></td></tr></table></figure>
+<p><strong>vue、小程序、uni-app中的本地数据存储和接收</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vue：</span><br><span class="line">	存储：localstorage.setItem（‘key’，‘value’）</span><br><span class="line">	接收：localstorage.getItem（‘key’）</span><br><span class="line"></span><br><span class="line">微信小程序：</span><br><span class="line">	存储：通过wx.setStorage/wx.setStorageSync写数据到缓存</span><br><span class="line">	接收：通过wx.getStorage/wx.getStorageSync读取本地缓存，</span><br><span class="line"></span><br><span class="line">uni-app：</span><br><span class="line">	存储：uni.setStorage(&#123;<span class="attr">key</span>:“属性名”，data:“值”&#125;) <span class="comment">//异步 </span></span><br><span class="line">		uni.setStorageSync(KEY,DATA) <span class="comment">//同步</span></span><br><span class="line">	接收：uni.getStorage(&#123;<span class="attr">key</span>:“属性名”,<span class="function"><span class="title">success</span>(<span class="params">res</span>)</span>&#123;res.data&#125;&#125;) <span class="comment">//异步</span></span><br><span class="line">		uni.getStorageSync(KEY) <span class="comment">//同步</span></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>vuex是什么？怎么使用？哪种功能场景使用它？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vuex 是Vue框架开发的状态管理库，它使得在应用程序中管理共享状态变得更加容易和可维护</span><br><span class="line"></span><br><span class="line">在main.js引入store，注入。新建了一个目录store.js，…… <span class="keyword">export</span></span><br><span class="line"></span><br><span class="line">场景有：单页应用中，组件之间的状态。音乐播放、登录状态、加入购物车</span><br></pre></td></tr></table></figure>
+
+<p><strong>vuex有哪几种属性？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">state：基本数据(数据源存放地)</span><br><span class="line">getter：从基本数据派生出来的数据</span><br><span class="line">mutations：唯一修改state的方法，修改过程是同步的</span><br><span class="line">action：像一个装饰器，包裹mutations，使之可以异步</span><br><span class="line">moule：模块化Vuex</span><br></pre></td></tr></table></figure>
+<p><strong>ue.js中ajax请求代码应该写在组件的methods中还是vuex的actions中？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">如果请求来的数据是不是要被其他组件公用，仅仅在请求的组件内使用，就不需要放入vuex 的state里。</span><br><span class="line"></span><br><span class="line">如果被其他地方复用，这个很大几率上是需要的，如果需要，请将请求放入action里，方便复用</span><br></pre></td></tr></table></figure>
+<p><strong>v-on可以监听多个方法吗？</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可以</span><br><span class="line">栗子：&lt;input type=<span class="string">&quot;text&quot;</span> v-on=<span class="string">&quot;&#123; input:onInput,focus:onFocus,blur:onBlur, &#125;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id><a href="#" class="headerlink" title></a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>单页面应用和多页面应用区别及优缺点</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">单页面应用（SPA），通俗一点说就是指只有一个主页面的应用，浏览器一开始要加载所有必须的 html, js, css。所有的页面内容都包含在这个所谓的主页面中。但在写的时候，还是会分开写（页面片段），然后在交互的时候由路由程序动态载入，单页面的页面跳转，仅刷新局部资源。多应用于pc端。</span><br><span class="line">多页面（MPA），就是指一个应用中有多个页面，页面跳转时是整页刷新</span><br><span class="line">单页面的优点：</span><br><span class="line">用户体验好，快，内容的改变不需要重新加载整个页面，基于这一点spa对服务器压力较小；前后端分离；页面效果会比较炫酷（比如切换页面内容时的专场动画）。</span><br><span class="line">单页面缺点：</span><br><span class="line">不利于seo；导航不可用，如果一定要导航需要自行实现前进、后退。（由于是单页面不能用浏览器的前进后退功能，所以需要自己建立堆栈管理）；初次加载时耗时多；页面复杂度提高很多</span><br></pre></td></tr></table></figure>
+<p><strong>–HTTP–</strong></p>
+<p><strong>在地址栏里输入一个地址回车会发生那些事情</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) 解析URL</span><br><span class="line">(<span class="number">2</span>) 缓存判断</span><br><span class="line">(<span class="number">3</span>) DNS解析</span><br><span class="line">(<span class="number">4</span>) 获取MAC地址</span><br><span class="line">(<span class="number">5</span>) TCP三次握手</span><br><span class="line">(<span class="number">6</span>) HTTPS握手</span><br><span class="line">(<span class="number">7</span>) 返回数据</span><br><span class="line">(<span class="number">8</span>) 页面渲染</span><br><span class="line">(<span class="number">9</span>) TCP四次挥手</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>HTTP和HTTPS协议的区别</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">HTTP  超文本传输协议，信息是明文传输的</span><br><span class="line">HTTPS 则是具有安全性的SSL加密传输协议，比http更安全</span><br><span class="line">HTTPS 协议需要CA证书,费用较高;而HTTP协议不需要</span><br><span class="line"></span><br><span class="line">HTTP  协议端口是<span class="number">80</span>, HTTPS  协议端口是<span class="number">443</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>WebSocket 的应用场景主要有哪些</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">即时通信 数据监控 大文件下载</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>–基本–</strong></p>
+<p><strong>问你项目描述</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>你这个项目的整体描述，需求，功能；</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>你这个项目所用到的技术栈，以及选择该技术栈的原因；</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>你这个项目中所遇到的问题，以及解决方法</span><br></pre></td></tr></table></figure>
+<p><strong>问你前端优化</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、降低请求量：合并资源，减少HTTP请求数，minify/gzip压缩</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、加快请求速度：预解析DNS，减少域名数，并行加载</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、缓存：HTTP协议缓存请求，离线缓存manifest，离线数据缓存<span class="built_in">localStorage</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、渲染：JS/CSS优化，加载顺序，服务端渲染</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">...补充中</span><br></pre></td></tr></table></figure>
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/12/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98js/" rel="prev" title="前端面试题-js(补充中...)">
+      <i class="fa fa-chevron-left"></i> 前端面试题-js(补充中...)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="c-Aurora"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">c-Aurora</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://yoursite.com/" title="http:&#x2F;&#x2F;yoursite.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <script type="text/javascript" src="/js/snow.js"></script>
+</body>
+</html>
