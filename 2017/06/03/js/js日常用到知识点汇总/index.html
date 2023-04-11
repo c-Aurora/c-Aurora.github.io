@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="js日常用到知识点汇总">
+<meta property="og:url" content="http://example.com/2017/06/03/js/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="得鹿梦鱼">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-06-03T11:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-05T16:35:36.000Z">
+<meta property="article:author" content="c-Aurora">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="数组">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2017/06/03/js/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>js日常用到知识点汇总 | 得鹿梦鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">得鹿梦鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/06/03/js/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="c-Aurora">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="得鹿梦鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          js日常用到知识点汇总
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-06-03 19:00:00" itemprop="dateCreated datePublished" datetime="2017-06-03T19:00:00+08:00">2017-06-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/06/03/js/js%E6%97%A5%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" class="post-meta-item leancloud_visitors" data-flag-title="js日常用到知识点汇总" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+
+<p><strong>1、js数字转化为千分位格式</strong><br>搜索了一些只有整数的千分位分割符，现在是不管整数，带小数(不分割小数点以后的数字)都可以分割</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toQfw</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> str=num.toString();<span class="comment">//转换为字符串</span></span><br><span class="line">    <span class="keyword">let</span> reg=str.indexOf(<span class="string">&#x27;.&#x27;</span>) &gt;-<span class="number">1</span> ? <span class="regexp">/(\d&#123;1,3&#125;)(?=(?:\d&#123;3&#125;)+\.)/g</span> : <span class="regexp">/(\d&#123;1,3&#125;)(?=(?:\d&#123;3&#125;)+$)/g</span>;<span class="comment">//千分符的正则</span></span><br><span class="line">    <span class="keyword">return</span> str.replace(reg, <span class="string">&#x27;$1,&#x27;</span>);<span class="comment">//千分位格式化;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log( toQfw(<span class="number">3708205.23</span>) ) <span class="comment">//3,708,205.23</span></span><br><span class="line"><span class="built_in">console</span>.log( toQfw(<span class="number">3708205</span>) ) <span class="comment">//3,708,205</span></span><br></pre></td></tr></table></figure>
+<p><strong>2、Array.from 方法用于将两类对象转为真正的数组</strong><br>这个方法不错，拆解后台数据的时候很好用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrayLike = &#123;<span class="string">&#x27;0&#x27;</span>: <span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;1&#x27;</span>: <span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;2&#x27;</span>: <span class="string">&#x27;c&#x27;</span>,<span class="attr">length</span>: <span class="number">3</span>&#125;;</span><br><span class="line"><span class="built_in">Array</span>.from(arrayLike, <span class="function">(<span class="params">v, k</span>) =&gt;</span> v); <span class="comment">// [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span></span><br><span class="line"><span class="built_in">Array</span>.from(arrayLike, <span class="function">(<span class="params">v, k</span>) =&gt;</span> k); <span class="comment">// [0, 1, 2]</span></span><br></pre></td></tr></table></figure>
+<p><strong>3、两种编程方式：命令式编程和声明式编程</strong><br><strong>命令式编程</strong>：命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现。<br><strong>声明式编程</strong>：告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)。</p>
+<p>例如：让一个数组里的数值翻倍</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//命令式编程风格实现：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> doubled = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">	<span class="keyword">var</span> newNumber = numbers[i] * <span class="number">2</span></span><br><span class="line"> 	doubled.push (newNumber)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log (doubled) <span class="comment">//=&gt; [2,4,6,8,10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//我们直接遍历整个数组，取出每个元素，乘以二，</span></span><br><span class="line"><span class="comment">//然后把翻倍后的值放入新数组，每次都要操作这个双倍数组，直到计算完所有元素</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明式编程方法：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> doubled = numbers.map (<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> n * <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log (doubled) <span class="comment">//=&gt; [2,4,6,8,10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//map利用当前的数组创建了一个新数组，新数组里的每个元素</span></span><br><span class="line"><span class="comment">//都是经过了传入map的函数(这里是function (n) &#123; return n*2 &#125;)的处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//map函数所做的事情是将直接遍历整个数组的过程归纳抽离出来，</span></span><br><span class="line"><span class="comment">//让我们专注于描述我们想要的是什么(what)。注意，我们传入map的是一个纯函数；</span></span><br><span class="line"><span class="comment">//它不具有任何副作用(不会改变外部状态)，它只是接收一个数字，返回乘以二后的值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>再例如： 求一个list里所有值的和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//命令式编程：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">0</span> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">  	total += numbers[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log (total) <span class="comment">//=&gt; 15</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明式编程：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> total = numbers.reduce (<span class="function"><span class="keyword">function</span> (<span class="params">sum, n</span>) </span>&#123;</span><br><span class="line">  	<span class="keyword">return</span> sum + n</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log (total) <span class="comment">//=&gt; 15</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">声明式编程的总结</span><br><span class="line"></span><br><span class="line">　　声明式编程让我们去描述我们想要的是什么，让底层的软件/计算机/等去解决如何去实现它们。</span><br><span class="line"></span><br><span class="line">　　在很多情况中，就像我们看到的一样，声明式编程能给我们的编程带来真正的提升，通过站在更高层面写代码，我们可以更多的专注于what，而这正是我们开发软件真正的目标。</span><br><span class="line"></span><br><span class="line">　　问题是，程序员习惯了去描述how，这让我们感觉很好很舒服——强力——能够控制事情的发生发展，不放走任何我们不能看见不能理解的处理过程。</span><br><span class="line"></span><br><span class="line">　　有时候这种紧盯着how不放的做法是没问题的。如果我需要对代码进行更高性能的优化，我需要对what进行更深一步的描述来指导how。有时候对于某个业务逻辑没有任何可以归纳提取的通用实现，我们只能写命令式编程代码。</span><br><span class="line"></span><br><span class="line">　　但大多数时候，我们可以、而且应该寻求声明式的写代码方式，如果没有发现现成的归纳提取好的实现，我们应该自己去创建。起初这会很难，必定的，但就像我们使用SQL和D3.js， 我们会长期从中获得巨大的回报！</span><br></pre></td></tr></table></figure>
+<p>4、点击空白处关闭弹窗几种方法</p>
+<p>4.1jQuery 写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).mouseup(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _con = $(<span class="string">&#x27; 目标区域 &#x27;</span>);   <span class="comment">// 设置目标区域</span></span><br><span class="line"> 	<span class="keyword">if</span>(!_con.is(e.target) &amp;&amp; _con.has(e.target).length === <span class="number">0</span>)&#123; <span class="comment">// Mark 1</span></span><br><span class="line">    	some code...   <span class="comment">// 功能代码</span></span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>4.2vue.js 写法（写在mounted里面）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&#x27;mouseup&#x27;</span>,<span class="function">(<span class="params">e</span>) =&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> _con = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;more-oprate&#x27;</span>)</span><br><span class="line">	<span class="keyword">if</span>(_con) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!_con.contains(e.target)) &#123;</span><br><span class="line">			<span class="built_in">this</span>.isShowBtn = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>持续更新中……</p>
+
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="c-Aurora 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="c-Aurora 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/05/20/js/%E9%82%A3%E4%BA%9B%E5%B9%B4%E8%B8%A9%E5%BE%97%E5%9D%91...toFixed()%E5%B9%B6%E4%B8%8D%E6%98%AF%E7%9C%9F%E7%9A%84%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5/" rel="prev" title="那些年踩得坑...toFixed()并不是真的四舍五入">
+      <i class="fa fa-chevron-left"></i> 那些年踩得坑...toFixed()并不是真的四舍五入
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/10/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98css/" rel="next" title="前端面试题-css(补充中...)">
+      前端面试题-css(补充中...) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="c-Aurora"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">c-Aurora</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>

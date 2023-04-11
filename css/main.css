@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff8bff;
+  background: #ff96fe;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2679,7 +2679,8 @@ body {
   background: url("/images/bg01.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-color: #505534;
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -2778,4 +2779,10 @@ body {
 }
 .headband {
   display: none;
+}
+.vsys {
+  display: none !important;
+}
+.vpower.txt-right {
+  display: none !important;
 }
