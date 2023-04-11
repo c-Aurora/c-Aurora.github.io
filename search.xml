@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>谷歌浏览器插件下载</title>
+    <url>/2018/05/25/chrome/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
+    <content><![CDATA[<hr>
+<p>相信很多小伙伴都遇到过chrome浏览器商店打不开的情况，这里推荐一个网站<a href="https://www.extfans.com/">Extfans</a>，里面谷歌插件可以说很多</p>
+<span id="more"></span>
+<h3 id="首先说说mac下载"><a href="#首先说说mac下载" class="headerlink" title="首先说说mac下载"></a>首先说说mac下载</h3><blockquote>
+<p>找到插件，下载流程按上面说的一步一步来即可，最后将crx文件拖到扩展程序页面</p>
+</blockquote>
+<h3 id="windows下载"><a href="#windows下载" class="headerlink" title="windows下载"></a>windows下载</h3><blockquote>
+<p>先按步骤来，跟mac操作一样，如果没问题的话，那边不用看下面了</p>
+</blockquote>
+<blockquote>
+<p>当出现你往扩展程序页面拖拽crx文件，拖不进来的时候:</p>
+</blockquote>
+<blockquote>
+<p>windows谷歌浏览器无法安装crx插件 解决办法<br>1、扩展程序打开开发者模式<br>2、上述还不行就 修改参数(基本就可以了)<br>打开 chrome://flags/&gt;#extensions-on-chrome-urls<br>将 Extensions on chrome://urls     的&gt;disabled 改为enable 重启即可<br>记得装完插件再改回来</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">推荐几个好用的谷歌插件：</span><br><span class="line">* vue 开发调试工具-     Vue.js devtools</span><br><span class="line">* react 开发调试工具-     React Developer Tools</span><br><span class="line">* redux 开发调试工具-     Redux DevTools</span><br><span class="line">* 快捷预览 json 接口工具-     <span class="built_in">JSON</span>-handle</span><br><span class="line">* 谷歌翻译-      Google翻译 (不好用了)</span><br><span class="line">* 沙拉查词-     沙拉查词-聚合词典划词翻译(划词翻译)</span><br><span class="line">* 极速翻译-网页全文翻译      -网页全文翻译(可以替代谷歌翻译网页全文)</span><br><span class="line">* 广告拦截(包括百度搜索广告)-  Adblock Plus - 免费的广告拦截器(推荐，好用)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>chrome</category>
+      </categories>
+      <tags>
+        <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>几种垂直居中的方法</title>
     <url>/2017/04/15/css/CSS%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<hr>
@@ -31,32 +57,6 @@
       <tags>
         <tag>css</tag>
         <tag>垂直水平居中</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>谷歌浏览器插件下载</title>
-    <url>/2018/05/25/chrome/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<hr>
-<p>相信很多小伙伴都遇到过chrome浏览器商店打不开的情况，这里推荐一个网站<a href="https://www.extfans.com/">Extfans</a>，里面谷歌插件可以说很多</p>
-<span id="more"></span>
-<h3 id="首先说说mac下载"><a href="#首先说说mac下载" class="headerlink" title="首先说说mac下载"></a>首先说说mac下载</h3><blockquote>
-<p>找到插件，下载流程按上面说的一步一步来即可，最后将crx文件拖到扩展程序页面</p>
-</blockquote>
-<h3 id="windows下载"><a href="#windows下载" class="headerlink" title="windows下载"></a>windows下载</h3><blockquote>
-<p>先按步骤来，跟mac操作一样，如果没问题的话，那边不用看下面了</p>
-</blockquote>
-<blockquote>
-<p>当出现你往扩展程序页面拖拽crx文件，拖不进来的时候:</p>
-</blockquote>
-<blockquote>
-<p>windows谷歌浏览器无法安装crx插件 解决办法<br>1、扩展程序打开开发者模式<br>2、上述还不行就 修改参数(基本就可以了)<br>打开 chrome://flags/&gt;#extensions-on-chrome-urls<br>将 Extensions on chrome://urls     的&gt;disabled 改为enable 重启即可<br>记得装完插件再改回来</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">推荐几个好用的谷歌插件：</span><br><span class="line">* vue 开发调试工具-     Vue.js devtools</span><br><span class="line">* react 开发调试工具-     React Developer Tools</span><br><span class="line">* redux 开发调试工具-     Redux DevTools</span><br><span class="line">* 快捷预览 json 接口工具-     <span class="built_in">JSON</span>-handle</span><br><span class="line">* 谷歌翻译-      Google翻译 (不好用了)</span><br><span class="line">* 沙拉查词-     沙拉查词-聚合词典划词翻译(划词翻译)</span><br><span class="line">* 极速翻译-网页全文翻译      -网页全文翻译(可以替代谷歌翻译网页全文)</span><br><span class="line">* 广告拦截(包括百度搜索广告)-  Adblock Plus - 免费的广告拦截器(推荐，好用)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>chrome</category>
-      </categories>
-      <tags>
-        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -188,70 +188,6 @@
       </tags>
   </entry>
   <entry>
-    <title>markdown语法</title>
-    <url>/2016/07/05/grammar/markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<h3 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-<h3 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*倾斜*</span><br><span class="line">***斜体加粗***</span><br><span class="line">~~加删除线~~</span><br></pre></td></tr></table></figure>
-<h3 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&gt;引用</span><br></pre></td></tr></table></figure>
-<p>效果如下:</p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<h3 id="四、分割线-三个或者三个以上的-或者-都可以"><a href="#四、分割线-三个或者三个以上的-或者-都可以" class="headerlink" title="四、分割线(三个或者三个以上的 - 或者 * 都可以)"></a>四、分割线(三个或者三个以上的 - 或者 * 都可以)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
-<h3 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">![图片alt](图片地址 <span class="string">&#x27;&#x27;</span>图片title<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</span><br></pre></td></tr></table></figure>
-<h3 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 <span class="string">&quot;超链接title&quot;</span>)title可加可不加   </span><br><span class="line">[百度](http:<span class="comment">//baidu.com)</span></span><br></pre></td></tr></table></figure>
-<p>示例：<a href="http://baidu.com/">百度</a></p>
-<h3 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h3><p>无序列表</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 任何一种都可以,但是跟内容之间都要有一个空格  </span><br></pre></td></tr></table></figure>
-<p>有序列表</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 列表内容</span><br><span class="line"><span class="number">2.</span> 列表内容</span><br><span class="line"><span class="number">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格  </span><br></pre></td></tr></table></figure>
-<p>列表嵌套</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">上一级和下一级之间敲三个空格即可 </span><br><span class="line">- 一级有序列表内容</span><br><span class="line">   - 二级无序列表内容 </span><br></pre></td></tr></table></figure>
-<h3 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">使用<span class="string">`:---:`</span>居中</span><br><span class="line">使用<span class="string">`:----`</span>居左</span><br><span class="line">使用<span class="string">`----:`</span>居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。此处省略</span><br></pre></td></tr></table></figure>
-<h3 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">“   <span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">        function fun()&#123;</span></span><br><span class="line"><span class="string">         echo &quot;1&quot;;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        fun(); </span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>    ”   </span><br></pre></td></tr></table></figure>
-<h3 id="十、表格"><a href="#十、表格" class="headerlink" title="十、表格"></a>十、表格</h3><p>hexo,table表格显示异常，直接不显示表格<br>解决：表格和正文之间空两行</p>
-<p><strong>编程操作(表格和正文之间空两行)</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">命令名</th>
-<th align="left">功能描述</th>
-<th align="left">使用举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">make</td>
-<td align="left">维护可执行程序的最新版本</td>
-<td align="left">make</td>
-</tr>
-<tr>
-<td align="left">touch</td>
-<td align="left">更新文件的访问和修改时间</td>
-<td align="left">touch -m 05202400 filename</td>
-</tr>
-<tr>
-<td align="left">dbx</td>
-<td align="left">命令行界面调试工具</td>
-<td align="left">dbx a.out</td>
-</tr>
-<tr>
-<td align="left">xde</td>
-<td align="left">图形用户界面调试工具</td>
-<td align="left">xde a.out</td>
-</tr>
-</tbody></table>
-<h3 id="十一、流程图"><a href="#十一、流程图" class="headerlink" title="十一、流程图"></a>十一、流程图</h3><p>关于 <strong>甘特图</strong> 语法，参考 <a href="https://mermaidjs.github.io/">这儿</a>,<br>关于 <strong>Mermaid</strong> 语法，参考 <a href="https://mermaidjs.github.io/">这儿</a>,<br>关于 <strong>Flowchart流程图</strong> 语法，参考 <a href="http://adrai.github.io/flowchart.js/">这儿</a>.</p>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo美化</title>
     <url>/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<hr>
@@ -324,6 +260,70 @@
       </tags>
   </entry>
   <entry>
+    <title>markdown语法</title>
+    <url>/2016/07/05/grammar/markdown%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<h3 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h3 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">**加粗**</span><br><span class="line">*倾斜*</span><br><span class="line">***斜体加粗***</span><br><span class="line">~~加删除线~~</span><br></pre></td></tr></table></figure>
+<h3 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&gt;引用</span><br></pre></td></tr></table></figure>
+<p>效果如下:</p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h3 id="四、分割线-三个或者三个以上的-或者-都可以"><a href="#四、分割线-三个或者三个以上的-或者-都可以" class="headerlink" title="四、分割线(三个或者三个以上的 - 或者 * 都可以)"></a>四、分割线(三个或者三个以上的 - 或者 * 都可以)</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+<h3 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">![图片alt](图片地址 <span class="string">&#x27;&#x27;</span>图片title<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</span><br></pre></td></tr></table></figure>
+<h3 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[超链接名](超链接地址 <span class="string">&quot;超链接title&quot;</span>)title可加可不加   </span><br><span class="line">[百度](http:<span class="comment">//baidu.com)</span></span><br></pre></td></tr></table></figure>
+<p>示例：<a href="http://baidu.com/">百度</a></p>
+<h3 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h3><p>无序列表</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 任何一种都可以,但是跟内容之间都要有一个空格  </span><br></pre></td></tr></table></figure>
+<p>有序列表</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 列表内容</span><br><span class="line"><span class="number">2.</span> 列表内容</span><br><span class="line"><span class="number">3.</span> 列表内容</span><br><span class="line">注意：序号跟内容之间要有空格  </span><br></pre></td></tr></table></figure>
+<p>列表嵌套</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">上一级和下一级之间敲三个空格即可 </span><br><span class="line">- 一级有序列表内容</span><br><span class="line">   - 二级无序列表内容 </span><br></pre></td></tr></table></figure>
+<h3 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">使用<span class="string">`:---:`</span>居中</span><br><span class="line">使用<span class="string">`:----`</span>居左</span><br><span class="line">使用<span class="string">`----:`</span>居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。此处省略</span><br></pre></td></tr></table></figure>
+<h3 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">“   <span class="string">``</span><span class="string">`javascript</span></span><br><span class="line"><span class="string">        function fun()&#123;</span></span><br><span class="line"><span class="string">         echo &quot;1&quot;;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">        fun(); </span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>    ”   </span><br></pre></td></tr></table></figure>
+<h3 id="十、表格"><a href="#十、表格" class="headerlink" title="十、表格"></a>十、表格</h3><p>hexo,table表格显示异常，直接不显示表格<br>解决：表格和正文之间空两行</p>
+<p><strong>编程操作(表格和正文之间空两行)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">命令名</th>
+<th align="left">功能描述</th>
+<th align="left">使用举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">make</td>
+<td align="left">维护可执行程序的最新版本</td>
+<td align="left">make</td>
+</tr>
+<tr>
+<td align="left">touch</td>
+<td align="left">更新文件的访问和修改时间</td>
+<td align="left">touch -m 05202400 filename</td>
+</tr>
+<tr>
+<td align="left">dbx</td>
+<td align="left">命令行界面调试工具</td>
+<td align="left">dbx a.out</td>
+</tr>
+<tr>
+<td align="left">xde</td>
+<td align="left">图形用户界面调试工具</td>
+<td align="left">xde a.out</td>
+</tr>
+</tbody></table>
+<h3 id="十一、流程图"><a href="#十一、流程图" class="headerlink" title="十一、流程图"></a>十一、流程图</h3><p>关于 <strong>甘特图</strong> 语法，参考 <a href="https://mermaidjs.github.io/">这儿</a>,<br>关于 <strong>Mermaid</strong> 语法，参考 <a href="https://mermaidjs.github.io/">这儿</a>,<br>关于 <strong>Flowchart流程图</strong> 语法，参考 <a href="http://adrai.github.io/flowchart.js/">这儿</a>.</p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo搭建github博客</title>
     <url>/2016/07/04/hexo/hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<hr>
@@ -366,8 +366,8 @@
         <category>搭建</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
         <tag>github</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -402,6 +402,20 @@
       </categories>
       <tags>
         <tag>面试题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js怎样读取json里面的数据</title>
+    <url>/2016/09/02/json/js%E6%80%8E%E6%A0%B7%E8%AF%BB%E5%8F%96json%E9%87%8C%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> json = &#123;  </span><br><span class="line">        <span class="attr">contry</span>:&#123; </span><br><span class="line">            <span class="attr">area</span>:&#123; </span><br><span class="line">                <span class="attr">man</span>:<span class="string">&quot;12万&quot;</span>,  </span><br><span class="line">                <span class="attr">women</span>:<span class="string">&quot;10万&quot;</span> </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="comment">//方式一：使用eval解析  </span></span><br><span class="line">	<span class="keyword">var</span> obj = <span class="built_in">eval</span>(json);  </span><br><span class="line">		alert(obj.constructor);</span><br><span class="line">		alert(obj.contry.area.women);  </span><br><span class="line"> </span><br><span class="line"><span class="comment">//方式二：使用Funtion函数  </span></span><br><span class="line">	<span class="keyword">var</span> strJSON = <span class="string">&quot;&#123;name:&#x27;json name&#x27;&#125;&quot;</span>;<span class="comment">//得到的JSON  </span></span><br><span class="line">	<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;return&quot;</span> + strJSON)();<span class="comment">//转换后的JSON对象  </span></span><br><span class="line">	    alert(obj.name);<span class="comment">//json name  </span></span><br><span class="line">	    alert(obj.constructor);</span><br><span class="line">       </span><br><span class="line"><span class="comment">//复杂一点的json数组数据的解析  </span></span><br><span class="line"><span class="keyword">var</span> value1 = [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;a01&quot;</span>:<span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a02&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a03&quot;</span>:<span class="string">&quot;3&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a04&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;b01&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b02&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b03&quot;</span>:<span class="string">&quot;5&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b04&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;c01&quot;</span>:<span class="string">&quot;5&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c02&quot;</span>:<span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c03&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c04&quot;</span>:<span class="string">&quot;11&quot;</span>,   </span><br><span class="line">        &#125;</span><br><span class="line">    ];   </span><br><span class="line">	<span class="keyword">var</span> obj1 = <span class="built_in">eval</span>(value1);  </span><br><span class="line">	alert(obj1[<span class="number">0</span>].c01); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//复杂一点的json的另一种形式  </span></span><br><span class="line"><span class="keyword">var</span> value2 = &#123;</span><br><span class="line">        <span class="string">&quot;list&quot;</span>:[ </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;1230&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;coolcooldool&quot;</span></span><br><span class="line">            &#125;, </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;thisis2&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;okokok&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ], </span><br><span class="line">        <span class="string">&quot;array&quot;</span>:[</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;1230&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;coolcooldool&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;thisis2&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;okokok&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;;  </span><br><span class="line">	<span class="keyword">var</span> obj2 = <span class="built_in">eval</span>(value2);  </span><br><span class="line">	alert(obj2.list[<span class="number">0</span>].password);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JSON</category>
+      </categories>
+      <tags>
+        <tag>json</tag>
+        <tag>数据</tag>
       </tags>
   </entry>
   <entry>
@@ -520,20 +534,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小tips</title>
-    <url>/2017/04/27/js/%E5%B0%8Ftips/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<p>1、trim()去空格</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> con=$(<span class="string">&quot;.demo&quot;</span>).val(); </span><br><span class="line"><span class="comment">//错误：if(con.trim() == &#x27;&#x27;) --在ie下会报错</span></span><br><span class="line"><span class="comment">//正确：if($.trim(con) == &#x27;&#x27;) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">....后续更新</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何获取用户当前城市？</title>
     <url>/2016/10/30/js/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%BD%93%E5%89%8D%E5%9F%8E%E5%B8%82%EF%BC%9F/</url>
     <content><![CDATA[<hr>
@@ -548,18 +548,17 @@
       </tags>
   </entry>
   <entry>
-    <title>禁止横竖屏切换、强制横竖屏</title>
-    <url>/2016/10/12/js/%E7%A6%81%E6%AD%A2%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E3%80%81%E5%BC%BA%E5%88%B6%E6%A8%AA%E7%AB%96%E5%B1%8F/</url>
+    <title>小tips</title>
+    <url>/2017/04/27/js/%E5%B0%8Ftips/</url>
     <content><![CDATA[<hr>
 <span id="more"></span>
-<h3 id="js判断屏幕横竖屏："><a href="#js判断屏幕横竖屏：" class="headerlink" title="js判断屏幕横竖屏："></a>js判断屏幕横竖屏：</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orient</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//alert(&#x27;gete&#x27;);</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.orientation == <span class="number">0</span> || <span class="built_in">window</span>.orientation == <span class="number">180</span>) &#123;</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).attr(<span class="string">&quot;class&quot;</span>, <span class="string">&quot;portrait&quot;</span>);</span><br><span class="line">        orientation = <span class="string">&#x27;portrait&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.orientation == <span class="number">90</span> || <span class="built_in">window</span>.orientation == -<span class="number">90</span>) &#123;</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).attr(<span class="string">&quot;class&quot;</span>, <span class="string">&quot;landscape&quot;</span>);</span><br><span class="line">        orientation = <span class="string">&#x27;landscape&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    orient();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).bind( <span class="string">&#x27;orientationchange&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    orient();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ipad： <span class="number">90</span> 或 -<span class="number">90</span> 横屏</span><br><span class="line"></span><br><span class="line">ipad： <span class="number">0</span> 或<span class="number">180</span> 竖屏</span><br><span class="line"></span><br><span class="line">Andriod：<span class="number">0</span> 或<span class="number">180</span> 横屏</span><br><span class="line"></span><br><span class="line">Andriod： <span class="number">90</span> 或 -<span class="number">90</span> 竖屏</span><br><span class="line"></span><br><span class="line">iphone 、ipad禁止横竖屏切换、强制横竖屏：</span><br></pre></td></tr></table></figure>
-
-<h3 id="html5屏幕旋转事件-onorientationchange"><a href="#html5屏幕旋转事件-onorientationchange" class="headerlink" title="html5屏幕旋转事件 onorientationchange"></a>html5屏幕旋转事件 onorientationchange</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 判断屏幕是否旋转</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orientationChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(<span class="built_in">window</span>.orientation) &#123;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line">            alert(<span class="string">&quot;肖像模式 0,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> -<span class="number">90</span>: </span><br><span class="line">            alert(<span class="string">&quot;左旋 -90,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">90</span>:   </span><br><span class="line">            alert(<span class="string">&quot;右旋 90,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">180</span>:   </span><br><span class="line">        　　alert(<span class="string">&quot;风景模式 180,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">        　　<span class="keyword">break</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加事件监听</span></span><br><span class="line">addEventListener(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    orientationChange();</span><br><span class="line">    <span class="built_in">window</span>.onorientationchange = orientationChange;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+<p>1、trim()去空格</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> con=$(<span class="string">&quot;.demo&quot;</span>).val(); </span><br><span class="line"><span class="comment">//错误：if(con.trim() == &#x27;&#x27;) --在ie下会报错</span></span><br><span class="line"><span class="comment">//正确：if($.trim(con) == &#x27;&#x27;) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">....后续更新</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>JS</category>
       </categories>
       <tags>
-        <tag>横竖屏切换</tag>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -575,6 +574,21 @@
         <tag>监听</tag>
         <tag>自动播放</tag>
         <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>禁止横竖屏切换、强制横竖屏</title>
+    <url>/2016/10/12/js/%E7%A6%81%E6%AD%A2%E6%A8%AA%E7%AB%96%E5%B1%8F%E5%88%87%E6%8D%A2%E3%80%81%E5%BC%BA%E5%88%B6%E6%A8%AA%E7%AB%96%E5%B1%8F/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<h3 id="js判断屏幕横竖屏："><a href="#js判断屏幕横竖屏：" class="headerlink" title="js判断屏幕横竖屏："></a>js判断屏幕横竖屏：</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orient</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//alert(&#x27;gete&#x27;);</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.orientation == <span class="number">0</span> || <span class="built_in">window</span>.orientation == <span class="number">180</span>) &#123;</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).attr(<span class="string">&quot;class&quot;</span>, <span class="string">&quot;portrait&quot;</span>);</span><br><span class="line">        orientation = <span class="string">&#x27;portrait&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.orientation == <span class="number">90</span> || <span class="built_in">window</span>.orientation == -<span class="number">90</span>) &#123;</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).attr(<span class="string">&quot;class&quot;</span>, <span class="string">&quot;landscape&quot;</span>);</span><br><span class="line">        orientation = <span class="string">&#x27;landscape&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    orient();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).bind( <span class="string">&#x27;orientationchange&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    orient();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ipad： <span class="number">90</span> 或 -<span class="number">90</span> 横屏</span><br><span class="line"></span><br><span class="line">ipad： <span class="number">0</span> 或<span class="number">180</span> 竖屏</span><br><span class="line"></span><br><span class="line">Andriod：<span class="number">0</span> 或<span class="number">180</span> 横屏</span><br><span class="line"></span><br><span class="line">Andriod： <span class="number">90</span> 或 -<span class="number">90</span> 竖屏</span><br><span class="line"></span><br><span class="line">iphone 、ipad禁止横竖屏切换、强制横竖屏：</span><br></pre></td></tr></table></figure>
+
+<h3 id="html5屏幕旋转事件-onorientationchange"><a href="#html5屏幕旋转事件-onorientationchange" class="headerlink" title="html5屏幕旋转事件 onorientationchange"></a>html5屏幕旋转事件 onorientationchange</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 判断屏幕是否旋转</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">orientationChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(<span class="built_in">window</span>.orientation) &#123;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">0</span>: </span><br><span class="line">            alert(<span class="string">&quot;肖像模式 0,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> -<span class="number">90</span>: </span><br><span class="line">            alert(<span class="string">&quot;左旋 -90,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">90</span>:   </span><br><span class="line">            alert(<span class="string">&quot;右旋 90,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    　　<span class="keyword">case</span> <span class="number">180</span>:   </span><br><span class="line">        　　alert(<span class="string">&quot;风景模式 180,screen-width: &quot;</span> + screen.width + <span class="string">&quot;; screen-height:&quot;</span> + screen.height);</span><br><span class="line">        　　<span class="keyword">break</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加事件监听</span></span><br><span class="line">addEventListener(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    orientationChange();</span><br><span class="line">    <span class="built_in">window</span>.onorientationchange = orientationChange;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>横竖屏切换</tag>
       </tags>
   </entry>
   <entry>
@@ -612,19 +626,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac终端命令</title>
-    <url>/2017/03/10/mac/Mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>Mac终端</category>
-      </categories>
-      <tags>
-        <tag>mac</tag>
-        <tag>指令</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>分享点自己搜集的前端有用的链接</title>
     <url>/2016/10/10/links/%E5%88%86%E4%BA%AB%E7%82%B9%E8%87%AA%E5%B7%B1%E6%90%9C%E9%9B%86%E7%9A%84%E5%89%8D%E7%AB%AF%E6%9C%89%E7%94%A8%E7%9A%84%E9%93%BE%E6%8E%A5/</url>
     <content><![CDATA[<hr>
@@ -643,6 +644,19 @@
       <tags>
         <tag>前端</tag>
         <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac终端命令</title>
+    <url>/2017/03/10/mac/Mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>Mac终端</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>指令</tag>
       </tags>
   </entry>
   <entry>
@@ -681,20 +695,6 @@
       </categories>
       <tags>
         <tag>sourceTree</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js怎样读取json里面的数据</title>
-    <url>/2016/09/02/json/js%E6%80%8E%E6%A0%B7%E8%AF%BB%E5%8F%96json%E9%87%8C%E9%9D%A2%E7%9A%84%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> json = &#123;  </span><br><span class="line">        <span class="attr">contry</span>:&#123; </span><br><span class="line">            <span class="attr">area</span>:&#123; </span><br><span class="line">                <span class="attr">man</span>:<span class="string">&quot;12万&quot;</span>,  </span><br><span class="line">                <span class="attr">women</span>:<span class="string">&quot;10万&quot;</span> </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="comment">//方式一：使用eval解析  </span></span><br><span class="line">	<span class="keyword">var</span> obj = <span class="built_in">eval</span>(json);  </span><br><span class="line">		alert(obj.constructor);</span><br><span class="line">		alert(obj.contry.area.women);  </span><br><span class="line"> </span><br><span class="line"><span class="comment">//方式二：使用Funtion函数  </span></span><br><span class="line">	<span class="keyword">var</span> strJSON = <span class="string">&quot;&#123;name:&#x27;json name&#x27;&#125;&quot;</span>;<span class="comment">//得到的JSON  </span></span><br><span class="line">	<span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;return&quot;</span> + strJSON)();<span class="comment">//转换后的JSON对象  </span></span><br><span class="line">	    alert(obj.name);<span class="comment">//json name  </span></span><br><span class="line">	    alert(obj.constructor);</span><br><span class="line">       </span><br><span class="line"><span class="comment">//复杂一点的json数组数据的解析  </span></span><br><span class="line"><span class="keyword">var</span> value1 = [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;a01&quot;</span>:<span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a02&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a03&quot;</span>:<span class="string">&quot;3&quot;</span>,</span><br><span class="line">            <span class="string">&quot;a04&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;b01&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b02&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b03&quot;</span>:<span class="string">&quot;5&quot;</span>,</span><br><span class="line">            <span class="string">&quot;b04&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;c01&quot;</span>:<span class="string">&quot;5&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c02&quot;</span>:<span class="string">&quot;1&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c03&quot;</span>:<span class="string">&quot;4&quot;</span>,</span><br><span class="line">            <span class="string">&quot;c04&quot;</span>:<span class="string">&quot;11&quot;</span>,   </span><br><span class="line">        &#125;</span><br><span class="line">    ];   </span><br><span class="line">	<span class="keyword">var</span> obj1 = <span class="built_in">eval</span>(value1);  </span><br><span class="line">	alert(obj1[<span class="number">0</span>].c01); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//复杂一点的json的另一种形式  </span></span><br><span class="line"><span class="keyword">var</span> value2 = &#123;</span><br><span class="line">        <span class="string">&quot;list&quot;</span>:[ </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;1230&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;coolcooldool&quot;</span></span><br><span class="line">            &#125;, </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;thisis2&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;okokok&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ], </span><br><span class="line">        <span class="string">&quot;array&quot;</span>:[</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;1230&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;coolcooldool&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;password&quot;</span>:<span class="string">&quot;thisis2&quot;</span>,</span><br><span class="line">                <span class="string">&quot;username&quot;</span>:<span class="string">&quot;okokok&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;;  </span><br><span class="line">	<span class="keyword">var</span> obj2 = <span class="built_in">eval</span>(value2);  </span><br><span class="line">	alert(obj2.list[<span class="number">0</span>].password);</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>JSON</category>
-      </categories>
-      <tags>
-        <tag>json</tag>
-        <tag>数据</tag>
       </tags>
   </entry>
   <entry>
@@ -779,20 +779,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mac安装webpack</title>
-    <url>/2016/11/12/webpack/mac%E5%AE%89%E8%A3%85webpack/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<p>1、用npm的方式安装，首先你要安装node.js,<a href="https://nodejs.org/en/download/">地址</a>下载安装<br>2、安装完看有没有安装成功，看下版本,打开终端输入：node -v【查看node版本】、npm -v【查看npm版本】<br> 3(必)、在终端里输入： sudo -s 回车，输入你的开机密码回车<br>4、全局安装webpack：npm install webpack -g 回车</p>
-]]></content>
-      <categories>
-        <category>Webpack</category>
-      </categories>
-      <tags>
-        <tag>webpack</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue-cli2工程目录</title>
     <url>/2021/04/15/vue/vue-cli2%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<hr>
@@ -819,6 +805,20 @@
       </categories>
       <tags>
         <tag>vue-cli3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac安装webpack</title>
+    <url>/2016/11/12/webpack/mac%E5%AE%89%E8%A3%85webpack/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<p>1、用npm的方式安装，首先你要安装node.js,<a href="https://nodejs.org/en/download/">地址</a>下载安装<br>2、安装完看有没有安装成功，看下版本,打开终端输入：node -v【查看node版本】、npm -v【查看npm版本】<br> 3(必)、在终端里输入： sudo -s 回车，输入你的开机密码回车<br>4、全局安装webpack：npm install webpack -g 回车</p>
+]]></content>
+      <categories>
+        <category>Webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
       </tags>
   </entry>
   <entry>
