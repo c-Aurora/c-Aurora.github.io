@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题-other(补充中...)">
+<meta property="og:url" content="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/index.html">
+<meta property="og:site_name" content="得鹿梦鱼">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-22T09:23:59.000Z">
+<meta property="article:modified_time" content="2023-05-15T14:54:43.106Z">
+<meta property="article:author" content="c-Aurora">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端面试题-other(补充中...) | 得鹿梦鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">得鹿梦鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">64</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="c-Aurora">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="得鹿梦鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端面试题-other(补充中...)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-05-22 17:23:59" itemprop="dateCreated datePublished" datetime="2018-05-22T17:23:59+08:00">2018-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/" class="post-meta-item leancloud_visitors" data-flag-title="前端面试题-other(补充中...)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+<h3 id="在地址栏里输入一个地址回车会发生那些事情"><a href="#在地址栏里输入一个地址回车会发生那些事情" class="headerlink" title="在地址栏里输入一个地址回车会发生那些事情"></a>在地址栏里输入一个地址回车会发生那些事情</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)将域名进行DNS解析</span><br><span class="line">- 浏览器DNS缓存</span><br><span class="line">- 系统DNS缓存</span><br><span class="line">- 路由器DNS缓存</span><br><span class="line">- 网络运营商的DNS缓存</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)Tcp 三次握手</span><br><span class="line">- 客户端发送一个带有SYN（synchronize）标志的数据包给服务端</span><br><span class="line">- 服务端接收成功后，回传一个带有SYN/ACK标志的数据包传递确认信息，表示我收到了</span><br><span class="line">- 客户端再回传一个带有ACK标志的数据包，表示我知道了，握手结束</span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>)发送响应</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>)接受响应</span><br><span class="line"></span><br><span class="line">(<span class="number">5</span>)浏览器页面渲染</span><br><span class="line"></span><br><span class="line">(<span class="number">6</span>)Tcp 四次挥手</span><br><span class="line">- 客户端发送一个FIN，用来关闭客户端到服务端的数据传送，客户端进入FIN_WAIT_1状态</span><br><span class="line">- 服务端收到FIN后，发送一个ACK给客户端，确认序号为收到序号+<span class="number">1</span>（与SYN相同，一个FIN占用一个序号），服务端进入CLOSE_WAIT状态</span><br><span class="line">- 服务端发送一个FIN，用来关闭服务端到客户端的数据传送，服务端进入LAST_ACK状态</span><br><span class="line">- 客户端收到FIN后，客户端t进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+<span class="number">1</span>，服务端进入CLOSED状态，完成四次挥手</span><br></pre></td></tr></table></figure>
+
+<h3 id="HTTP和HTTPS协议的区别"><a href="#HTTP和HTTPS协议的区别" class="headerlink" title="HTTP和HTTPS协议的区别"></a>HTTP和HTTPS协议的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">HTTP  超文本传输协议，信息是明文传输的</span><br><span class="line">HTTPS 则是具有安全性的SSL加密传输协议，比http更安全</span><br><span class="line">HTTPS 协议需要CA证书,费用较高;而HTTP协议不需要</span><br><span class="line"></span><br><span class="line">HTTP  协议端口是<span class="number">80</span>, HTTPS  协议端口是<span class="number">443</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="WebSocket-的应用场景主要有哪些"><a href="#WebSocket-的应用场景主要有哪些" class="headerlink" title="WebSocket 的应用场景主要有哪些"></a>WebSocket 的应用场景主要有哪些</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">即时通信 数据监控 大文件下载</span><br></pre></td></tr></table></figure>
+
+<h2 id="Webpack类"><a href="#Webpack类" class="headerlink" title="Webpack类"></a>Webpack类</h2><h3 id="谈谈你对Webpack的理解（Webpack是什么？）"><a href="#谈谈你对Webpack的理解（Webpack是什么？）" class="headerlink" title="谈谈你对Webpack的理解（Webpack是什么？）"></a>谈谈你对Webpack的理解（Webpack是什么？）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Webpack 是一个 模块打包器，可以分析各个模块的依赖关系，最终打包成bundle静态文件（js、css、jpg）</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Webpack的打包过程-打包原理-构建流程？"><a href="#Webpack的打包过程-打包原理-构建流程？" class="headerlink" title="Webpack的打包过程/打包原理/构建流程？"></a>Webpack的打包过程/打包原理/构建流程？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">初始化：启动构建，读取与合并配置参数，加载plugin,实例化Compiler</span><br><span class="line">编译：从Entry出发，针对每个Module串行调用对应的Loader去翻译文件中的内容，再找到该Module依赖的Module，递归的进行编译处理</span><br><span class="line">输出：将编译后的Module组合成Chunk,将Chunk转换成文件，输出到文件系统中</span><br></pre></td></tr></table></figure>
+
+<h3 id="loader的作用"><a href="#loader的作用" class="headerlink" title="loader的作用"></a>loader的作用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack中的loader是一个函数，主要为了实现源码的转换，所以loader函数会以源码作为参数，比如，将ES6转换为ES5，将less转换为css，然后再将css转换为js，以便能嵌入到html文件中</span><br></pre></td></tr></table></figure>
+<h3 id="有哪些常见的Loader？他们是解决什么问题的？"><a href="#有哪些常见的Loader？他们是解决什么问题的？" class="headerlink" title="有哪些常见的Loader？他们是解决什么问题的？"></a>有哪些常见的Loader？他们是解决什么问题的？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件</span><br><span class="line">url-loader：和 file-loader 类似，但是能在文件很小的情况下以 base64 的方式把文件内容注入到代码中去</span><br><span class="line">source-map-loader：加载额外的 Source <span class="built_in">Map</span> 文件，以方便断点调试</span><br><span class="line">image-loader：加载并且压缩图片文件</span><br><span class="line">babel-loader：把 ES6 转换成 ES5</span><br><span class="line">css-loader：加载 CSS，支持模块化、压缩、文件导入等特性</span><br><span class="line">style-loader：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS。</span><br><span class="line">eslint-loader：通过 ESLint 检查 JavaScript 代码</span><br></pre></td></tr></table></figure>
+<h3 id="plugin的作用"><a href="#plugin的作用" class="headerlink" title="plugin的作用"></a>plugin的作用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugin是一个类，类中有一个apply()方法，主要用于Plugin的安装，可以在其中监听一些来自编译器发出的事件，在合适的时机做一些事情。</span><br></pre></td></tr></table></figure>
+
+<h3 id="有哪些常见的Plugin？他们是解决什么问题的？"><a href="#有哪些常见的Plugin？他们是解决什么问题的？" class="headerlink" title="有哪些常见的Plugin？他们是解决什么问题的？"></a>有哪些常见的Plugin？他们是解决什么问题的？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html-webpack-plugin：可以复制一个有结构的html文件，并自动引入打包输出的所有资源（JS/CSS）</span><br><span class="line">clean-webpack-plugin：重新打包自动清空 dist 目录</span><br><span class="line">mini-css-extract-plugin：提取 js 中的 css 成单独文件</span><br><span class="line">optimize-css-assets-webpack-plugin：压缩css</span><br><span class="line">uglifyjs-webpack-plugin：压缩js</span><br><span class="line">commons-chunk-plugin：提取公共代码</span><br><span class="line">define-plugin：定义环境变量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Webpack中Loader和Plugin的区别"><a href="#Webpack中Loader和Plugin的区别" class="headerlink" title="Webpack中Loader和Plugin的区别"></a>Webpack中Loader和Plugin的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、在 webpack 的 watch 模式下，文件系统中某一个文件发生修改，webpack 监听到文件变化，根据配置文件对模块重新编译打包，并将打包后的代码通过简单的 JavaScript 对象保存在内存中。</span><br><span class="line"><span class="number">2</span>、webpack-dev-server 和 webpack 之间的接口交互，而在这一步，主要是 dev-server 的中间件webpack-dev-middleware 和 webpack 之间的交互，webpack-dev-middleware 调用 webpack 暴露的 API对代码变化进行监控，并且告诉 webpack，将代码打包到内存中。</span><br><span class="line"><span class="number">3</span>、webpack-dev-server 对文件变化的一个监控，这一步不同于第一步，并不是监控代码变化重新打包。当我们在配置文件中配置了devServer.watchContentBase 为 <span class="literal">true</span> 的时候，Server 会监听这些配置文件夹中静态文件的变化，变化后会通知浏览器端对应用进行 live reload。注意，这儿是浏览器刷新，和 HMR 是两个概念</span><br><span class="line"><span class="number">4</span>、webpack-dev-server 代码的工作，该步骤主要是通过 sockjs（webpack-dev-server 的依赖）在浏览器端和服务端之间建立一个 websocket 长连接，将 webpack 编译打包的各个阶段的状态信息告知浏览器端，</span><br><span class="line">同时也包括第三步中 Server 监听静态文件变化的信息。浏览器端根据这些 socket 消息进行不同的操作。当然服务端传递的最主要信息还是新模块的 hash 值，后面的步骤根据这一 hash 值来进行模块热替换。</span><br><span class="line">webpack-dev-server/client 端并不能够请求更新的代码，也不会执行热更模块操作，而把这些工作又交回给了 webpack，webpack/hot/dev-server 的工作就是根据 webpack-dev-server/client 传给它的信息以及 dev-server 的配置决定是刷新浏览器呢还是进行模块热更新。当然如果仅仅是刷新浏览器，也就没有后面那些步骤了。HotModuleReplacement.runtime 是客户端 HMR 的中枢，它接收到上一步传递给他的新模块的 hash 值，它通过 JsonpMainTemplate.runtime 向 server 端发送 Ajax 请求，服务端返回一个 json，该 json 包含了所有要更新的模块的 hash 值，获取到更新列表后，该模块再次通过 jsonp 请求，获取到最新的模块代码。</span><br><span class="line"><span class="number">5</span>、决定 HMR 成功与否的关键步骤，在该步骤中，HotModulePlugin 将会对新旧模块进行对比，决定是否更新模块，在决定更新模块后，检查模块之间的依赖关系，更新模块的同时更新模块间的依赖引用。最后一步，当 HMR 失败后，回退到 live reload 操作，也就是进行浏览器刷新来获取最新打包代码。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="如何解决循环依赖问题"><a href="#如何解决循环依赖问题" class="headerlink" title="如何解决循环依赖问题"></a>如何解决循环依赖问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Webpack 中将 <span class="built_in">require</span> 替换为 webpack_require，会根据 moduleId 到 installedModules 找是否加载过，加载过则直接返回之前的 <span class="keyword">export</span>，不会重复加载</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="如何提高Webpack构建速度"><a href="#如何提高Webpack构建速度" class="headerlink" title="如何提高Webpack构建速度"></a>如何提高Webpack构建速度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">组件懒加载、路由懒加载、开启gzip、公共的第三方包上cdn、配置include/exclude缩小Loader对文件的搜索范围、配置cache缓存Loader对文件的编译副本、配置resolve提高文件的搜索速度（@: src）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Git代码冲突怎么处理"><a href="#Git代码冲突怎么处理" class="headerlink" title="Git代码冲突怎么处理"></a>Git代码冲突怎么处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">一、暂存到暂存区，更新后，从暂存区取出合并解决冲突</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>、git pull 出现冲突后可以暂存本地修改git stash</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>、然后git pull 更新代码</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>、git stash list 可查看暂存记录列表</span><br><span class="line"></span><br><span class="line">    <span class="number">4</span>、释放本地暂存 git stash apply stash@&#123;<span class="number">0</span>&#125; 就是刚才保存的标记</span><br><span class="line"></span><br><span class="line">    <span class="number">5</span>、出现冲突文件，找到并解决</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span>、然后可以提交git add . 加入索引库</span><br><span class="line"></span><br><span class="line">    <span class="number">7</span>、然后本地提交git commit -m <span class="string">&#x27;注释&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="number">8</span>、最后git push到远程</span><br><span class="line">二、更新发现冲突，提交本地，再更新，找到冲突地方解决后，再次提交推送远程</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>、git pull更新代码，发现error: Your local changes to the following files would be overwritten by merge:pom.xmlPlease commit your changes or stash them before you merge.这说明你的pom.xml与远程有冲突，你需要先提交本地的修改然后更新。</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>、git add pom.xml</span><br><span class="line"></span><br><span class="line">       git commit -m <span class="string">&#x27;冲突解决&#x27;</span></span><br><span class="line"></span><br><span class="line">       提交本地的pom.xml文件，不进行推送远程</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>、git pull</span><br><span class="line"></span><br><span class="line">        更新代码Auto-merging pom.xmlCONFLICT (content): Merge conflict <span class="keyword">in</span> pom.xmlAutomatic merge failed; fix conflicts and then commit the result.更新后你的本地分支上会出现 (develop|MERGING)类似这种标志。</span><br><span class="line"></span><br><span class="line">    <span class="number">4</span>、找到你本地的test.txt文件，并打开你会在文件中发现&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ，======= ，&gt;&gt;&gt;&gt;&gt;&gt;&gt; ae24sgwmfp2m2ojr2jaagwhhfawe2类似这样的标记。</span><br><span class="line">    &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD和=======中间的是你自己的代码， ======= 和&gt;&gt;&gt;&gt;&gt;&gt;&gt;中间的是其他人修改的代码自己确定保留那一部分代码，最后删除&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ，======= ，&gt;&gt;&gt;&gt;&gt;&gt;&gt;这种标志。</span><br><span class="line">    <span class="number">5</span>、git add test.txt &amp;&amp; git commit -m <span class="string">&#x27;冲突解决结束&#x27;</span>  再次将本地的test.txt文件提交。</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span>、git push将解决冲突后的文件推送到远程。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h2><h3 id="css3有哪些新增属性"><a href="#css3有哪些新增属性" class="headerlink" title="css3有哪些新增属性"></a>css3有哪些新增属性</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、border-color: #ff0000 #0000ff; 为边框设置多种颜色</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、border-radius:25px; 圆角边框</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、box-shadow: 10px 10px 5px #<span class="number">888888</span>;  阴影效果</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、background-size:80px 60px; 指定背景图片尺寸</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、text-shadow: 5px 5px 5px #FF0000; 文本阴影</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>、word-wrap:<span class="keyword">break</span>-word; 自动换行</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>、transform 变换效果</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>、animation 动画效果</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>、transition 过渡效果</span><br></pre></td></tr></table></figure>
+<h3 id="css3新增选择器"><a href="#css3新增选择器" class="headerlink" title="css3新增选择器"></a>css3新增选择器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">结构伪类选择器</span><br><span class="line"></span><br><span class="line">ul li:first-child &#123;</span><br><span class="line">      background-color: pink;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">ul li:last-child&#123;</span><br><span class="line">       background-color: skyblue;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">ul li:nth-<span class="function"><span class="title">child</span>(<span class="params"><span class="number">5</span></span>)</span> &#123;</span><br><span class="line">      background-color: purple;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 4.表示选择ul里面的第一个li，就是把ul里面的所有li进行排列，然后把第一个li找出来 */</span></span><br><span class="line">ul li:first-<span class="keyword">of</span>-type &#123;</span><br><span class="line">   background-color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 5.表示选择ul里面的最后一个li，就是把ul里面的所有li进行排列，然后把最后一个li找出来 */</span></span><br><span class="line">ul li:first-<span class="keyword">of</span>-type &#123;</span><br><span class="line">   background-color: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 6.表示选择ul里面的第n个li，就是把ul里面的所有li进行排列，然后把第n个li找出来 */</span></span><br><span class="line">ul li:nth-<span class="keyword">of</span>-<span class="function"><span class="title">type</span>(<span class="params">n</span>)</span> &#123;</span><br><span class="line">   background-color: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">伪元素选择器</span><br><span class="line"><span class="attr">p</span>::before &#123;</span><br><span class="line">   <span class="attr">content</span>: <span class="string">&quot;前面插入的内容&quot;</span>;</span><br><span class="line">   color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attr">p</span>::after &#123;</span><br><span class="line">    <span class="attr">content</span>:<span class="string">&quot;后面插入的内容&quot;</span>;</span><br><span class="line">    color: purple;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="echarts"><a href="#echarts" class="headerlink" title="echarts"></a>echarts</h2><p>VUE引用和使用echarts4/echarts5的差别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、echarts引用区别</span><br><span class="line"><span class="attr">v4</span>:</span><br><span class="line">    <span class="keyword">import</span> echarts <span class="keyword">from</span> <span class="string">&#x27;echarts&#x27;</span></span><br><span class="line">    Vue.prototype.$echarts = echarts</span><br><span class="line"><span class="attr">v5</span>:</span><br><span class="line">    <span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">&#x27;echarts&#x27;</span></span><br><span class="line">    Vue.prototype.$echarts = echarts</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">...补充中</span><br></pre></td></tr></table></figure>
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="c-Aurora 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="c-Aurora 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/20/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98vue/" rel="prev" title="前端面试题-vue(补充中...)">
+      <i class="fa fa-chevron-left"></i> 前端面试题-vue(补充中...)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/25/chrome/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="next" title="谷歌浏览器插件下载">
+      谷歌浏览器插件下载 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E9%87%8C%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9D%80%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E9%82%A3%E4%BA%9B%E4%BA%8B%E6%83%85"><span class="nav-number">1.</span> <span class="nav-text">在地址栏里输入一个地址回车会发生那些事情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">HTTP和HTTPS协议的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%BB%E8%A6%81%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">3.</span> <span class="nav-text">WebSocket 的应用场景主要有哪些</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">Webpack类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9Webpack%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%88Webpack%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">谈谈你对Webpack的理解（Webpack是什么？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack%E7%9A%84%E6%89%93%E5%8C%85%E8%BF%87%E7%A8%8B-%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86-%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">Webpack的打包过程&#x2F;打包原理&#x2F;构建流程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">loader的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84Loader%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%98%AF%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E7%9A%84%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">有哪些常见的Loader？他们是解决什么问题的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugin%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">plugin的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84Plugin%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%98%AF%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E7%9A%84%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">有哪些常见的Plugin？他们是解决什么问题的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack%E4%B8%ADLoader%E5%92%8CPlugin%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">Webpack中Loader和Plugin的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">如何解决循环依赖问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98Webpack%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6"><span class="nav-number">9.</span> <span class="nav-text">如何提高Webpack构建速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E4%BB%A3%E7%A0%81%E5%86%B2%E7%AA%81%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">Git代码冲突怎么处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3"><span class="nav-number"></span> <span class="nav-text">CSS3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css3%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E5%A2%9E%E5%B1%9E%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">css3有哪些新增属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css3%E6%96%B0%E5%A2%9E%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">css3新增选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts"><span class="nav-number"></span> <span class="nav-text">echarts</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="c-Aurora"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">c-Aurora</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>
