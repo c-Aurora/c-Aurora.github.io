@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="基于nodejs的express搭建后端服务器">
+<meta property="og:url" content="http://example.com/2022/05/30/express/express/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-30T11:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-05T07:31:11.773Z">
+<meta property="article:author" content="小川">
+<meta property="article:tag" content="express">
+<meta property="article:tag" content="node.js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/05/30/express/express/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>基于nodejs的express搭建后端服务器 | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">68</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/30/express/express/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小川">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于nodejs的express搭建后端服务器
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-30 19:00:00" itemprop="dateCreated datePublished" datetime="2022-05-30T19:00:00+08:00">2022-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/express/" itemprop="url" rel="index"><span itemprop="name">express</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/05/30/express/express/" class="post-meta-item leancloud_visitors" data-flag-title="基于nodejs的express搭建后端服务器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/05/30/express/express/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/30/express/express/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+<h2 id="什么是express？"><a href="#什么是express？" class="headerlink" title="什么是express？"></a>什么是<a href>express</a>？</h2><p>express是node.js的一个库，可以让我们搭建一个后端的服务器<br>通俗的讲：express负责后端，vue负责前端，它俩之间使用HTTP来进行数据交换</p>
+<h2 id="搭建项目-前后端分离-vue-express"><a href="#搭建项目-前后端分离-vue-express" class="headerlink" title="搭建项目(前后端分离 vue + express )"></a>搭建项目(前后端分离 vue + express )</h2><p>新建项目文件夹express_vue</p>
+<h3 id="后端-express环境搭建"><a href="#后端-express环境搭建" class="headerlink" title="后端 - express环境搭建"></a>后端 - express环境搭建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cd 进入文件夹express_vue</span></span><br><span class="line">cd express_vue</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局安装express</span></span><br><span class="line">npm install express -g</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局安装Express 脚手架工</span></span><br><span class="line">npm install express-generator -g</span><br><span class="line"></span><br><span class="line"><span class="comment">// express --version 来检测是否安装成功</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 express项目, 利用express-generator 脚手架快速生成项目</span></span><br><span class="line">express --no-view server</span><br><span class="line"><span class="comment">// 该命令即创建了一个名为 server的无视图 express 项目,项目目录如下：</span></span><br><span class="line">├─bin                              </span><br><span class="line">    ├─www                     <span class="comment">// 启动项目，默认监听3000端口         </span></span><br><span class="line">├─public                      <span class="comment">// 存放静态文件（images, js, css）          </span></span><br><span class="line">    ├─images文件夹                     </span><br><span class="line">    ├─javascripts文件夹                         </span><br><span class="line">    ├─stylesheets文件夹</span><br><span class="line">       ├─style.css</span><br><span class="line">    ├─index.html                 </span><br><span class="line">├─routes                     <span class="comment">// 存放路由文件，路由就是用来确定URL和资源的对应关系的，这里面的代码主要用来接收前端的请求，然后进行响应 ，我们需要在里面写后台的那些接口           </span></span><br><span class="line">    ├─index.js                            </span><br><span class="line">    ├─users.js                              </span><br><span class="line">├─app.js                    <span class="comment">// 整个项目的入口文件，在这里面引入一些项目需要的模块，创建 express 实例，进行总体路由设置等</span></span><br><span class="line">├─package-lock.json         <span class="comment">// 执行完 npm install 后生成的，里面是已经安装的依赖包的详细描述，需要上传到 git 上，以保证其他人在 install 的时候，大家的依赖版本相同</span></span><br><span class="line">└─package.json              <span class="comment">// 依赖包描述文件，这里面有的依赖包可以通过 npm install 一键安装</span></span><br><span class="line">views 目录存放模板引擎文件，这里面的文件最终会渲染为html页面</span><br><span class="line"></span><br><span class="line"><span class="comment">//进入项目目录下(/server)，执行 npm install 来安装项目所需的依赖模块</span></span><br><span class="line">cd server</span><br><span class="line"></span><br><span class="line">npm install </span><br><span class="line"></span><br><span class="line"><span class="comment">//执行命令 npm start 启动项目，通过浏览器访问 http://localhost:3000/</span></span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//localhost:3000/ (显示welcome to Express即启动成功)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//法二</span></span><br><span class="line"><span class="comment">//创建项目也可以使用下面的创建，不用express --no-view server</span></span><br><span class="line">express 想要创建的项目名   <span class="comment">//express 项目名称</span></span><br><span class="line">cd 创建的项目名 <span class="comment">//进入项目</span></span><br><span class="line">npm install   </span><br><span class="line">npm  run start</span><br></pre></td></tr></table></figure>
+<p>###nodejs插件 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、nodemon 代码热更新</span><br><span class="line"><span class="comment">//调试Nodejs项目时，修改代码，要手动close掉，再重新启动，非常繁琐</span></span><br><span class="line"><span class="comment">//可使用[nodemon](https/www.npmis.com/package/nodemon)这个工具，它能够监听项目文件的变动，当代码被修改后，nodemon会自动帮我们重启项目，极大方便了开发和调试</span></span><br><span class="line"></span><br><span class="line">npm install -g nodemon <span class="comment">//全局安装</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 项目根目录下创建nodemon.json文件</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;restartable&quot;</span>: <span class="string">&quot;rs&quot;</span>, <span class="comment">//设置重启模式</span></span><br><span class="line">    <span class="string">&quot;ignore&quot;</span>: [ <span class="comment">//设置热更新忽略的文件</span></span><br><span class="line">        <span class="string">&quot;.git&quot;</span>,</span><br><span class="line">        <span class="string">&quot;.svn&quot;</span>,</span><br><span class="line">        <span class="string">&quot;node_modules/**/node_modules&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">&quot;verbose&quot;</span>: <span class="literal">true</span>, <span class="comment">//设置日志输出模式，true 详细模式</span></span><br><span class="line">    <span class="string">&quot;execMap&quot;</span>: &#123; <span class="comment">//设置运行服务的后缀名与对应的命令</span></span><br><span class="line">        <span class="string">&quot;js&quot;</span>: <span class="string">&quot;node --harmony&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;watch&quot;</span>: [],  <span class="comment">//监听哪些文件的变化，当变化的时候自动重启</span></span><br><span class="line">    <span class="string">&quot;env&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;NODE_ENV&quot;</span>: <span class="string">&quot;development&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;ext&quot;</span>: <span class="string">&quot;ejs js json&quot;</span> <span class="comment">//监控指定的后缀文件名</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//更改启动命令</span></span><br><span class="line">更改package.json中的scripts下的start、把node换成nodemon</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;start&quot;</span>: <span class="string">&quot;nodemon ./bin/www&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//上述步骤全部成功之后重启服务验证,关闭当前服务后我们从新npm start启动服务</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、body-parser</span><br><span class="line"><span class="comment">//express中没有内置的获取post请求体的api，需要第三方包 body-parser,body-parser是解析req.body，不然body不会被解析</span></span><br><span class="line"></span><br><span class="line">cnpm i body-parser -save</span><br><span class="line"><span class="comment">//app.js配置</span></span><br><span class="line"><span class="keyword">var</span> jsonParser = bodyParser.json();</span><br><span class="line"><span class="keyword">var</span> urlencodedParser = bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、加密包 bcryptjs</span><br><span class="line">npm i bcryptjs@<span class="number">2.4</span><span class="number">.3</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、表单验证的包</span><br><span class="line">npm install @escook/express-joi</span><br><span class="line">npm install @hapi/joi@<span class="number">17.1</span><span class="number">.0</span>   </span><br><span class="line">npm i joi    <span class="comment">//Cannot mix different versions of joi schemas</span></span><br><span class="line"><span class="keyword">const</span> joi = <span class="built_in">require</span>(<span class="string">&#x27;joi&#x27;</span>)  <span class="comment">//用joi代替@hapi/joi@17.1.0</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、项目集成babel，支持ES6等新语法</span><br><span class="line"><span class="comment">//写着写着，你发现连基础的Import都无法使用，await async也不能用。比如，我const一个常用，它就报错了</span></span><br><span class="line"><span class="comment">//因为你用的语法太新了，是ES6以后的新语法，我们需要用babel转换一下</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//安装babel相关的库支持。cmd执行以下命令：</span></span><br><span class="line">npm install babel babel-node babel-cli --save-dev</span><br><span class="line">npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react</span><br><span class="line">npm install babel-preset-env --save-dev</span><br><span class="line"><span class="comment">//以上命令请自行百度用途，先照着做，npm会自安装相关的包。其中 --save -dev表示仅保存到当前项目和调试环境。</span></span><br><span class="line">安装完以后，会自动更新package.json文件，在devDependencies中增加了相关的babel库支持</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改start脚本。</span></span><br><span class="line">在package.json，将scripts的start命令，增加 --exec babel-node命令，完整如下：</span><br><span class="line"><span class="string">&quot;start&quot;</span>: <span class="string">&quot;nodemon --watch src --watch config src/index.js --exec babel-node&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//重新运行项目 就可以去玩代码了 ，写你需要的代码，扩充你的项目</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="前端-vue环境搭建"><a href="#前端-vue环境搭建" class="headerlink" title="前端 - vue环境搭建"></a>前端 - vue环境搭建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cd 进入文件夹express_vue</span></span><br><span class="line">cd express_vue</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正常用脚手架创建vue项目</span></span><br><span class="line"><span class="comment">//安装axios等插件</span></span><br><span class="line">npm install axios --save</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动项目</span></span><br><span class="line">npm run dev / npm run serve</span><br></pre></td></tr></table></figure>
+<h3 id="前后端交互（跨域问题）"><a href="#前后端交互（跨域问题）" class="headerlink" title="前后端交互（跨域问题）"></a>前后端交互（跨域问题）</h3><p><code>注意：使用这两种方法时需要在Express使用路由前修改</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决跨域方式一 -- 官方推荐的中间件cros</span></span><br><span class="line"><span class="comment">// 使用cros中间件实现跨域</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//安装中间件</span></span><br><span class="line">npm install cors   <span class="comment">//运行npm install cors安装中间件</span></span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>)   <span class="comment">//使用const cors=require(’cors‘)导入中间件</span></span><br><span class="line">app.use(cors())   <span class="comment">//在路由之前调用app.use(cors())配置中间件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> express, &#123; Express, Router  &#125; <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> app: Express = express();</span><br><span class="line"><span class="keyword">const</span> router: Router = express.Router();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cors = <span class="built_in">require</span>(<span class="string">&quot;cors&quot;</span>);</span><br><span class="line">app.use(cors());</span><br><span class="line"><span class="comment">//注意：使用这两种方法时需要在Express使用路由前修改</span></span><br><span class="line">app.get(<span class="string">&#x27;/list&#x27;</span>, <span class="function">()=&gt;</span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意事项：</span></span><br><span class="line">①CORS 主要在服务器端进行配置。客户端浏览器无须做任何额外的配置，即可请求开启了CORS的接口。</span><br><span class="line">②CORS在浏览器中有兼容。只有支持XMLHttpRequest Level2的浏览器，才能正常访问开启了CORS的服务端接口（例如：IE10+、Chrome4+、FireFox3<span class="number">.5</span>+）。</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置响应头，处理跨域请求(setHeader)</span></span><br><span class="line">app.all(<span class="string">&#x27;/cors-server&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">	res.setHeader(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">    <span class="comment">// 允许客户端额外想服务器发送 Content-Type 请求头和 X-Custom-Header 请求头</span></span><br><span class="line">    res.setHeader(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>, <span class="string">&quot;X-PINGOTHER,Content-type,X-Requested-With,Authorization&quot;</span>)</span><br><span class="line">	res.setHeader(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;PUT,POST,GET,DELETE,OPTIONS&quot;</span>)</span><br><span class="line">	res.send(<span class="string">&#x27;CORS 跨域请求&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//解决跨域方式二 -- 手动添加头信息</span></span><br><span class="line"><span class="comment">//实现跨域访问,要想前后端可以交互，要配置跨域访问</span></span><br><span class="line">express文件夹中的app.js文件中粘贴如下代码</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> express, &#123; Express, Router&#125; <span class="keyword">from</span> <span class="string">&#x27;express&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> app: Express = express();</span><br><span class="line"></span><br><span class="line">app.all(<span class="string">&#x27;*&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 设置允许跨域的域名,*代表允许任意域名跨域</span></span><br><span class="line">    res.header(<span class="string">&quot;Access-Control-Allow-Origin&quot;</span>, <span class="string">&quot;*&quot;</span>); <span class="comment">//包含本域地址</span></span><br><span class="line">    <span class="comment">// 允许的header类型</span></span><br><span class="line">    res.header(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>, <span class="string">&quot;X-PINGOTHER,Content-type,X-Requested-With,Authorization&quot;</span>);</span><br><span class="line">    <span class="comment">// 跨域允许的请求方式</span></span><br><span class="line">    res.header(<span class="string">&quot;Access-Control-Allow-Methods&quot;</span>, <span class="string">&quot;PUT,POST,GET,DELETE,OPTIONS&quot;</span>);</span><br><span class="line">    res.header(<span class="string">&quot;X-Powered-By&quot;</span>, <span class="string">&#x27; 3.2.1&#x27;</span>)</span><br><span class="line">    <span class="comment">// 让options 尝试请求快速结束</span></span><br><span class="line">    res.header(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/json;charset=utf-8&quot;</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//注意：使用这两种方法时需要在Express使用路由前修改</span></span><br><span class="line">app.use(<span class="string">&quot;/api&quot;</span>, router);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&quot;/list&quot;</span>, <span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="comment">// 请求内容</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//连接mysql数据库</span></span><br><span class="line">cd到后端文件夹根目录，安装数据库模块</span><br><span class="line">npm i mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">//连接数据库</span></span><br><span class="line">新建一个utils文件夹，创建pool.js（名字随便取），用于配置数据库连接，粘贴下面代码</span><br><span class="line"><span class="comment">// 连接mysql数据库</span></span><br><span class="line"><span class="comment">// 数据库连接池</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;babel-polyfill&#x27;</span>); <span class="comment">// 兼容性问题</span></span><br><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"><span class="comment">//建立连接池</span></span><br><span class="line"><span class="keyword">var</span> pool = mysql.createPool(&#123;</span><br><span class="line">    <span class="attr">host</span>: <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">    <span class="attr">user</span>: <span class="string">&#x27;*****&#x27;</span>, <span class="comment">//用户名</span></span><br><span class="line">    <span class="attr">password</span>: <span class="string">&#x27;*****&#x27;</span>, <span class="comment">//密码</span></span><br><span class="line">    <span class="attr">database</span>: <span class="string">&#x27;*****&#x27;</span>, <span class="comment">//要连接数据库名</span></span><br><span class="line">    <span class="comment">//设置超时时间解决握手不活动超时问题</span></span><br><span class="line">    <span class="attr">connectionLimit</span>: <span class="number">1000</span>,</span><br><span class="line">    <span class="attr">connectTimeout</span>: <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>,</span><br><span class="line">    <span class="attr">acquireTimeout</span>: <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>,</span><br><span class="line">    <span class="attr">timeout</span>: <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 取出连接</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPoolConnection</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 从连接池中取出连接 err:错误信息 conn：从连接池中取出的连接对象，通过这个对象去访问数据库</span></span><br><span class="line">        pool.getConnection(<span class="function">(<span class="params">err, conn</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 成功信息</span></span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="comment">// 失败信息</span></span><br><span class="line">                reject(<span class="string">&quot;mysql数据库连接失败!失败原因：&quot;</span> + err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                resolve(conn);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//执行sql</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">execute</span>(<span class="params">sql</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> connection;</span><br><span class="line">        <span class="comment">//then中有2个参数，第⼀个参数是状态变为成功后应该执⾏的回调函数，第⼆个参数是状态变为失败后应该执⾏的回调函数</span></span><br><span class="line">        getPoolConnection().then(<span class="function"><span class="keyword">function</span>(<span class="params">conn</span>) </span>&#123;</span><br><span class="line">            conn.query(sql, <span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">&quot;sql错误&quot;</span>);</span><br><span class="line">                    <span class="built_in">console</span>.log(err);</span><br><span class="line">                    reject(err);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    resolve(result);</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">&quot;sql执行完成&quot;</span>);</span><br><span class="line">                    <span class="comment">// console.log(result)</span></span><br><span class="line">                    conn.release();</span><br><span class="line">                    <span class="comment">// console.log(&quot;释放完成&quot;);</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">            reject(err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    getPoolConnection,</span><br><span class="line">    execute</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="项目打包-–-Vue项目安装打包上传到Express服务器"><a href="#项目打包-–-Vue项目安装打包上传到Express服务器" class="headerlink" title="项目打包 – Vue项目安装打包上传到Express服务器"></a>项目打包 – Vue项目安装打包上传到Express服务器</h3><p>项目写好了，如何发布到服务器部署呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、vue项目执行打包,生成dist文件夹</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line">进入到dist/index.html,使用浏览器运行，页面如果空白报错，解决方法</span><br><span class="line">修改，项目根目录下config/index.js，修改一处</span><br><span class="line">    <span class="attr">build</span>: &#123;</span><br><span class="line">    <span class="comment">// Template for index.html</span></span><br><span class="line">    <span class="attr">index</span>: path.resolve(__dirname, <span class="string">&#x27;../dist/index.html&#x27;</span>),</span><br><span class="line">    <span class="comment">// Paths</span></span><br><span class="line">    <span class="attr">assetsRoot</span>: path.resolve(__dirname, <span class="string">&#x27;../dist&#x27;</span>),</span><br><span class="line">    <span class="attr">assetsSubDirectory</span>: <span class="string">&#x27;static&#x27;</span>,</span><br><span class="line">    <span class="attr">assetsPublicPath</span>: <span class="string">&#x27;./&#x27;</span>, <span class="comment">//  未修改前是 / 修改之后 ./</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Source Maps</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">vue项目打包后css背景图路径不对的问题，解决办法为：在build/utils.js文件中添加一行代  publicPath:<span class="string">&#x27;../../&#x27;</span>    </span><br><span class="line">    <span class="keyword">if</span> (options.extract) &#123;</span><br><span class="line">        <span class="keyword">return</span> ExtractTextPlugin.extract(&#123;</span><br><span class="line">        <span class="attr">use</span>: loaders,</span><br><span class="line">        <span class="attr">fallback</span>: <span class="string">&#x27;vue-style-loader&#x27;</span>,</span><br><span class="line">        <span class="attr">publicPath</span>: <span class="string">&#x27;../../&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">&#x27;vue-style-loader&#x27;</span>].concat(loaders)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、将vue打包的文件放到Nodejs下运行</span><br><span class="line">①将vue打包生成dist文件下所有的文件复制到express项目的public中</span><br><span class="line">②express项目中，打开app.js文件，将“app.use(<span class="string">&#x27;/&#x27;</span>, indexRouter);”注释掉。（如果要展示vue项目，忽略此步）</span><br><span class="line">③改完后，重新启动express项目 npm start</span><br><span class="line">④运行express，在浏览器中输入localhost:<span class="number">3000</span></span><br><span class="line">⑤如果express运行错误，回到vue项目gw_demo/build/ vue-loader.conf.js将isProduction 改成<span class="literal">false</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="attr">loaders</span>: utils.cssLoaders(&#123;</span><br><span class="line">    <span class="attr">sourceMap</span>: sourceMapEnabled,</span><br><span class="line">    <span class="attr">extract</span>: <span class="literal">false</span> <span class="comment">//isProduction 改成false</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//运维如何管理？</span></span><br><span class="line"><span class="comment">//你需要把package.json+dist文件夹一起打包给运维。运维执行直接执行：npm i ，就可以安装所有的包。</span></span><br><span class="line"><span class="comment">//然后执行npm run serve命令运行相关后端服务。</span></span><br><span class="line"><span class="comment">//当然，一般运维会用pm2来部署，即pm2 start dist/index.js --name server </span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、关闭终端 ,云服务就断了，网页无法访问</span><br><span class="line">可以使用pm2</span><br><span class="line"><span class="comment">//安装pm2</span></span><br><span class="line">npm i pm2 -g</span><br><span class="line"></span><br><span class="line"><span class="comment">//启动项目</span></span><br><span class="line">pm2 start ./bin/www</span><br><span class="line"></span><br><span class="line"><span class="comment">//项目运行的时候一刷新页面就会报404</span></span><br><span class="line">使用connect-history-api-fallback中间件解决</span><br><span class="line">npm install --save connect-history-api-fallback</span><br><span class="line"></span><br><span class="line">修改express创建项目下app.js文件</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express();   <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">var</span> history = <span class="built_in">require</span>(<span class="string">&#x27;connect-history-api-fallback&#x27;</span>); <span class="comment">//这个是重点</span></span><br><span class="line"></span><br><span class="line">app.use(history());  <span class="comment">//使用history   最好放到pubic静态目录前</span></span><br><span class="line">app.use(express.static(path.join(__dirname, <span class="string">&#x27;public&#x27;</span>)));</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="express中间件"><a href="#express中间件" class="headerlink" title="express中间件"></a>express中间件</h3><p>Express的中间件，本质上是function处理函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> zjj = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">    next()  <span class="comment">//当前业务处理完后，必须调用next函数，把关系转交给下一个中间件或路由</span></span><br><span class="line">&#125;)</span><br><span class="line">注：</span><br><span class="line">①中间件函数的形参列表中，必须包含next参数，而路由处理函数只包含req和res</span><br><span class="line"></span><br><span class="line">②next函数是实现多个中间件连续调用的关键，它表示把流转关系转交给下一个中间件或路由。</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局生效的中间件</span></span><br><span class="line">客户端发起的任何请求，到达服务器之后，都会触发的中间件，叫做全局生效的中间件</span><br><span class="line"><span class="keyword">const</span> mw = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;交给下一个,lm，popst&#x27;</span>)</span><br><span class="line">  next()</span><br><span class="line">&#125;</span><br><span class="line">app.use(mw)</span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;   <span class="comment">//全局中间件的简化形式</span></span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//中间件作用</span></span><br><span class="line">多个中间件之间，共享同一份req和res。基于这样的特性，我们可以在上游的中间件中，统一为req 或res对象添加自定义的属性或方法，供下游的中间件或路由进行使用</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义多个全局中间件</span></span><br><span class="line">使用app.use()连续定义多个全局中间件，按定义的顺序执行</span><br><span class="line"></span><br><span class="line"><span class="comment">//局部生效的中间件</span></span><br><span class="line">不使用app.use()定义的中间件，叫做局部生效的中间件</span><br><span class="line"><span class="keyword">const</span> mw1 = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;局部中间件&#x27;</span>)</span><br><span class="line">  next()</span><br><span class="line">&#125;</span><br><span class="line">app.get(<span class="string">&#x27;/user&#x27;</span>,mw1,<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">&#x27;请求&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义多个局部中间件</span></span><br><span class="line">app.get(<span class="string">&#x27;/user&#x27;</span>,mw1,mw2,<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">&#x27;请求&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意事项</span></span><br><span class="line">①一定要在路由之前注册中间件</span><br><span class="line"></span><br><span class="line">②客户端发送过来的请求，可以连续调用多个中间件进行处理</span><br><span class="line"></span><br><span class="line">④执行完中间件的业务代码之后，不要忘记调用next()函数</span><br><span class="line"></span><br><span class="line">④为了防止代码逻辑混乱，调用next()函数后不要再写额外的代码</span><br><span class="line"></span><br><span class="line">⑤连续调用多个中间件时，多个中间件之间，共享req和res对象</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>中间件的分类</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>）应用级别的中间件</span><br><span class="line"></span><br><span class="line">通过app.use()或app.get()或app.post()，绑定到app实例上的中间件，叫做应用级别的中间件</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>）路由级别的中间件</span><br><span class="line"></span><br><span class="line">绑定到express.Router0实例上的中间件，叫做路由级别的中间件。router.use()</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>）错误级别的中间件</span><br><span class="line"></span><br><span class="line">错误级别中间件的作用：专门用来捕获整个项目中发生的异常错误，从而防止项目异常崩溃的问题。</span><br><span class="line"></span><br><span class="line">参数格式有：（err,req,res,next)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/url&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;服务器发生错误了wl&#x27;</span>)</span><br><span class="line">  res.send(<span class="string">&#x27;新请求&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err,req,res,next</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;中间件&#x27;</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;错误&#x27;</span> + err.message)</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">注意：错误级别的中间件，必须注册在所有路由之后！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>）Express内置的中间件</span><br><span class="line"></span><br><span class="line">①express.static 快速托管静态资源的内置中间件，例如：HTML文件、图片、CSS样式等（无兼容性）</span><br><span class="line"></span><br><span class="line">②express.json 解析<span class="built_in">JSON</span>格式的请求体数据（有兼容性，仅在<span class="number">4.16</span><span class="number">.0</span>+版本中可用）③expres.urlencoded 解析URL-encoded 格式的请求体数据（有兼容性，仅在<span class="number">4.16</span><span class="number">.0</span>+版本中可用）</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认情况下，如果不配置解折表单数据的中间件，则req.body默认等于undefined</span></span><br><span class="line">app.use(express.json())  </span><br><span class="line">app.use(express.urlencoded(&#123;<span class="attr">extended</span>:<span class="literal">false</span>&#125;))</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>）第三方的中间件</span><br><span class="line"></span><br><span class="line">按需下载并配置中间件，提高开发效率</span><br><span class="line">npm install body-parser</span><br><span class="line"><span class="keyword">const</span> bodyPaser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>)</span><br><span class="line">app.use(bodyPaser)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>自定义中间件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">自己手动模拟一个类似于express.urlencoded这样的中间件，来解析POST提交到服务器的表单数据。</span><br><span class="line"></span><br><span class="line">步骤：</span><br><span class="line"></span><br><span class="line">①定义中间件</span><br><span class="line"></span><br><span class="line">②监听req的data事件</span><br><span class="line"></span><br><span class="line">③监听req的end事件</span><br><span class="line"></span><br><span class="line">④使用querystring 模块解析请求体数据</span><br><span class="line"></span><br><span class="line">⑤将解析出来的数据对象挂载为req，body</span><br><span class="line"></span><br><span class="line">⑥将自定义中间件封装为模块</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="小川 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="小川 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/express/" rel="tag"><i class="fa fa-tag"></i> express</a>
+              <a href="/tags/node-js/" rel="tag"><i class="fa fa-tag"></i> node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/23/electron/electron%E5%BA%94%E7%94%A8/" rel="prev" title="electron应用">
+      <i class="fa fa-chevron-left"></i> electron应用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/15/ts/Typescript/" rel="next" title="Typescript在vue3项目中的使用">
+      Typescript在vue3项目中的使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFexpress%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是express？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE-%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB-vue-express"><span class="nav-number">2.</span> <span class="nav-text">搭建项目(前后端分离 vue + express )</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF-express%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">后端 - express环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF-vue%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.2.</span> <span class="nav-text">前端 - vue环境搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%EF%BC%88%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">前后端交互（跨域问题）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85-%E2%80%93-Vue%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85%E6%89%93%E5%8C%85%E4%B8%8A%E4%BC%A0%E5%88%B0Express%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.4.</span> <span class="nav-text">项目打包 – Vue项目安装打包上传到Express服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="nav-number">2.5.</span> <span class="nav-text">express中间件</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小川"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">小川</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>

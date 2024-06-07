@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Hexo美化">
+<meta property="og:url" content="http://example.com/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-07-16T06:42:01.000Z">
+<meta property="article:modified_time" content="2023-05-04T15:36:40.240Z">
+<meta property="article:author" content="小川">
+<meta property="article:tag" content="next7.8">
+<meta property="article:tag" content="主题">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo美化 | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">68</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小川">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo美化
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-07-16 14:42:01" itemprop="dateCreated datePublished" datetime="2016-07-16T14:42:01+08:00">2016-07-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">搭建</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo美化" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/07/16/hexo/Hexo%E7%BE%8E%E5%8C%96/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+
+<h2 id="下面是我比较喜欢的美化，亲测有效-根据next7-8"><a href="#下面是我比较喜欢的美化，亲测有效-根据next7-8" class="headerlink" title="下面是我比较喜欢的美化，亲测有效(根据next7.8)"></a>下面是我比较喜欢的美化，亲测有效(根据next7.8)</h2><h3 id="Next-7-x-8-x-自动添加可切换的暗黑模式"><a href="#Next-7-x-8-x-自动添加可切换的暗黑模式" class="headerlink" title="Next 7.x / 8.x 自动添加可切换的暗黑模式"></a>Next 7.x / 8.x 自动添加可切换的<a target="_blank" rel="noopener" href="https://blog.csdn.net/rqh656418510/article/details/123676457">暗黑模式</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//安装 hexo-next-darkmode 插件</span></span><br><span class="line"></span><br><span class="line">npm install hexo-next-darkmode --save</span><br><span class="line"></span><br><span class="line"><span class="comment">//在 Next 主题的 _config.yml 配置文件里添加以下内容</span></span><br><span class="line"></span><br><span class="line"># Darkmode JS</span><br><span class="line"># For more information: https:<span class="comment">//github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">enable: <span class="literal">true</span></span><br><span class="line"><span class="attr">bottom</span>: <span class="string">&#x27;64px&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;32px&#x27;</span></span><br><span class="line"><span class="attr">right</span>: <span class="string">&#x27;unset&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;32px&#x27;</span></span><br><span class="line"><span class="attr">left</span>: <span class="string">&#x27;32px&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;unset&#x27;</span></span><br><span class="line"><span class="attr">time</span>: <span class="string">&#x27;0.5s&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;0.3s&#x27;</span></span><br><span class="line"><span class="attr">mixColor</span>: <span class="string">&#x27;transparent&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;#fff&#x27;</span></span><br><span class="line"><span class="attr">backgroundColor</span>: <span class="string">&#x27;transparent&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;#fff&#x27;</span></span><br><span class="line"><span class="attr">buttonColorDark</span>: <span class="string">&#x27;#100f2c&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;#100f2c&#x27;</span></span><br><span class="line"><span class="attr">buttonColorLight</span>: <span class="string">&#x27;#fff&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;#fff&#x27;</span></span><br><span class="line"><span class="attr">isActivated</span>: <span class="literal">false</span> # <span class="keyword">default</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">saveInCookies</span>: <span class="literal">true</span> # <span class="keyword">default</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">label</span>: <span class="string">&#x27;🌓&#x27;</span> # <span class="keyword">default</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">autoMatchOsTheme</span>: <span class="literal">true</span> # <span class="keyword">default</span>: <span class="literal">true</span></span><br><span class="line"><span class="attr">libUrl</span>: # <span class="built_in">Set</span> custom library cdn url <span class="keyword">for</span> Darkmode.js</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>isActivated: true：默认激活暗黑/夜间模式，请始终与 saveInCookies: false、autoMatchOsTheme: false 一起使用</p>
+</blockquote>
+<blockquote>
+<p>关闭原生的暗黑模式<br>确保 Next 原生的 darkmode 选项设置为 false，在 Next 的 _config.yml 配置文件中更改 darkmode: false </p>
+</blockquote>
+<h3 id="添加鼠标点击显示字体效果"><a href="#添加鼠标点击显示字体效果" class="headerlink" title="添加鼠标点击显示字体效果"></a>添加鼠标点击显示字体效果</h3><p>在 /themes/next/source/js 下新建文件 click_show_text.js，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a_idx = <span class="number">0</span>;</span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&quot;body&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span></span><br><span class="line">        (<span class="string">&quot;Js&quot;</span>, <span class="string">&quot;Css&quot;</span>, <span class="string">&quot;HTML&quot;</span>, <span class="string">&quot;Json&quot;</span>, <span class="string">&quot;Vue&quot;</span>, <span class="string">&quot;Node&quot;</span>, <span class="string">&quot;Webpack&quot;</span>, <span class="string">&quot;git&quot;</span>, <span class="string">&quot;Jquery&quot;</span>, <span class="string">&quot;Html5&quot;</span>, <span class="string">&quot;Css3&quot;</span>, <span class="string">&quot;react&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> $i = $(<span class="string">&quot;&lt;span/&gt;&quot;</span>).text(a[a_idx]);</span><br><span class="line">        a_idx = (a_idx + <span class="number">1</span>) % a.length;</span><br><span class="line">        <span class="keyword">var</span> x = e.pageX,</span><br><span class="line">        y = e.pageY;</span><br><span class="line">        $i.css(&#123;</span><br><span class="line">            <span class="string">&quot;z-index&quot;</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="string">&quot;top&quot;</span>: y - <span class="number">20</span>,</span><br><span class="line">            <span class="string">&quot;left&quot;</span>: x,</span><br><span class="line">            <span class="string">&quot;position&quot;</span>: <span class="string">&quot;absolute&quot;</span>,</span><br><span class="line">            <span class="string">&quot;font-weight&quot;</span>: <span class="string">&quot;bold&quot;</span>,</span><br><span class="line">            <span class="string">&quot;color&quot;</span>: <span class="string">&quot;#FF0000&quot;</span></span><br><span class="line">        &#125;);</span><br><span class="line">        $(<span class="string">&quot;body&quot;</span>).append($i);</span><br><span class="line">        $i.animate(&#123;</span><br><span class="line">            <span class="string">&quot;top&quot;</span>: y - <span class="number">180</span>,</span><br><span class="line">            <span class="string">&quot;opacity&quot;</span>: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">			<span class="number">3000</span>,</span><br><span class="line">			<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			    $i.remove();</span><br><span class="line">			&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="string">&#x27;delay()&#x27;</span>, <span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delay</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">&quot;.buryit&quot;</span>).removeAttr(<span class="string">&quot;onclick&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>想要每次点击显示的文字为不同颜色，可以将其中 color 值进行如下更改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;color&quot;</span>: <span class="string">&quot;rgb(&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;,&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;,&quot;</span> + ~~(<span class="number">255</span> * <span class="built_in">Math</span>.random()) + <span class="string">&quot;)&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后在 \themes\next\layout\layout.swig 文件<body></body>中添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/click_show_text.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>最最最（重要的字说三遍）重要的来了，<br>可能你会报错JQ找不到，那是没引入JQ，在上面之前引入JQ即可，即：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;http://libs.baidu.com/jquery/1.8.3/jquery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;http://libs.baidu.com/jquery/1.8.3/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/js/click_show_text.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加网站雪花飘落效果"><a href="#添加网站雪花飘落效果" class="headerlink" title="添加网站雪花飘落效果"></a>添加网站雪花飘落效果</h3><p>在 /themes/next/source/js 下新建文件 snow.js，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">	$.fn.snow = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> $flake = $(<span class="string">&#x27;&lt;div id=&quot;snowbox&quot; /&gt;&#x27;</span>).css(&#123;<span class="string">&#x27;position&#x27;</span>: <span class="string">&#x27;absolute&#x27;</span>,<span class="string">&#x27;z-index&#x27;</span>:<span class="string">&#x27;9999&#x27;</span>, <span class="string">&#x27;top&#x27;</span>: <span class="string">&#x27;-50px&#x27;</span>&#125;).html(<span class="string">&#x27;&amp;#10052;&#x27;</span>),</span><br><span class="line">	documentHeight 	= $(<span class="built_in">document</span>).height(),</span><br><span class="line">	documentWidth	= $(<span class="built_in">document</span>).width(),</span><br><span class="line">	defaults = &#123;</span><br><span class="line">		<span class="attr">minSize</span>		: <span class="number">10</span>,</span><br><span class="line">		<span class="attr">maxSize</span>		: <span class="number">20</span>,</span><br><span class="line">		<span class="attr">newOn</span>		: <span class="number">1000</span>,</span><br><span class="line">		<span class="attr">flakeColor</span>	: <span class="string">&quot;#AFDAEF&quot;</span> <span class="comment">/* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */</span></span><br><span class="line">	&#125;,</span><br><span class="line">	options	= $.extend(&#123;&#125;, defaults, options);</span><br><span class="line">	<span class="keyword">var</span> interval= <span class="built_in">setInterval</span>( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> startPositionLeft = <span class="built_in">Math</span>.random() * documentWidth - <span class="number">100</span>,</span><br><span class="line">	startOpacity = <span class="number">0.5</span> + <span class="built_in">Math</span>.random(),</span><br><span class="line">	sizeFlake = options.minSize + <span class="built_in">Math</span>.random() * options.maxSize,</span><br><span class="line">	endPositionTop = documentHeight - <span class="number">200</span>,</span><br><span class="line">	endPositionLeft = startPositionLeft - <span class="number">500</span> + <span class="built_in">Math</span>.random() * <span class="number">500</span>,</span><br><span class="line">	durationFall = documentHeight * <span class="number">10</span> + <span class="built_in">Math</span>.random() * <span class="number">5000</span>;</span><br><span class="line">	$flake.clone().appendTo(<span class="string">&#x27;body&#x27;</span>).css(&#123;</span><br><span class="line">		<span class="attr">left</span>: startPositionLeft,</span><br><span class="line">		<span class="attr">opacity</span>: startOpacity,</span><br><span class="line">		<span class="string">&#x27;font-size&#x27;</span>: sizeFlake,</span><br><span class="line">		<span class="attr">color</span>: options.flakeColor</span><br><span class="line">	&#125;).animate(&#123;</span><br><span class="line">		<span class="attr">top</span>: endPositionTop,</span><br><span class="line">		<span class="attr">left</span>: endPositionLeft,</span><br><span class="line">		<span class="attr">opacity</span>: <span class="number">0.2</span></span><br><span class="line">	&#125;,durationFall,<span class="string">&#x27;linear&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		$(<span class="built_in">this</span>).remove()</span><br><span class="line">	&#125;);</span><br><span class="line">	&#125;, options.newOn);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)(jQuery);</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $.fn.snow(&#123; </span><br><span class="line">	    <span class="attr">minSize</span>: <span class="number">5</span>, <span class="comment">/* 定义雪花最小尺寸 */</span></span><br><span class="line">	    <span class="attr">maxSize</span>: <span class="number">50</span>,<span class="comment">/* 定义雪花最大尺寸 */</span></span><br><span class="line">	    <span class="attr">newOn</span>: <span class="number">300</span>  <span class="comment">/* 定义密集程度，数字越小越密集 */</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后在 \themes\next\layout\layout.swig 文件<body></body>中添加以下代码<br>如遇到JQ找不到，参考第一种特效解决方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;\js\snow.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在文章末尾添加“文章结束”标记"><a href="#在文章末尾添加“文章结束”标记" class="headerlink" title="在文章末尾添加“文章结束”标记"></a>在文章末尾添加“文章结束”标记</h3><p> 在主题/layout/_macro 下新建 passage-end-tag.swig 文件，并添加以下代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">&quot;text-align:center;color: #000;font-size:16px;&quot;</span>&gt;------ The End ------&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>打开 /themes/next/layout/_macro/post.swig 文件，在 END POST BODY 后面引入 passage-end-tag.swig，如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;#####################&#125;</span><br><span class="line">&#123;### END POST BODY ###&#125;</span><br><span class="line">&#123;#####################&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.passage_end_tag.enable and not is_index %&#125;</span><br><span class="line">&#123;% include <span class="string">&#x27;passage-end-tag.swig&#x27;</span> %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>在主题配置文件 _config.yml 的末尾添加以下配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passage_end_tag:</span><br><span class="line">  enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="侧边栏背景设置"><a href="#侧边栏背景设置" class="headerlink" title="侧边栏背景设置"></a>侧边栏背景设置</h3><p>打开themes\next\source\css_partial\sidebar.styl<br>此配置文件中，可以找到 .sidebar(我的没有只有#sidebar,所以我f12查看了标签找到新的id,即如下)，修改其内部的属性参数即可实现设置侧边栏背景图片和字体颜色的功能</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.mdui-drawer &#123;</span><br><span class="line">    <span class="comment">//设置背景图片，图片放在Hexo\themes\theme-Meadow\source\images目录下</span></span><br><span class="line">    <span class="attr">background</span>:url(<span class="regexp">/images/</span>sidebar.jpg);	</span><br><span class="line">    background-size: cover;</span><br><span class="line">    background-position:center;</span><br><span class="line">    background-repeat:no-repeat;</span><br><span class="line">    bottom: <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (not hexo-config(<span class="string">&#x27;back2top.sidebar&#x27;</span>)) &#123;</span><br><span class="line">        box-shadow: inset <span class="number">0</span> 2px 6px black;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attr">position</span>: fixed;</span><br><span class="line">    top: <span class="number">0</span>;</span><br><span class="line">    transition: all $transition-ease-out;</span><br><span class="line">    width: $sidebar-desktop;</span><br><span class="line">    z-index: $zindex-<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    a &#123;</span><br><span class="line">        <span class="comment">//设置文字颜色</span></span><br><span class="line">        border-bottom-color: #FFFFFF;</span><br><span class="line">        color: #FFFFFF;</span><br><span class="line">        &amp;:hover &#123;</span><br><span class="line">            border-bottom-color: $FFFFFF;</span><br><span class="line">            color: #FFFFFF;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更换背景"><a href="#更换背景" class="headerlink" title="更换背景"></a>更换背景</h3><p>在themes\next\source\css\main.styl文件最下面添加下面代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>:url(<span class="regexp">/images/</span>bg01.jpg);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:<span class="number">50</span>% <span class="number">50</span>%;</span><br><span class="line">    color: <span class="keyword">var</span>(--text-color);</span><br><span class="line">    font-family: <span class="string">&#x27;Lato&#x27;</span>, <span class="string">&quot;PingFang SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, sans-serif;</span><br><span class="line">    font-size: 1em;</span><br><span class="line">    line-height: <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置透明度和中心文章栏加圆角"><a href="#设置透明度和中心文章栏加圆角" class="headerlink" title="设置透明度和中心文章栏加圆角"></a>设置透明度和中心文章栏加圆角</h3><p>单设置了背景图片还不是很完美，我们给所有的栏目设置一个小小的透明，会显得效果很好。<br>在themes\next\source\css\main.styl文件最下面添加下面代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 侧边标题栏更改透明度</span></span><br><span class="line">.header-inner &#123;</span><br><span class="line">    <span class="attr">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 侧边头像栏更改透明度</span></span><br><span class="line">.sidebar&#123;</span><br><span class="line">    transition-duration: <span class="number">0.</span>4s;  </span><br><span class="line">    opacity: <span class="number">0.8</span>;  <span class="comment">// 透明度</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中心文章栏更改透明度</span></span><br><span class="line">.content &#123;</span><br><span class="line">  padding-top: 15px;</span><br><span class="line">  opacity: <span class="number">0.9</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加圆角</span></span><br><span class="line"><span class="comment">//第一个文章</span></span><br><span class="line">.post-block &#123;</span><br><span class="line">  <span class="attr">background</span>: <span class="keyword">var</span>(--content-bg-color);</span><br><span class="line">  border-radius: 10px 10px 10px 10px; <span class="comment">//边框圆角</span></span><br><span class="line">  box-shadow: <span class="number">0</span> 2px 2px <span class="number">0</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.12</span>), <span class="number">0</span> 3px 1px -2px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.06</span>), <span class="number">0</span> 1px 5px <span class="number">0</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.12</span>);</span><br><span class="line">  padding: 40px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//之后的所有文章</span></span><br><span class="line">.post-block + .post-block &#123;</span><br><span class="line">  border-radius: 10px 10px 10px 10px; <span class="comment">//边框圆角</span></span><br><span class="line">  box-shadow: <span class="number">0</span> 2px 2px <span class="number">0</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.12</span>), <span class="number">0</span> 3px 1px -2px rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.06</span>), <span class="number">0</span> 1px 5px <span class="number">0</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.12</span>), <span class="number">0</span> -1px <span class="number">0.</span>5px <span class="number">0</span> rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.09</span>);</span><br><span class="line">  margin-top: 12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Read-More-按钮样式-黑底绿字"><a href="#Read-More-按钮样式-黑底绿字" class="headerlink" title="[Read More]按钮样式: 黑底绿字"></a>[Read More]按钮样式: 黑底绿字</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.post-button .btn:hover &#123;</span><br><span class="line">  <span class="attr">color</span>: rgb(<span class="number">136</span>, <span class="number">255</span>, <span class="number">13</span>) !important;</span><br><span class="line">	background-color: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.75</span>); <span class="comment">//black</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="页面底部页码样式"><a href="#页面底部页码样式" class="headerlink" title="页面底部页码样式"></a>页面底部页码样式</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 页面底部页码</span></span><br><span class="line">.pagination .page-number.current &#123;</span><br><span class="line">    border-radius: <span class="number">100</span>%;</span><br><span class="line">    background-color: rgba(<span class="number">50</span>, <span class="number">50</span>, <span class="number">50</span>, <span class="number">0.75</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 页面底部页码, 去除鼠标置于上方时，数字上方的线</span></span><br><span class="line">.pagination .prev, .pagination .next, .pagination .page-number &#123;</span><br><span class="line">    margin-bottom: 10px;</span><br><span class="line">    border: none;</span><br><span class="line">	color: rgb(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 页面底部页码，鼠标置于上方，黑底绿字</span></span><br><span class="line">.page-number:hover,.page-number:active&#123;</span><br><span class="line">	<span class="attr">color</span>: rgb(<span class="number">136</span>, <span class="number">255</span>, <span class="number">13</span>);</span><br><span class="line">  border-radius: <span class="number">100</span>%;</span><br><span class="line">	background-color: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.75</span>); <span class="comment">//black</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改分类页的页面样式"><a href="#修改分类页的页面样式" class="headerlink" title="修改分类页的页面样式"></a>修改分类页的页面样式</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分类&amp;&amp;标签 页面样式</span></span><br><span class="line">.post-block.page &#123;</span><br><span class="line">    margin-top: 40px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 分类页面page</span></span><br><span class="line">.category-all-page &#123;</span><br><span class="line">    box-shadow: 0px 0px 10px 0px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.5</span>);</span><br><span class="line">    background-color: #797D7F;</span><br><span class="line">    padding: 20px 30px 60px 30px;</span><br><span class="line">    border-radius: 25px 25px 25px 25px;</span><br><span class="line">&#125;</span><br><span class="line">.category-all-title &#123;</span><br><span class="line">    font-family: Impact;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">    color: aqua;</span><br><span class="line">&#125;</span><br><span class="line">.category-list &#123;</span><br><span class="line">    <span class="attr">overflow</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line">.category-list li &#123;</span><br><span class="line">    <span class="attr">height</span>: <span class="number">100</span>%;</span><br><span class="line">    float: left;</span><br><span class="line">    border-right: 3px solid #<span class="number">222</span>;</span><br><span class="line">    padding: <span class="number">0</span> 20px;</span><br><span class="line">&#125;</span><br><span class="line">.category-all ul li &#123;</span><br><span class="line">    list-style: none!important;</span><br><span class="line">&#125;</span><br><span class="line">.category-list li:last-child &#123;</span><br><span class="line">    border-right: none;</span><br><span class="line">&#125;</span><br><span class="line">.category-list li a &#123;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">    color: chartreuse;</span><br><span class="line">    font-family: Helvetica, Verdana, sans-serif;</span><br><span class="line">    <span class="comment">// text-transform: uppercase;</span></span><br><span class="line">    -webkit-transition: all <span class="number">0.</span>5s ease;</span><br><span class="line">    -moz-transition: all <span class="number">0.</span>5s ease;</span><br><span class="line">    -o-transition: all <span class="number">0.</span>5s ease;</span><br><span class="line">    -ms-transition: all <span class="number">0.</span>5s ease;</span><br><span class="line">    transition: all <span class="number">0.</span>5s ease;</span><br><span class="line">&#125;</span><br><span class="line">.category-list li a:hover &#123;</span><br><span class="line">    <span class="attr">color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line">.category-list li.active a &#123;</span><br><span class="line">    font-weight: bold;</span><br><span class="line">    color: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改彩色标签页的页面样式"><a href="#修改彩色标签页的页面样式" class="headerlink" title="修改彩色标签页的页面样式"></a>修改彩色标签页的页面样式</h3><p>在 /themes/next/layout/ 目录下，新增 tag-color.swig 文件，填入如下内容:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接覆盖掉源文件</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">     <span class="keyword">var</span> alltags = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;tag-cloud-tags&#x27;</span>);</span><br><span class="line">     <span class="keyword">var</span> tags = alltags[<span class="number">0</span>].getElementsByTagName(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = tags.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       <span class="keyword">var</span> r=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">130</span>);</span><br><span class="line">       <span class="keyword">var</span> g=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">100</span>);</span><br><span class="line">       <span class="keyword">var</span> b=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">75</span>+<span class="number">80</span>);</span><br><span class="line">       tags[i].style.background = <span class="string">&quot;rgb(&quot;</span>+r+<span class="string">&quot;,&quot;</span>+g+<span class="string">&quot;,&quot;</span>+b+<span class="string">&quot;)&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="selector-class">.tag-cloud-tags</span>&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="comment">/*font-family: Helvetica, Tahoma, Arial;*/</span></span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="comment">/*font-weight: 100;*/</span></span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">text-align</span>: center;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">counter-reset</span>: tags;</span></span></span><br><span class="line"><span class="css"><span class="xml">  &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span>&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">padding-right</span>: <span class="number">5px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">padding-left</span>: <span class="number">5px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">    <span class="attribute">margin</span>: <span class="number">8px</span> <span class="number">5px</span> <span class="number">0px</span> <span class="number">0px</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span>:before&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">    content: <span class="string">&quot;🔖&quot;</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml"></span></span></span><br><span class="line"><span class="css"><span class="xml">  <span class="selector-class">.tag-cloud-tags</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>&#123;</span></span></span><br><span class="line"><span class="css"><span class="xml">     <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">15px</span> <span class="number">0px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">4</span>);</span></span></span><br><span class="line"><span class="css"><span class="xml">     <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span></span></span><br><span class="line"><span class="css"><span class="xml">     <span class="comment">/*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/</span></span></span></span><br><span class="line"><span class="css"><span class="xml">     <span class="attribute">transition-duration</span>: <span class="number">0.15s</span>;</span></span></span><br><span class="line"><span class="css"><span class="xml">  &#125;</span></span></span><br><span class="line"><span class="css"><span class="xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>在同级目录的 page.swig 中引入 tag-color.swig</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找一下有没有相识的这一段，有的话覆盖掉，没有就粘贴上去  </span></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;tag-cloud&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 目前共计xxx个标签</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;tag-cloud-title&quot;</span>&gt;</span><br><span class="line">            &#123;&#123; _p(<span class="string">&#x27;counter.tag_cloud&#x27;</span>, site.tags.length) &#125;&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        --&gt;</span><br><span class="line">    </span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;tag-cloud-tags&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          &#123;&#123; tagcloud(&#123;min_font: 10, max_font: 15, amount: 300, color: true, start_color: &#x27;#ccc&#x27;, end_color: &#x27;#111&#x27;&#125;) &#125;&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">+     &#123;% include <span class="string">&#x27;tag-color.swig&#x27;</span> %&#125;</span><br><span class="line">    </span><br><span class="line">    &#123;% elif page.type === <span class="string">&#x27;categories&#x27;</span> %&#125;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;category-all-page&quot;</span>&gt;</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;category-all-title&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">            &#123;&#123; _p(&#x27;counter.categories&#x27;, site.categories.length) &#125;&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;category-all&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          &#123;&#123; list_categories() &#125;&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="去掉博客顶部黑线"><a href="#去掉博客顶部黑线" class="headerlink" title="去掉博客顶部黑线"></a>去掉博客顶部黑线</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去掉博客顶部黑线</span></span><br><span class="line">.headband &#123;<span class="attr">display</span>:none;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="改掉题头颜色"><a href="#改掉题头颜色" class="headerlink" title="改掉题头颜色"></a>改掉题头颜色</h3><p>在themes\next\source\css\main.styl文件最下面添加如下代码即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//改掉题头颜色</span></span><br><span class="line">.site-brand-container &#123;</span><br><span class="line">  <span class="attr">background</span>: ; <span class="comment">//修改为自己喜欢的颜色</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h3><p>可以利用 next 的插件 group picture 来实现，他的原理很简单，就是利用 next 主题的 Tag Plugin 这种语法提供了一种展示图片的布局。</p>
+<p>需要以下几步：</p>
+<p>首先 hexo new page photos 新建一个名为 photos 的标签页，并且在 themes/next/languages/zh-CN.yml 中的 menu 一项下面添加 photos: 相册，这样在首页菜单栏才会显示中文相册。<br>其次，可以直接在 source/photos/index.md 写文章，并在需要插入图片的时候用以下方式来组织你的图片列表：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## 某某地方玩</span><br><span class="line">&#123;% gp <span class="number">6</span>-<span class="number">3</span> %&#125;</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">  ![](<span class="regexp">/images/</span>docs/github.png)</span><br><span class="line">&#123;% endgp %&#125;</span><br><span class="line"></span><br><span class="line">其中 ‘<span class="number">6</span>-<span class="number">3</span>’ 的意思是改组一共有六张图片，每行排最多三张。除了图片之外其他的文字和章节标题都可以像往常一样加</span><br></pre></td></tr></table></figure>
+
+<h3 id="为Next主题添加Valine评论系统，可参考这个"><a href="#为Next主题添加Valine评论系统，可参考这个" class="headerlink" title="为Next主题添加Valine评论系统，可参考这个"></a>为Next主题添加Valine评论系统，<a target="_blank" rel="noopener" href="https://blog.csdn.net/jiunian_2761/article/details/97388997">可参考这个</a></h3><p>….后续更新</p>
+
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="小川 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="小川 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/next7-8/" rel="tag"><i class="fa fa-tag"></i> next7.8</a>
+              <a href="/tags/%E4%B8%BB%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 主题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/07/05/grammar/markdown%E8%AF%AD%E6%B3%95/" rel="prev" title="markdown语法">
+      <i class="fa fa-chevron-left"></i> markdown语法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/08/18/css/%E4%BD%BF%E7%94%A8CSS%E5%B0%86%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2%E6%88%90%E9%BB%91%E7%99%BD(%E7%81%B0%E8%89%B2%E3%80%81%E7%BD%AE%E7%81%B0)/" rel="next" title="使用CSS将图片转换成黑白(灰色、置灰)">
+      使用CSS将图片转换成黑白(灰色、置灰) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AF%E6%88%91%E6%AF%94%E8%BE%83%E5%96%9C%E6%AC%A2%E7%9A%84%E7%BE%8E%E5%8C%96%EF%BC%8C%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88-%E6%A0%B9%E6%8D%AEnext7-8"><span class="nav-number">1.</span> <span class="nav-text">下面是我比较喜欢的美化，亲测有效(根据next7.8)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-7-x-8-x-%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%8F%AF%E5%88%87%E6%8D%A2%E7%9A%84%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">Next 7.x &#x2F; 8.x 自动添加可切换的暗黑模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%98%BE%E7%A4%BA%E5%AD%97%E4%BD%93%E6%95%88%E6%9E%9C"><span class="nav-number">1.2.</span> <span class="nav-text">添加鼠标点击显示字体效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E9%9B%AA%E8%8A%B1%E9%A3%98%E8%90%BD%E6%95%88%E6%9E%9C"><span class="nav-number">1.3.</span> <span class="nav-text">添加网站雪花飘落效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%96%87%E7%AB%A0%E7%BB%93%E6%9D%9F%E2%80%9D%E6%A0%87%E8%AE%B0"><span class="nav-number">1.4.</span> <span class="nav-text">在文章末尾添加“文章结束”标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.5.</span> <span class="nav-text">侧边栏背景设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E8%83%8C%E6%99%AF"><span class="nav-number">1.6.</span> <span class="nav-text">更换背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%80%8F%E6%98%8E%E5%BA%A6%E5%92%8C%E4%B8%AD%E5%BF%83%E6%96%87%E7%AB%A0%E6%A0%8F%E5%8A%A0%E5%9C%86%E8%A7%92"><span class="nav-number">1.7.</span> <span class="nav-text">设置透明度和中心文章栏加圆角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Read-More-%E6%8C%89%E9%92%AE%E6%A0%B7%E5%BC%8F-%E9%BB%91%E5%BA%95%E7%BB%BF%E5%AD%97"><span class="nav-number">1.8.</span> <span class="nav-text">[Read More]按钮样式: 黑底绿字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8%E9%A1%B5%E7%A0%81%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.9.</span> <span class="nav-text">页面底部页码样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%88%86%E7%B1%BB%E9%A1%B5%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.10.</span> <span class="nav-text">修改分类页的页面样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%BD%A9%E8%89%B2%E6%A0%87%E7%AD%BE%E9%A1%B5%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.11.</span> <span class="nav-text">修改彩色标签页的页面样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E5%8D%9A%E5%AE%A2%E9%A1%B6%E9%83%A8%E9%BB%91%E7%BA%BF"><span class="nav-number">1.12.</span> <span class="nav-text">去掉博客顶部黑线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E6%8E%89%E9%A2%98%E5%A4%B4%E9%A2%9C%E8%89%B2"><span class="nav-number">1.13.</span> <span class="nav-text">改掉题头颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%86%8C"><span class="nav-number">1.14.</span> <span class="nav-text">相册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%8F%AF%E5%8F%82%E8%80%83%E8%BF%99%E4%B8%AA"><span class="nav-number">1.15.</span> <span class="nav-text">为Next主题添加Valine评论系统，可参考这个</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小川"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">小川</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>

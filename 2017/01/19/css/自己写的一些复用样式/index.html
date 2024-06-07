@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="自己写的一些复用样式">
+<meta property="og:url" content="http://example.com/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-01-19T09:28:41.000Z">
+<meta property="article:modified_time" content="2023-05-04T15:34:01.843Z">
+<meta property="article:author" content="小川">
+<meta property="article:tag" content="css复用">
+<meta property="article:tag" content="js复用">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>自己写的一些复用样式 | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">68</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小川">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自己写的一些复用样式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-01-19 17:28:41" itemprop="dateCreated datePublished" datetime="2017-01-19T17:28:41+08:00">2017-01-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/" class="post-meta-item leancloud_visitors" data-flag-title="自己写的一些复用样式" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/01/19/css/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%8D%E7%94%A8%E6%A0%B7%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;title&gt;&lt;/title&gt;</span><br><span class="line">        &lt;script src=&quot;js/rem.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script src=&quot;js/jquery-1.11.3.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            *&#123;padding:0;margin:0;&#125;</span><br><span class="line">            //1、确定取消</span><br><span class="line">            .delDiv&#123;width:11.52rem;height:4.48rem;text-align:center;color:#000;background:#F7F7F7;-moz-border-radius:0.555rem;-webkit-border-radius:0.555rem;border-radius:0.555rem;font-size:0.725rem;position: absolute;top:0;left:0;right:0;bottom:0;margin:auto;z-index:10000;&#125;</span><br><span class="line">            .delDiv .delDiv_tip&#123;width:100%;height:2.56rem;line-height:2.56rem;border-bottom:1px solid #e2e2e2;&#125;</span><br><span class="line">            .delDiv .delDiv_info&#123;width:100%;height:1.877rem;line-height:1.877rem;&#125;</span><br><span class="line">            .delDiv .delDiv_info .delDiv_info_left&#123;width:50%;height:1.877rem;text-align:center;float:left;border-right:1px solid #e2e2e2;box-sizing:border-box;&#125;</span><br><span class="line">            .delDiv .delDiv_info .delDiv_info_right&#123;width:50%;height:1.877rem;text-align:center;float:right;&#125;</span><br><span class="line">            .delDiv .delDiv_info .btn-green&#123;border:0;font-size:0.725rem;color:#3A79FF;background:none;outline:none;&#125;</span><br><span class="line">			</span><br><span class="line">            //.mask&#123;width:100%;height:100%;position:absolute;top:0;left:0;z-index:1000;background:#000;opacity:0.4;filter:alpha(opacity=40)&#125;</span><br><span class="line">			</span><br><span class="line">            .expurgate&#123;width:4.48rem;height:2.517rem;line-height:2.517rem;text-align:center;color:#fff;background:#000;opacity:0.8;filter:alpha(opacity=80);-moz-border-radius:0.427rem;-webkit-border-radius:0.427rem;border-radius:0.427rem;font-size:0.683rem;position: absolute;top:0;left:0;right:0;bottom:0;margin:auto;&#125;</span><br><span class="line">            </span><br><span class="line">            //2、确定</span><br><span class="line">            //弹出框</span><br><span class="line">            .popup&#123;width:11.52rem;height:4.48rem;text-align:center;color:#383838;background:#F7F7F7;-moz-border-radius: 0.555rem;-webkit-border-radius: 0.555rem;border-radius: 0.555rem;font-size:0.725rem;position: absolute;top:10rem;left:2.24rem;z-index:2000;&#125;</span><br><span class="line">            .popup .pop_pass&#123;display:table;width:11.52rem;height:2.56rem;border-bottom:1px solid #ccc;box-sizing:border-box;padding:0 1rem;&#125;</span><br><span class="line">            .popup .pop_pass .pass&#123;vertical-align:middle;display:table-cell;text-align:center;width:11.52rem;height:2.56rem;&#125;</span><br><span class="line">            .popup .ok&#123;height:1.92rem;line-height:1.92rem;color:#3A79FF;&#125;</span><br><span class="line">            //遮罩层</span><br><span class="line">            .mask&#123;width:100%;height:100%;position:absolute;top:0;left:0;z-index:1000;background:#000;opacity:0.4;filter:alpha(opacity=40);&#125;</span><br><span class="line">		</span><br><span class="line">            //3、提示框</span><br><span class="line">            .hint&#123;display:table;width:7rem;height:2rem;padding:0.6rem;color:#fff;background:#000;opacity:0.8;filter:alpha(opacity=80);-moz-border-radius:0.427rem;-webkit-border-radius:0.427rem;border-radius:0.427rem;font-size:0.683rem;position: absolute;top:0;left:0;right:0;bottom:0;margin:auto;z-index: 10000;&#125;</span><br><span class="line">            .hint_txt&#123;vertical-align:middle;display:table-cell;text-align:center;width:7rem;height:2rem;&#125;</span><br><span class="line">		</span><br><span class="line">            //4、圆角</span><br><span class="line">            div&#123;-moz-border-radius:0.256rem;-webkit-border-radius:0.256rem;border-radius:0.256rem;&#125;</span><br><span class="line">	</span><br><span class="line">            //5、透明度</span><br><span class="line">            div&#123;opacity:0.3;filter:alpha(opacity=30);&#125; </span><br><span class="line">		</span><br><span class="line">            //6、placeholder颜色改变，字体大小改变</span><br><span class="line">            input:-moz-placeholder,textarea:-moz-placeholder&#123;color:#B5B5B6;font-size:0.64rem;&#125;   </span><br><span class="line">            input:-ms-input-placeholder,textarea:-ms-input-placeholder&#123;color:#B5B5B6;font-size:0.64rem;&#125;   </span><br><span class="line">            input::-webkit-input-placeholder,textarea::-webkit-input-placeholder&#123;color:#B5B5B6;font-size:0.64rem;&#125;</span><br><span class="line">	</span><br><span class="line">            //7、滚动去除卡顿及滚动条</span><br><span class="line">            .wrap&#123;overflow-x:hidden;overflow-y:scroll;-webkit-overflow-scrolling:touch;&#125;</span><br><span class="line">            .wrap::-webkit-scrollbar&#123;display:none;&#125;</span><br><span class="line">	</span><br><span class="line">            //8、水平垂直居中</span><br><span class="line">            div&#123;position: absolute;top:0;left:0;right:0;bottom:0;margin:auto;&#125;</span><br><span class="line">		</span><br><span class="line">            //9、背景渐变效果</span><br><span class="line">            div&#123;</span><br><span class="line">                background:-webkit-linear-gradient(#ffbb18, #ff353f);</span><br><span class="line">                background:-moz-linear-gradient(#ffbb18, #ff353f);</span><br><span class="line">                background:-o-linear-gradient(#ffbb18, #ff353f);</span><br><span class="line">                background:-webkit-gradient(linear, from(#ffbb18), to(#ff353f));</span><br><span class="line">                background:#ffbb18;</span><br><span class="line">                background:linear-gradient(#ffbb18, #ff353f);</span><br><span class="line">            &#125;</span><br><span class="line">		</span><br><span class="line">            //10、引入字体</span><br><span class="line">            @font-face &#123;</span><br><span class="line">                font-family:&#x27;shuweishufa&#x27;;</span><br><span class="line">                src: url(&#x27;fonts/shuweishufa.ttf&#x27;);</span><br><span class="line">            &#125;</span><br><span class="line">            div&#123;</span><br><span class="line">                font-family:&quot;shuweishufa&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            //11、弹性盒布局</span><br><span class="line">        </span><br><span class="line">            //12、swiper轮播图</span><br><span class="line">        </span><br><span class="line">            //13、input框记住账号后背景为白色*/</span><br><span class="line">            input:-webkit-autofill&#123;-webkit-box-shadow: 0 0 0px 1000px white inset;&#125;</span><br><span class="line">        </span><br><span class="line">            //14、selsect框设置下拉按钮</span><br><span class="line">            .sel&#123;width:9rem;height:1.579rem;border:0;outline:none;font-size:0.597rem;background: #fff url(../img/xiala.png) no-repeat right center;background-size:9% 50%;padding-right:0.8rem;&#125;</span><br><span class="line">            </span><br><span class="line">            //15、去除默认样式</span><br><span class="line">            input[type=&quot;button&quot;], </span><br><span class="line">            input[type=&quot;submit&quot;],</span><br><span class="line">            input[type=&quot;reset&quot;],</span><br><span class="line">            input[type=&quot;text&quot;],</span><br><span class="line">            input[type=&quot;tel&quot;],</span><br><span class="line">            select,textarea&#123;-webkit-appearance:none;&#125;</span><br><span class="line">        </span><br><span class="line">            //16、背景全屏显示	</span><br><span class="line">            &#123;margin: 0;padding: 0;&#125;</span><br><span class="line">            html, body &#123;width:100%;height: 100%;overflow: hidden;&#125;</span><br><span class="line">            .cont &#123;height: 100%;height: 100%;background-image:url(&quot;slider-2.jpg&quot;);background-size:cover;overflow:auto;&#125;</span><br><span class="line"></span><br><span class="line">            //17、禁止选中复制	</span><br><span class="line">            .nocopy &#123;-moz-user-select:none;-webkit-user-select:none&#125;</span><br><span class="line"></span><br><span class="line">            //18、文本溢出隐藏</span><br><span class="line">            div&#123;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;&#125;</span><br><span class="line">            </span><br><span class="line">            //19、多行隐藏</span><br><span class="line">            div&#123;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;&#125;		</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">            &lt;div&gt;1234567890&lt;/div&gt;</span><br><span class="line">            &lt;!--1、确定取消--&gt;		</span><br><span class="line">        &lt;!--&lt;div class=&quot;delDiv&quot; style=&quot;display:block;&quot;&gt;</span><br><span class="line">	        &lt;div class=&quot;delDiv_tip&quot;&gt;确认删除该图片吗？&lt;/div&gt;        </span><br><span class="line">	        &lt;div class=&quot;delDiv_info&quot;&gt;</span><br><span class="line">	            &lt;span id=&quot;&quot; class=&quot;delDiv_info_left&quot;&gt;</span><br><span class="line">	                &lt;input id=&quot;btnCancel&quot; type=&quot;button&quot; value=&quot;取 消&quot; class=&quot;btn-green&quot; /&gt;</span><br><span class="line">	            &lt;/span&gt;</span><br><span class="line">	            &lt;span id=&quot;&quot; class=&quot;delDiv_info_right&quot;&gt;</span><br><span class="line">	                &lt;input id=&quot;btnDelTrue&quot; type=&quot;button&quot; value=&quot;确 认&quot; class=&quot;btn-green&quot; /&gt;</span><br><span class="line">	            &lt;/span&gt;             </span><br><span class="line">	        &lt;/div&gt;</span><br><span class="line">	    &lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;expurgate&quot; style=&quot;display: none;&quot;&gt;删除成功&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;mask&quot; style=&quot;display:block;&quot;&gt;&lt;/div&gt;--&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;!--2、确定,不管一行还是两行都是垂直居中--&gt;</span><br><span class="line">		&lt;!--&lt;div class=&quot;popup&quot; style=&quot;display:block;&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;pop_pass&quot;&gt;&lt;p class=&quot;pass&quot;&gt;虚拟购买人数不能大于当前虚拟在线人数1000&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">			&lt;p class=&quot;ok&quot;&gt;确定&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;mask&quot; style=&quot;display:block;&quot;&gt;&lt;/div&gt;--&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;!--3、提示框 ，不管一行还是两行都是垂直居中--&gt;</span><br><span class="line">		&lt;div class=&quot;hint&quot; style=&quot;display: none;&quot;&gt;&lt;p class=&quot;hint_txt&quot;&gt;抢购尚未开始,请注意抢购时间&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;!--13、PC端--&gt;</span><br><span class="line">		&lt;!--&lt;input class=&quot;inp&quot; type=&quot;text&quot; onkeyup=&quot;clearNoNum(this)&quot;&gt;--&gt;</span><br><span class="line">		&lt;!--&lt;script&gt;</span><br><span class="line">			function clearNoNum(obj)&#123;  </span><br><span class="line">				obj.value = obj.value.replace(/[^\d.]/g,&quot;&quot;);  //清除“数字”和“.”以外的字符     </span><br><span class="line">				obj.value = obj.value.replace(/\.&#123;2,&#125;/g,&quot;.&quot;); //只保留第一个. 清除多余的 			</span><br><span class="line">				obj.value = obj.value.replace(/^\./g,&quot;&quot;);   //必须保证第一个为数字而不是. 				</span><br><span class="line">				obj.value = obj.value.replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;);  //保证.只出现一次，而不能出现两次以上		 </span><br><span class="line">				obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,&#x27;$1$2.$3&#x27;);//只能输入两个小数   </span><br><span class="line">				if(obj.value.indexOf(&quot;.&quot;)&lt; 0 &amp;&amp; obj.value !=&quot;&quot;)&#123;//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额  </span><br><span class="line">				 	obj.value= parseFloat(obj.value);  </span><br><span class="line">				&#125;  </span><br><span class="line">			&#125; </span><br><span class="line">		&lt;/script&gt;--&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;!--14、移动端--&gt;				</span><br><span class="line">		&lt;!--&lt;input type=&quot;text&quot; class=&quot;inp&quot; /&gt;	</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			$(&quot;.inp&quot;).bind(&quot;input&quot;,&quot;onpropertychange&quot;,function()&#123;</span><br><span class="line">				$(this).val($(this).val().replace(/[^\d.]/g,&quot;&quot;));</span><br><span class="line">				$(this).val($(this).val().replace(/\.&#123;2,&#125;/g,&quot;.&quot;));</span><br><span class="line">				</span><br><span class="line">				$(this).val($(this).val().replace(/^\./g,&quot;&quot;));</span><br><span class="line">				</span><br><span class="line">				$(this).val($(this).val().replace(&quot;.&quot;,&quot;$#$&quot;).replace(/\./g,&quot;&quot;).replace(&quot;$#$&quot;,&quot;.&quot;)); </span><br><span class="line">				$(this).val($(this).val().replace(/^(\-)*(\d+)\.(\d\d).*$/,&#x27;$1$2.$3&#x27;));</span><br><span class="line">				if($(this).val().indexOf(&quot;.&quot;)&lt; 0 &amp;&amp; $(this).val() !=&quot;&quot;)&#123;</span><br><span class="line">					$(this).val(parseFloat($(this).val()));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)	</span><br><span class="line">		&lt;/script&gt;	--&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!--15、复制按钮，复制input内容--&gt;</span><br><span class="line">	&lt;!--&lt;input type=&quot;text&quot; readonly id=&quot;text&quot; value=&quot;1234566&quot; /&gt;</span><br><span class="line">	&lt;button onclick=&quot;myCopy()&quot;&gt;点击复制文本框内的内容&lt;/button&gt;&lt;br&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		function myCopy()&#123;</span><br><span class="line">			var ele = document.getElementById(&quot;text&quot;);</span><br><span class="line">			ele.select();</span><br><span class="line">			document.execCommand(&quot;Copy&quot;);</span><br><span class="line">			alert(&quot;复制成功&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;	--&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	//1、确定取消	</span><br><span class="line">		$(&quot;#btnDelTrue&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;.delDiv&quot;).hide();</span><br><span class="line">			$(&quot;.mask&quot;).hide();</span><br><span class="line">			/*删除图片*/</span><br><span class="line">			$(&quot;.expurgate&quot;).show(0).delay(1000).hide(0);				</span><br><span class="line">		&#125;)</span><br><span class="line">		$(&quot;#btnCancel&quot;).click(function()&#123;</span><br><span class="line">			$(&quot;.delDiv&quot;).hide();</span><br><span class="line">			$(&quot;.mask&quot;).hide();</span><br><span class="line">		&#125;)</span><br><span class="line">		</span><br><span class="line">	//2、确定</span><br><span class="line">	$(&quot;.ok&quot;).click(function()&#123;</span><br><span class="line">    	$(&quot;.popup&quot;).hide();</span><br><span class="line">        $(&quot;.mask&quot;).hide();</span><br><span class="line">    &#125;)</span><br><span class="line">	</span><br><span class="line">	//3、提示框</span><br><span class="line">	$(&quot;.hint&quot;).show(0).delay(1000).hide(0);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	//16、刷新当前页面</span><br><span class="line">	window.location.reload();</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	//17、判断是否在微信&amp;&amp;安卓上，是底部隐藏，否显示		</span><br><span class="line">//	function is_weixn(id)&#123;</span><br><span class="line">//		var u = navigator.userAgent;</span><br><span class="line">//	    var ua = navigator.userAgent.toLowerCase();    </span><br><span class="line">//	    if((ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;)&amp;&amp;(u.indexOf(&#x27;Android&#x27;)&gt;-1)) &#123;//判断微信终端&amp;&amp;android终端</span><br><span class="line">//	    	var oHeight = $(document).height(); //浏览器当前的高度  </span><br><span class="line">//		    $(window).resize(function()&#123;</span><br><span class="line">//				if($(document).height() &lt; oHeight)&#123;</span><br><span class="line">//		        	$(id).hide();</span><br><span class="line">//				&#125;else&#123;		     </span><br><span class="line">//		    		$(id).show();</span><br><span class="line">//				&#125;</span><br><span class="line">//		    &#125;) </span><br><span class="line">//	    &#125;   </span><br><span class="line">//	&#125;</span><br><span class="line">//	is_weixn(&quot;.btn&quot;);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	//18、滚动条	</span><br><span class="line">//	function scroll()&#123;</span><br><span class="line">//		var myscroll;</span><br><span class="line">//		function loaded()&#123;</span><br><span class="line">//			setTimeout(function()&#123;</span><br><span class="line">//				myscroll=new IScroll(&quot;.wrap&quot;,&#123;</span><br><span class="line">//					click:true,</span><br><span class="line">//				&#125;)</span><br><span class="line">//			&#125;,100);</span><br><span class="line">//		&#125;		</span><br><span class="line">//		window.addEventListener(&quot;load&quot;,loaded,false);</span><br><span class="line">//	&#125;</span><br><span class="line">//	scroll();</span><br><span class="line"></span><br><span class="line">	//19、判断pc还是移动端，公安备号显示与隐藏</span><br><span class="line">//	function goPAGE() &#123;</span><br><span class="line">//	    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) &#123;</span><br><span class="line">//	        $(&quot;.police&quot;).hide(); //移动端</span><br><span class="line">//	    &#125;</span><br><span class="line">//	    else &#123;</span><br><span class="line">//	        $(&quot;.police&quot;).show();//pc端</span><br><span class="line">//	    &#125;</span><br><span class="line">//	&#125;</span><br><span class="line">//	goPAGE();</span><br><span class="line"></span><br><span class="line">	//20、倒计时加零</span><br><span class="line">//  function add_zero(n)&#123;</span><br><span class="line">//      return n &lt; 10 ? &#x27;0&#x27;+ n : n;</span><br><span class="line">//  &#125;</span><br><span class="line"></span><br><span class="line">	//21、on绑定click事件在苹果手机失效的问题</span><br><span class="line">	//方法:&#123;cursor:pointer&#125;苹果有这么个设置,鼠标放上去，能够出现“手”型的图标才被认作可以使用点击事件</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	//22、通过判断浏览器的userAgent，用正则来判断是否是ios和Android客户端	</span><br><span class="line">//	    var u = navigator.userAgent;</span><br><span class="line">//	    var isAndroid = u.indexOf(&#x27;Android&#x27;) &gt; -1 || u.indexOf(&#x27;Adr&#x27;) &gt; -1; //android终端</span><br><span class="line">//	    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端</span><br><span class="line">//	    alert(&#x27;是否是Android：&#x27;+isAndroid);</span><br><span class="line">//	    alert(&#x27;是否是iOS：&#x27;+isiOS);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//23、判断iPhone|iPad|iPod|iOS|Android客户端</span><br><span class="line">//		if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) &#123;  //判断iPhone|iPad|iPod|iOS</span><br><span class="line">    		//alert(navigator.userAgent);  </span><br><span class="line">//   			 window.location.href =&quot;iPhone.html&quot;;</span><br><span class="line">//		&#125; else if (/(Android)/i.test(navigator.userAgent)) &#123;   //判断Android</span><br><span class="line">    		//alert(navigator.userAgent); </span><br><span class="line">//    		window.location.href =&quot;Android.html&quot;;</span><br><span class="line">//		&#125; else &#123;  //pc</span><br><span class="line">//    		window.location.href =&quot;pc.html&quot;;</span><br><span class="line">//		&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//24、点击键盘backspace键清空验证码</span><br><span class="line">		//动态</span><br><span class="line">		$(document).on(&quot;keydown&quot;,&quot;.information_txt&quot;,function(event)&#123;</span><br><span class="line">			event=event||window.event;</span><br><span class="line">		    if (event.keyCode == 8) &#123;	    </span><br><span class="line">		        $(this).val(&quot;&quot;)</span><br><span class="line">		    &#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		//不动态</span><br><span class="line">	//	$(&#x27;.information_txt&#x27;).keydown(function (event) &#123;</span><br><span class="line">	//	    event=event||window.event;</span><br><span class="line">	//	    if (event.keyCode == 8) &#123;	    </span><br><span class="line">	//	        $(this).val(&quot;&quot;)</span><br><span class="line">	//	    &#125;</span><br><span class="line">	//	&#125;);</span><br><span class="line">	</span><br><span class="line">	//25、复选框遍历选中的个数</span><br><span class="line">//	var n=0;</span><br><span class="line">//  for(var i=0; i&lt; $(&quot;.gou&quot;).length;i++)&#123;</span><br><span class="line">//      if($(&quot;.gou&quot;)[i].checked)&#123;</span><br><span class="line">//          n++;</span><br><span class="line">//      &#125;</span><br><span class="line">//  &#125;</span><br><span class="line"></span><br><span class="line">	//26、复选框遍历选中的个数的值</span><br><span class="line">//	for(var j=0; j&lt; $(&quot;.gou&quot;).length;j++)&#123;</span><br><span class="line">//      if($(&quot;.gou&quot;)[j].checked)&#123;</span><br><span class="line">//        var id=$(&quot;.gou&quot;)[j].value;</span><br><span class="line">//      &#125;</span><br><span class="line">//  &#125;</span><br><span class="line"></span><br><span class="line">	//27、复选框遍历选中的个数的值拼成字符串</span><br><span class="line">//	for(var j=0; j&lt; $(&quot;.gou&quot;).length;j++)&#123;</span><br><span class="line">//      if($(&quot;.gou&quot;)[j].checked)&#123;</span><br><span class="line">//          var id=$(&quot;.gou&quot;)[j].value;</span><br><span class="line">//          var s=s+id+&quot;,&quot;;</span><br><span class="line">//      &#125;</span><br><span class="line">//  &#125;</span><br><span class="line">//    var ID=s.substr(0, s.length - 1);//最后一个逗号删除</span><br><span class="line"></span><br><span class="line">	//28、json数据拿取</span><br><span class="line">//	info:&#123;1:&#123;name:&quot;生产管理&quot;,sm_id:[&quot;生产二维码&quot;,&quot;添加商品&quot;]&#125;&#125;</span><br><span class="line">//	 var obj=data.info;</span><br><span class="line">//	 for (i in obj)&#123;</span><br><span class="line">//      console.log(obj);</span><br><span class="line">//       console.log(obj[i]);</span><br><span class="line">//      console.log(obj[i].name);</span><br><span class="line">//      console.log(obj[i].sm_id);</span><br><span class="line">//      var s2=&#x27;&lt;div style=&quot;margin: 10px 0;color: #1aad1a&quot;&gt;&lt;label class=&quot;checkbox-inline&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled checked /&gt;&#x27;+obj[i].name+&#x27;&lt;/label&gt;&lt;/div&gt;&#x27;</span><br><span class="line">//      var arr=obj[i].sm_id;</span><br><span class="line">//      var s3=&#x27;&#x27;;</span><br><span class="line">//      for(var k=0;k&lt;arr.length;k++)&#123;</span><br><span class="line">//          var s3=s3+ &#x27;&lt;label class=&quot;checkbox-inline&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled checked /&gt;&#x27;+arr[k]+&#x27;&lt;/label&gt;&#x27;</span><br><span class="line">//      &#125;</span><br><span class="line">//      $(&quot;.main_ul&quot;).append(&quot;&lt;li class=&#x27;main_li&#x27;&gt;&quot;+s2+&quot;&lt;div style=&#x27;margin-left:40px&#x27;&gt;&quot;+s3+&quot;&lt;/div&gt;&lt;li&gt;&quot;);</span><br><span class="line">//  &#125;</span><br><span class="line">	//29、复选框</span><br><span class="line">//		$(&#x27;.all&#x27;).click(function () &#123;</span><br><span class="line">//	        var id = $(this).attr(&#x27;title&#x27;);</span><br><span class="line">//	        $(&#x27;input[abc=&#x27;+id+&#x27;]&#x27;).prop(&#x27;checked&#x27;,this.checked);</span><br><span class="line">//	    &#125;);</span><br><span class="line">//	    $(&#x27;.gou&#x27;).click(function () &#123;</span><br><span class="line">//	        var num = $(this).attr(&#x27;abc&#x27;);</span><br><span class="line">//	        var n=0;</span><br><span class="line">//	        for(var i=0; i&lt;$(&#x27;input[abc=&#x27;+num+&#x27;]&#x27;).length;i++)&#123;</span><br><span class="line">//	            if($(&#x27;input[abc=&#x27;+num+&#x27;]&#x27;)[i].checked)&#123;</span><br><span class="line">//	                n++;</span><br><span class="line">//	            &#125;</span><br><span class="line">//	        &#125;</span><br><span class="line">//	        if(n&gt;0)&#123;</span><br><span class="line">//	            $(&#x27;input[title=&#x27;+num+&#x27;]&#x27;).prop(&quot;checked&quot;, true);</span><br><span class="line">//	        &#125;else&#123;</span><br><span class="line">//	            $(&#x27;input[title=&#x27;+num+&#x27;]&#x27;).prop(&quot;checked&quot;, false);</span><br><span class="line">//	        &#125;</span><br><span class="line">//	    &#125;);</span><br><span class="line">		//30、每次绑定前先取消上次的绑定防止重复</span><br><span class="line">//		$(&#x27;#sub&#x27;).unbind(&#x27;click&#x27;).click(function () &#123;</span><br><span class="line">//  		...</span><br><span class="line">//		&#125;);</span><br><span class="line">		//31、map</span><br><span class="line">//		$(&quot;p&quot;).append( $(&quot;input&quot;).map(function()&#123;</span><br><span class="line">//    		return $(this).val();</span><br><span class="line">//  	&#125;).get().join(&quot;, &quot;) );</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="小川 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="小川 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/css%E5%A4%8D%E7%94%A8/" rel="tag"><i class="fa fa-tag"></i> css复用</a>
+              <a href="/tags/js%E5%A4%8D%E7%94%A8/" rel="tag"><i class="fa fa-tag"></i> js复用</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/01/17/js/px%E8%BD%ACrem/" rel="prev" title="px转rem">
+      <i class="fa fa-chevron-left"></i> px转rem
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/03/10/mac/Mac%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" rel="next" title="Mac终端命令">
+      Mac终端命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小川"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">小川</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>

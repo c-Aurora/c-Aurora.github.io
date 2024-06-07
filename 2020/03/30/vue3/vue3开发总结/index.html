@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="用到的一些东西">
+<meta property="og:url" content="http://example.com/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-30T12:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-16T06:49:11.970Z">
+<meta property="article:author" content="小川">
+<meta property="article:tag" content="tips">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>用到的一些东西 | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">68</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小川">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用到的一些东西
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-30 20:00:00" itemprop="dateCreated datePublished" datetime="2020-03-30T20:00:00+08:00">2020-03-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue3/" itemprop="url" rel="index"><span itemprop="name">Vue3</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="用到的一些东西" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/30/vue3/vue3%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+<p>1、路由跳转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = useRouter()</span><br><span class="line"></span><br><span class="line">router.push(&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>: &#123;</span><br><span class="line">      <span class="attr">dataPkId</span>: xxx,</span><br><span class="line">      <span class="attr">num</span>: xxx,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>2、ref 与 reactive用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">①、ref</span><br><span class="line"></span><br><span class="line">声明：<span class="keyword">const</span> open = ref(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">使用：ref.value = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">②、reactive</span><br><span class="line"></span><br><span class="line">声明：<span class="keyword">const</span> data = reactive(&#123;</span><br><span class="line">  <span class="attr">formReport</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">queryParams</span>: &#123;</span><br><span class="line">    <span class="attr">pageNum</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">pageSize</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="attr">title</span>: <span class="literal">undefined</span>, </span><br><span class="line">    <span class="attr">level</span>: <span class="literal">undefined</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//弹框规则校验</span></span><br><span class="line">  <span class="attr">rules</span>: &#123;</span><br><span class="line">    <span class="attr">deptId</span>: [&#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请选择xxxx&#x27;</span>, <span class="attr">trigger</span>: [<span class="string">&#x27;blur&#x27;</span>, <span class="string">&#x27;change&#x27;</span>] &#125;],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">使用：<span class="keyword">const</span> &#123; queryParams, formReport, rules &#125; = toRefs(data)  <span class="comment">// 需要用toRefs转一下</span></span><br><span class="line">    queryParams.value.pageNum = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">tips：在模板中不用写.value</span><br></pre></td></tr></table></figure>
+<p>3、elementplus序号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-table-column label=<span class="string">&quot;序号&quot;</span> align=<span class="string">&quot;left&quot;</span> type=<span class="string">&quot;index&quot;</span> width=<span class="string">&quot;70&quot;</span>&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;&#123; scope.$index + 1 + (queryParams.pageNum - 1) * queryParams.pageSize &#125;&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">&lt;/el-table-column&gt;</span><br></pre></td></tr></table></figure>
+<p>4、在setup中写方法,先引用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup name=<span class="string">&#x27;xxx&#x27;</span>&gt;</span><br><span class="line">    <span class="keyword">import</span> &#123; ref, reactive, toRefs, onMounted, onUnmounted &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line">①、方法</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    或</span><br><span class="line">    <span class="keyword">const</span> add = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> getList = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> data = <span class="keyword">await</span> PostApi.getPostPage(queryParams)</span><br><span class="line">            list.value = data.list</span><br><span class="line">            total.value = data.total</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">  </span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            loading.value = <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">②、初始化</span><br><span class="line"></span><br><span class="line">    onMounted(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;)</span><br><span class="line">    或</span><br><span class="line">    直接写在script标签里面最下面 </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>5、根据el-tree树操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">①、给树节点添加disabled属性</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeDisabled</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  data.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    item.disabled = item.type == <span class="string">&#x27;00&#x27;</span> ? <span class="literal">true</span> : <span class="literal">false</span></span><br><span class="line">    <span class="keyword">if</span> (item.children &amp;&amp; item.children !== <span class="literal">null</span> &amp;&amp; item.children.length !== <span class="number">0</span>) &#123;</span><br><span class="line">      changeDisabled(item.children)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> data</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeDisabled(树嵌套的data)</span><br><span class="line"></span><br><span class="line">②、根据树id获取对应的name</span><br><span class="line"></span><br><span class="line"><span class="comment">/** 循环树获取选择的id所对应的对象 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTreeName</span>(<span class="params">id, tree</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; tree.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> ele = tree[i]</span><br><span class="line">    ele.id === id ? (res = ele) : <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> (res) <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> (ele.children &amp;&amp; ele.children.length) &#123;</span><br><span class="line">      res = getTreeName(id, ele.children)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = getTreeName(deptId, deptOptions.value)</span><br><span class="line"></span><br><span class="line">treeObj.value.deptName = obj.label</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>6、watch监听</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/** 监听从详情页面页面跳转回来刷新页面 */</span></span><br><span class="line">watch(</span><br><span class="line">  <span class="function">() =&gt;</span> router.currentRoute.value.path,</span><br><span class="line">  <span class="function">(<span class="params">toPath, fromPath</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//要执行的方法</span></span><br><span class="line">    <span class="keyword">if</span> (fromPath == <span class="string">&#x27;/opinionAnalysis/detail&#x27;</span>) &#123;</span><br><span class="line">      location.reload()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>7、使用 docx-preview 预览word文档流(二进制流)的时候</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; renderAsync &#125; <span class="keyword">from</span> <span class="string">&#x27;docx-preview&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染时候</span></span><br><span class="line"><span class="comment">// const previewContainer = document.getElementById(&#x27;fileShow&#x27;) // 不要用，多个页面预览的时候，预览容易出现白屏</span></span><br><span class="line"><span class="comment">// renderAsync(res.data, previewContainer) //渲染</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 用这个</span></span><br><span class="line">&lt;div ref=<span class="string">&quot;file&quot;</span> id=<span class="string">&quot;fileShow&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="keyword">const</span> file = ref()</span><br><span class="line">renderAsync(res.data, proxy.$refs.file) <span class="comment">//渲染</span></span><br></pre></td></tr></table></figure>
+<p>8、勾选框根据某个状态判断是否勾选</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;el-table-column type=<span class="string">&quot;selection&quot;</span> width=<span class="string">&quot;50&quot;</span> align=<span class="string">&quot;center&quot;</span> :selectable=<span class="string">&quot;checkSelectable&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 勾选框根据反馈状态判断是否勾选</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkSelectable</span>(<span class="params">row</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (row.feedbackState == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>9、复选框转单选框</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单选勾选框 </span></span><br><span class="line"><span class="comment">// &lt;el-table v-loading=&quot;loading&quot; ref=&quot;multipleTableRef&quot; @select=&quot;handlerSelect&quot; :data=&quot;feedbackList&quot; @selection-change=&quot;handleSelectionChange&quot; @row-click=&quot;rowClickHandle&quot; highlight-current-row&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> multipleTableRef = ref() <span class="comment">// 表格ref</span></span><br><span class="line"><span class="keyword">const</span> ids = ref([]) <span class="comment">// 表格多选id集合</span></span><br><span class="line"><span class="keyword">const</span> multiple = ref(<span class="literal">true</span>) <span class="comment">// 多选按钮是否禁用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 反馈弹出框form表单 和 多条件搜索 字段</span></span><br><span class="line"><span class="keyword">const</span> data = reactive(&#123;</span><br><span class="line">  <span class="comment">// 表格勾选数据</span></span><br><span class="line">  <span class="attr">selectCheckList</span>: [],</span><br><span class="line">  <span class="comment">// 多条件搜索</span></span><br><span class="line">  <span class="attr">queryParams</span>: &#123;</span><br><span class="line">    <span class="attr">pageNum</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">pageSize</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="attr">title</span>: <span class="literal">undefined</span>, <span class="comment">// 标题</span></span><br><span class="line">    <span class="attr">level</span>: <span class="literal">undefined</span>, <span class="comment">// 等级</span></span><br><span class="line">   </span><br><span class="line">    <span class="attr">orderByColumn</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="attr">isAsc</span>: <span class="literal">undefined</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//规则校验</span></span><br><span class="line">  <span class="attr">rules</span>: &#123;</span><br><span class="line">    <span class="attr">deptId</span>: [&#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请选择组织机构&#x27;</span>, <span class="attr">trigger</span>: [<span class="string">&#x27;blur&#x27;</span>, <span class="string">&#x27;change&#x27;</span>] &#125;],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; selectCheckList, queryParams, rules &#125; = toRefs(data)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表格某一行的单击事件</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rowClickHandle</span>(<span class="params">row</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> selectData = data.selectCheckList</span><br><span class="line">        multipleTableRef.value.clearSelection()</span><br><span class="line">        <span class="keyword">if</span> (selectData.length == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> [item] = selectData</span><br><span class="line">            <span class="keyword">const</span> shouldSelect = item !== row</span><br><span class="line">            multipleTableRef.value.toggleRowSelection(row, shouldSelect)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            multipleTableRef.value.toggleRowSelection(row, <span class="literal">true</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当用户手动勾选数据行的 Checkbox 时触发的事件</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">handlerSelect</span>(<span class="params">selection, row</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 清除 所有勾选项</span></span><br><span class="line">        multipleTableRef.value.clearSelection()</span><br><span class="line">        <span class="keyword">if</span> (selection.length == <span class="number">0</span>) <span class="keyword">return</span></span><br><span class="line">        multipleTableRef.value.toggleRowSelection(row, <span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">// 当选择项发生变化时会触发该事件</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">handleSelectionChange</span>(<span class="params">selection</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;表格的选中 可以获得当前选中的数据&#x27;</span>, selection)</span><br><span class="line">        data.selectCheckList = selection</span><br><span class="line">        ids.value = selection.map(<span class="function">(<span class="params">item</span>) =&gt;</span> item.userId)</span><br><span class="line">        multiple.value = !selection.length</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// css</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 隐藏全选按钮</span></span><br><span class="line">:<span class="function"><span class="title">deep</span>(<span class="params">.el-table th.el-table__cell:nth-child(<span class="number">1</span>) .cell</span>)</span> &#123;</span><br><span class="line">  <span class="attr">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.circle&#123;</span><br><span class="line">  <span class="attr">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  display: block;</span><br><span class="line">  width: 4px;</span><br><span class="line">  height: 4px;</span><br><span class="line">  background-color: #b82c22;</span><br><span class="line">  border-radius: <span class="number">50</span>%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 筛选</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 覆盖默认的筛选图标样式 */</span></span><br><span class="line">    :<span class="function"><span class="title">deep</span>(<span class="params">.el-table .cell .el-table__column-filter-trigger</span>)</span> &#123;</span><br><span class="line">      <span class="attr">background</span>: url(<span class="string">&#x27;@/assets/icons/svg/filter.svg&#x27;</span>) no-repeat center;</span><br><span class="line">      background-size: contain;</span><br><span class="line">      width: 20px; <span class="comment">/* 自定义宽度 */</span></span><br><span class="line">      height: 20px; <span class="comment">/* 自定义高度 */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当图标被激活时的样式 */</span></span><br><span class="line">    .el-table .cell .el-table__column-filter-trigger.active &#123;</span><br><span class="line">      background-image: url(<span class="string">&#x27;path/to/your/custom-icon-active.png&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>10、数组添加序号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> originalArray = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;cherry&#x27;</span>];</span><br><span class="line"></span><br><span class="line">originalArray.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> <span class="string">`<span class="subst">$&#123;index + <span class="number">1</span>&#125;</span>、<span class="subst">$&#123;item&#125;</span>`</span>)</span><br><span class="line"><span class="comment">// [ &#x27;1、apple&#x27;, &#x27;2、banana&#x27;, &#x27;3、cherry&#x27; ] </span></span><br><span class="line"> </span><br><span class="line">originalArray.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> <span class="string">`<span class="subst">$&#123;index + <span class="number">1</span>&#125;</span>、<span class="subst">$&#123;item&#125;</span>`</span>).join(<span class="string">&#x27; &#x27;</span>) </span><br><span class="line"><span class="comment">// &#x27;1、apple 2、banana 3、cherry&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>11、Vue3 中 使用watch 监听路由中的值 会重复执行多次</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遇到的问题：watch监听路由请求列表数据的时候会重复请求多次，累加请求</span></span><br><span class="line"><span class="comment">// 出现的原因：因为使用了keep-alive；</span></span><br><span class="line"><span class="comment">// 解决的办法：方法一：去掉keep-alive；方法二：在onDeactivated中销毁watch；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> destroyWatch = watch(</span><br><span class="line">	<span class="function">() =&gt;</span> route.query.id,</span><br><span class="line">	<span class="function">(<span class="params">newVal, oldVal</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(newVal)</span><br><span class="line">        getData() <span class="comment">// 这个会请求多次</span></span><br><span class="line">        ....</span><br><span class="line">	&#125;,</span><br><span class="line">	&#123; <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">onDeactivated(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">	destroyWatch()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">....后续更新</span><br></pre></td></tr></table></figure>
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="小川 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="小川 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/tips/" rel="tag"><i class="fa fa-tag"></i> tips</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/27/js/ES6+%E6%96%B0%E7%89%B9%E6%80%A7/" rel="prev" title="ES6+新特性">
+      <i class="fa fa-chevron-left"></i> ES6+新特性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/05/uni-app/uni-app%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="next" title="uni-app开发小程序">
+      uni-app开发小程序 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小川"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">小川</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>

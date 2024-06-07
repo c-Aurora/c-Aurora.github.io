@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题-other(补充中...)">
+<meta property="og:url" content="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-05-22T09:23:59.000Z">
+<meta property="article:modified_time" content="2023-05-24T09:48:32.773Z">
+<meta property="article:author" content="小川">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端面试题-other(补充中...) | 学习笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">学习笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">孜孜不倦，蒸蒸日上</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">68</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="小川">
+      <meta itemprop="description" content="留一片空白，随时浓墨重彩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端面试题-other(补充中...)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-05-22 17:23:59" itemprop="dateCreated datePublished" datetime="2018-05-22T17:23:59+08:00">2018-05-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/" class="post-meta-item leancloud_visitors" data-flag-title="前端面试题-other(补充中...)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+
+   <!--
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>  -->
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/05/22/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98other/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr>
+<span id="more"></span>
+<h3 id="在地址栏里输入一个地址回车会发生那些事情"><a href="#在地址栏里输入一个地址回车会发生那些事情" class="headerlink" title="在地址栏里输入一个地址回车会发生那些事情"></a>在地址栏里输入一个地址回车会发生那些事情</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)将域名进行DNS解析</span><br><span class="line">- 浏览器DNS缓存</span><br><span class="line">- 系统DNS缓存</span><br><span class="line">- 路由器DNS缓存</span><br><span class="line">- 网络运营商的DNS缓存</span><br><span class="line"></span><br><span class="line">(<span class="number">2</span>)Tcp 三次握手</span><br><span class="line">- 客户端发送一个带有SYN（synchronize）标志的数据包给服务端</span><br><span class="line">- 服务端接收成功后，回传一个带有SYN/ACK标志的数据包传递确认信息，表示我收到了</span><br><span class="line">- 客户端再回传一个带有ACK标志的数据包，表示我知道了，握手结束</span><br><span class="line"></span><br><span class="line">(<span class="number">3</span>)发送响应</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>)接受响应</span><br><span class="line"></span><br><span class="line">(<span class="number">5</span>)浏览器解析渲染页面 （也就是浏览器的运行机制）</span><br><span class="line"></span><br><span class="line">(<span class="number">6</span>)Tcp 四次挥手</span><br><span class="line">- 客户端发送一个FIN，用来关闭客户端到服务端的数据传送，客户端进入FIN_WAIT_1状态</span><br><span class="line">- 服务端收到FIN后，发送一个ACK给客户端，确认序号为收到序号+<span class="number">1</span>（与SYN相同，一个FIN占用一个序号），服务端进入CLOSE_WAIT状态</span><br><span class="line">- 服务端发送一个FIN，用来关闭服务端到客户端的数据传送，服务端进入LAST_ACK状态</span><br><span class="line">- 客户端收到FIN后，客户端t进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+<span class="number">1</span>，服务端进入CLOSED状态，完成四次挥手</span><br></pre></td></tr></table></figure>
+<h3 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">浏览器缓存策略分为两种：强缓存和协商缓存，并且缓存策略都是通过设置 HTTP Header 来实现的，强缓存优先于协商缓存进行</span><br><span class="line"></span><br><span class="line">若强制缓存(Expires和Cache-Control)生效则直接使用缓存，不再走协商缓存路线</span><br><span class="line"></span><br><span class="line">若时间已过期则进行协商缓存(Last-Modified / If-Modified-Since和Etag / If-None-Match)</span><br><span class="line"></span><br><span class="line">协商缓存由服务器决定是否使用缓存，若协商缓存失效，那么代表该请求的缓存失效了，返回<span class="number">200</span>，重新返回资源和缓存标识，再存入浏览器缓存中；</span><br><span class="line">生效则返回<span class="number">304</span>，继续使用缓存。</span><br><span class="line"></span><br><span class="line">实际场景应用缓存策略：</span><br><span class="line"></span><br><span class="line"><span class="comment">//不使用缓存资源</span></span><br><span class="line">meta 缓存头设置为禁止缓存</span><br><span class="line">    在 html 的 head 标签中加入下面内容，就可以禁止浏览器读取缓存</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;Cache-Control&quot;</span> content=<span class="string">&quot;no-cache, no-store, must-revalidate&quot;</span> /&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Pragma&quot;</span> <span class="attr">content</span>=<span class="string">&quot;no-cache&quot;</span> /&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Expires&quot;</span> <span class="attr">content</span>=<span class="string">&quot;0&quot;</span> /&gt;</span></span>   </span><br><span class="line"></span><br><span class="line">js、css 加上版本号</span><br><span class="line">    当请求 js、css 的时候，给他们最后加上版本号，浏览器发现版本高了，就自然而然不会读取低版本的缓存了 版本号并不需要改变文件名，只需要在调用 js、css 的时候在最末尾加上?v=<span class="number">1.0</span>即可</span><br><span class="line">    custom.css?v=<span class="number">1.0</span></span><br><span class="line">    main.js?v=<span class="number">2.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//不使用缓存资源</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">频繁变动的资源：将Cache-Control字段设置为no-cache，表示每次请求都要验证资源的有效性</span><br><span class="line">不常变化的资源：Cache-Control: max-age=<span class="number">31536000</span>，将过期时间设置为<span class="number">1</span>年。其实实际上在发送请求的时候会在路径中添加hash来更改url，发起新的请求。</span><br><span class="line">输入url，回车：按照整个缓存机制进行，先走强缓存，再走协商缓存。</span><br><span class="line">浏览器点击刷新按钮或者按F5刷新：发送的请求头带有：Cache-Control:max-age=<span class="number">0</span>，表示不走强制缓存这条路，可以走协商缓存向服务器发起数据请求。</span><br><span class="line">ctrl+F5强制刷新：发送的请求头带有Cache-Control:no-cache ，表示不走缓存这条路。直接向服务器发送新的请求。</span><br><span class="line">浏览器的前进，后退，跳转是直接从缓存里取数据。</span><br><span class="line"></span><br><span class="line">浏览器缓存的好处：</span><br><span class="line">    避免了冗余的数据传输，节省流量；</span><br><span class="line">    加快了用户访问网页的速度；</span><br><span class="line">    减小了服务器的压力</span><br><span class="line"></span><br><span class="line"><span class="comment">//拓展</span></span><br><span class="line">缓存的位置：</span><br><span class="line">service worker:单独的一个线程，用来实现缓存功能；</span><br><span class="line"></span><br><span class="line">memory cache:内存中的缓存；容量小，存储时间短；</span><br><span class="line"></span><br><span class="line">disk cache:硬盘上的缓存，容量大，时效性长；（绝大部分的缓存都来自 Disk Cache，与HTTP的缓存策略有很大的关联）</span><br><span class="line"></span><br><span class="line">缓存过程的分析：</span><br><span class="line">浏览器每次发起请求，都会先在浏览器缓存中查找该请求的结果以及缓存标识。</span><br><span class="line"></span><br><span class="line">如果找不到则向服务器发送请求，拿到请求结果后又会根据资源响应头决定是否将该结果和缓存标识存入浏览器缓存中</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">强缓存</span><br><span class="line">强缓存：客户端再次请求资源时，不会向服务器发送请求，而是直接从缓存中读取资源</span><br><span class="line"></span><br><span class="line">两种实现方式：</span><br><span class="line">（<span class="number">1</span>）Expires方法（设置过期时间）</span><br><span class="line">（<span class="number">2</span>）Cache-Control方法（设置过期时间）</span><br><span class="line">两者同时存在的话，Cache-Control优先级高于Expires；</span><br><span class="line"></span><br><span class="line">协商缓存：</span><br><span class="line">协商缓存：客户端再次请求资源时时，会向服务器发送请求验证当前资源的有效性</span><br><span class="line"></span><br><span class="line">两种实现方法：</span><br><span class="line">（<span class="number">1</span>）Last-Modified（根据文件修改时间来决定是否从缓存取数据）</span><br><span class="line">（<span class="number">2</span>）Etag方法（根据文件内容是否修改来决定是否从缓存取数据）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="HTTP和HTTPS协议的区别"><a href="#HTTP和HTTPS协议的区别" class="headerlink" title="HTTP和HTTPS协议的区别"></a>HTTP和HTTPS协议的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">HTTP  超文本传输协议，信息是明文传输的</span><br><span class="line">HTTPS 则是具有安全性的SSL加密传输协议，比http更安全</span><br><span class="line">HTTPS 协议需要CA证书,费用较高;而HTTP协议不需要</span><br><span class="line"></span><br><span class="line">HTTP  协议端口是<span class="number">80</span>, HTTPS  协议端口是<span class="number">443</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="WebSocket-的应用场景主要有哪些"><a href="#WebSocket-的应用场景主要有哪些" class="headerlink" title="WebSocket 的应用场景主要有哪些"></a>WebSocket 的应用场景主要有哪些</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">即时通信 数据监控 大文件下载</span><br></pre></td></tr></table></figure>
+
+<h2 id="Webpack类"><a href="#Webpack类" class="headerlink" title="Webpack类"></a>Webpack类</h2><h3 id="谈谈你对Webpack的理解（Webpack是什么？）"><a href="#谈谈你对Webpack的理解（Webpack是什么？）" class="headerlink" title="谈谈你对Webpack的理解（Webpack是什么？）"></a>谈谈你对Webpack的理解（Webpack是什么？）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Webpack 是一个 模块打包器，可以分析各个模块的依赖关系，最终打包成bundle静态文件（js、css、jpg）</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Webpack的打包过程-打包原理-构建流程？"><a href="#Webpack的打包过程-打包原理-构建流程？" class="headerlink" title="Webpack的打包过程/打包原理/构建流程？"></a>Webpack的打包过程/打包原理/构建流程？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">初始化：启动构建，读取与合并配置参数，加载plugin,实例化Compiler</span><br><span class="line">编译：从Entry出发，针对每个Module串行调用对应的Loader去翻译文件中的内容，再找到该Module依赖的Module，递归的进行编译处理</span><br><span class="line">输出：将编译后的Module组合成Chunk,将Chunk转换成文件，输出到文件系统中</span><br></pre></td></tr></table></figure>
+
+<h3 id="loader的作用"><a href="#loader的作用" class="headerlink" title="loader的作用"></a>loader的作用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack中的loader是一个函数，主要为了实现源码的转换，所以loader函数会以源码作为参数，比如，将ES6转换为ES5，将less转换为css，然后再将css转换为js，以便能嵌入到html文件中</span><br></pre></td></tr></table></figure>
+<h3 id="有哪些常见的Loader？他们是解决什么问题的？"><a href="#有哪些常见的Loader？他们是解决什么问题的？" class="headerlink" title="有哪些常见的Loader？他们是解决什么问题的？"></a>有哪些常见的Loader？他们是解决什么问题的？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">file-loader：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件</span><br><span class="line">url-loader：和 file-loader 类似，但是能在文件很小的情况下以 base64 的方式把文件内容注入到代码中去</span><br><span class="line">source-map-loader：加载额外的 Source <span class="built_in">Map</span> 文件，以方便断点调试</span><br><span class="line">image-loader：加载并且压缩图片文件</span><br><span class="line">babel-loader：把 ES6 转换成 ES5</span><br><span class="line">css-loader：加载 CSS，支持模块化、压缩、文件导入等特性</span><br><span class="line">style-loader：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS。</span><br><span class="line">eslint-loader：通过 ESLint 检查 JavaScript 代码</span><br></pre></td></tr></table></figure>
+<h3 id="plugin的作用"><a href="#plugin的作用" class="headerlink" title="plugin的作用"></a>plugin的作用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugin是一个类，类中有一个apply()方法，主要用于Plugin的安装，可以在其中监听一些来自编译器发出的事件，在合适的时机做一些事情。</span><br></pre></td></tr></table></figure>
+
+<h3 id="有哪些常见的Plugin？他们是解决什么问题的？"><a href="#有哪些常见的Plugin？他们是解决什么问题的？" class="headerlink" title="有哪些常见的Plugin？他们是解决什么问题的？"></a>有哪些常见的Plugin？他们是解决什么问题的？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">html-webpack-plugin：可以复制一个有结构的html文件，并自动引入打包输出的所有资源（JS/CSS）</span><br><span class="line">clean-webpack-plugin：重新打包自动清空 dist 目录</span><br><span class="line">mini-css-extract-plugin：提取 js 中的 css 成单独文件</span><br><span class="line">optimize-css-assets-webpack-plugin：压缩css</span><br><span class="line">uglifyjs-webpack-plugin：压缩js</span><br><span class="line">commons-chunk-plugin：提取公共代码</span><br><span class="line">define-plugin：定义环境变量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Webpack中Loader和Plugin的区别"><a href="#Webpack中Loader和Plugin的区别" class="headerlink" title="Webpack中Loader和Plugin的区别"></a>Webpack中Loader和Plugin的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、在 webpack 的 watch 模式下，文件系统中某一个文件发生修改，webpack 监听到文件变化，根据配置文件对模块重新编译打包，并将打包后的代码通过简单的 JavaScript 对象保存在内存中。</span><br><span class="line"><span class="number">2</span>、webpack-dev-server 和 webpack 之间的接口交互，而在这一步，主要是 dev-server 的中间件webpack-dev-middleware 和 webpack 之间的交互，webpack-dev-middleware 调用 webpack 暴露的 API对代码变化进行监控，并且告诉 webpack，将代码打包到内存中。</span><br><span class="line"><span class="number">3</span>、webpack-dev-server 对文件变化的一个监控，这一步不同于第一步，并不是监控代码变化重新打包。当我们在配置文件中配置了devServer.watchContentBase 为 <span class="literal">true</span> 的时候，Server 会监听这些配置文件夹中静态文件的变化，变化后会通知浏览器端对应用进行 live reload。注意，这儿是浏览器刷新，和 HMR 是两个概念</span><br><span class="line"><span class="number">4</span>、webpack-dev-server 代码的工作，该步骤主要是通过 sockjs（webpack-dev-server 的依赖）在浏览器端和服务端之间建立一个 websocket 长连接，将 webpack 编译打包的各个阶段的状态信息告知浏览器端，</span><br><span class="line">同时也包括第三步中 Server 监听静态文件变化的信息。浏览器端根据这些 socket 消息进行不同的操作。当然服务端传递的最主要信息还是新模块的 hash 值，后面的步骤根据这一 hash 值来进行模块热替换。</span><br><span class="line">webpack-dev-server/client 端并不能够请求更新的代码，也不会执行热更模块操作，而把这些工作又交回给了 webpack，webpack/hot/dev-server 的工作就是根据 webpack-dev-server/client 传给它的信息以及 dev-server 的配置决定是刷新浏览器呢还是进行模块热更新。当然如果仅仅是刷新浏览器，也就没有后面那些步骤了。HotModuleReplacement.runtime 是客户端 HMR 的中枢，它接收到上一步传递给他的新模块的 hash 值，它通过 JsonpMainTemplate.runtime 向 server 端发送 Ajax 请求，服务端返回一个 json，该 json 包含了所有要更新的模块的 hash 值，获取到更新列表后，该模块再次通过 jsonp 请求，获取到最新的模块代码。</span><br><span class="line"><span class="number">5</span>、决定 HMR 成功与否的关键步骤，在该步骤中，HotModulePlugin 将会对新旧模块进行对比，决定是否更新模块，在决定更新模块后，检查模块之间的依赖关系，更新模块的同时更新模块间的依赖引用。最后一步，当 HMR 失败后，回退到 live reload 操作，也就是进行浏览器刷新来获取最新打包代码。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="如何解决循环依赖问题"><a href="#如何解决循环依赖问题" class="headerlink" title="如何解决循环依赖问题"></a>如何解决循环依赖问题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Webpack 中将 <span class="built_in">require</span> 替换为 webpack_require，会根据 moduleId 到 installedModules 找是否加载过，加载过则直接返回之前的 <span class="keyword">export</span>，不会重复加载</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="如何提高Webpack构建速度"><a href="#如何提高Webpack构建速度" class="headerlink" title="如何提高Webpack构建速度"></a>如何提高Webpack构建速度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">组件懒加载、路由懒加载、开启gzip、公共的第三方包上cdn、配置include/exclude缩小Loader对文件的搜索范围、配置cache缓存Loader对文件的编译副本、配置resolve提高文件的搜索速度（@: src）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Git代码冲突怎么处理"><a href="#Git代码冲突怎么处理" class="headerlink" title="Git代码冲突怎么处理"></a>Git代码冲突怎么处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">一、暂存到暂存区，更新后，从暂存区取出合并解决冲突</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>、git pull 出现冲突后可以暂存本地修改git stash</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>、然后git pull 更新代码</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>、git stash list 可查看暂存记录列表</span><br><span class="line"></span><br><span class="line">    <span class="number">4</span>、释放本地暂存 git stash apply stash@&#123;<span class="number">0</span>&#125; 就是刚才保存的标记</span><br><span class="line"></span><br><span class="line">    <span class="number">5</span>、出现冲突文件，找到并解决</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span>、然后可以提交git add . 加入索引库</span><br><span class="line"></span><br><span class="line">    <span class="number">7</span>、然后本地提交git commit -m <span class="string">&#x27;注释&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="number">8</span>、最后git push到远程</span><br><span class="line">二、更新发现冲突，提交本地，再更新，找到冲突地方解决后，再次提交推送远程</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>、git pull更新代码，发现error: Your local changes to the following files would be overwritten by merge:pom.xmlPlease commit your changes or stash them before you merge.这说明你的pom.xml与远程有冲突，你需要先提交本地的修改然后更新。</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>、git add pom.xml</span><br><span class="line"></span><br><span class="line">       git commit -m <span class="string">&#x27;冲突解决&#x27;</span></span><br><span class="line"></span><br><span class="line">       提交本地的pom.xml文件，不进行推送远程</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>、git pull</span><br><span class="line"></span><br><span class="line">        更新代码Auto-merging pom.xmlCONFLICT (content): Merge conflict <span class="keyword">in</span> pom.xmlAutomatic merge failed; fix conflicts and then commit the result.更新后你的本地分支上会出现 (develop|MERGING)类似这种标志。</span><br><span class="line"></span><br><span class="line">    <span class="number">4</span>、找到你本地的test.txt文件，并打开你会在文件中发现&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ，======= ，&gt;&gt;&gt;&gt;&gt;&gt;&gt; ae24sgwmfp2m2ojr2jaagwhhfawe2类似这样的标记。</span><br><span class="line">    &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD和=======中间的是你自己的代码， ======= 和&gt;&gt;&gt;&gt;&gt;&gt;&gt;中间的是其他人修改的代码自己确定保留那一部分代码，最后删除&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD ，======= ，&gt;&gt;&gt;&gt;&gt;&gt;&gt;这种标志。</span><br><span class="line">    <span class="number">5</span>、git add test.txt &amp;&amp; git commit -m <span class="string">&#x27;冲突解决结束&#x27;</span>  再次将本地的test.txt文件提交。</span><br><span class="line"></span><br><span class="line">    <span class="number">6</span>、git push将解决冲突后的文件推送到远程。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="echarts"><a href="#echarts" class="headerlink" title="echarts"></a>echarts</h2><h3 id="echarts问题"><a href="#echarts问题" class="headerlink" title="echarts问题"></a>echarts问题</h3><p>VUE引用和使用echarts4/echarts5的差别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、echarts引用区别</span><br><span class="line"><span class="attr">v4</span>:</span><br><span class="line">    <span class="keyword">import</span> echarts <span class="keyword">from</span> <span class="string">&#x27;echarts&#x27;</span></span><br><span class="line">    Vue.prototype.$echarts = echarts</span><br><span class="line"><span class="attr">v5</span>:</span><br><span class="line">    <span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">&#x27;echarts&#x27;</span></span><br><span class="line">    Vue.prototype.$echarts = echarts</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h2><h3 id="WebSocket即时通讯"><a href="#WebSocket即时通讯" class="headerlink" title="WebSocket即时通讯"></a>WebSocket即时通讯</h3><p>要实现客户端与服务器端的通信，最常接触的是http（https）协议，http通信只能是客户端发起请求，服务器响应。服务器不能主动向客户端传递消息。<br>HTTP 协议无法做到服务器主动向客户端推送信息，2008年诞生的WebSocket 协议可以实现客户端与服务器端的双向对话，即：服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">WebSocket 协议的底层协议也是TCP协议</span><br><span class="line"></span><br><span class="line">WebSocket 协议的标识符为ws,加密后为wss</span><br><span class="line"></span><br><span class="line">WebSocket 协议没有同源限制，即WebSocket 协议可以跨域通信</span><br><span class="line"></span><br><span class="line">WebSocket 协议是有状态的，是前后端交互的长连接，即建立连接后可以保持连接状态，通信时可以省略部分状态信息</span><br><span class="line"></span><br><span class="line">WebSocket 协议可以发送文本，也可以发送二进制数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">建立WebSocket 连接，我们要知道 WebSocket 在前端工程 支持 <span class="number">4</span>种属性</span><br><span class="line"></span><br><span class="line">OnOpen 【建立连接】</span><br><span class="line">OnClose 【关闭连接】</span><br><span class="line">OnError 【错误信息】</span><br><span class="line">OnMessage 【接收处理】</span><br><span class="line"></span><br><span class="line">后端的WebSocket 支持五种：</span><br><span class="line"></span><br><span class="line">OnOpen 【建立连接】</span><br><span class="line">OnClose 【关闭连接】</span><br><span class="line">OnError 【错误信息】</span><br><span class="line">OnMessage 【连接处理】</span><br><span class="line">connection 【信息处理函数】</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">客户端实现</span><br><span class="line">    客户端可以通过WebSocket 构造函数创建WebSocket 对象创建和管理 WebSocket 连接，并通过该连接发送和接收数据的 API</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="title">created</span>(<span class="params"></span>)</span> &#123; </span><br><span class="line">    <span class="comment">// 页面创建 生命周期函数              </span></span><br><span class="line">    <span class="built_in">this</span>.initWebSocket()        </span><br><span class="line">&#125;,        </span><br><span class="line"><span class="attr">destroyed</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">	<span class="comment">// 页面销毁生命周期函数              </span></span><br><span class="line">	<span class="built_in">this</span>.websocketclose();        </span><br><span class="line">&#125;, </span><br><span class="line"><span class="attr">methods</span>: &#123;            </span><br><span class="line">	<span class="attr">initWebSocket</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;                </span><br><span class="line">		<span class="comment">// WebSocket与普通的请求所用协议有所不同，ws等同于http，wss等同于https                </span></span><br><span class="line">		<span class="built_in">this</span>.websock = <span class="keyword">new</span> WebSocket(<span class="string">&quot;ws://127.0.0.1:9007/websocket&quot;</span>);                </span><br><span class="line">		<span class="built_in">this</span>.websock.onopen = <span class="built_in">this</span>.websocketonopen;                </span><br><span class="line">		<span class="built_in">this</span>.websock.onerror = <span class="built_in">this</span>.websocketonerror;                </span><br><span class="line">		<span class="built_in">this</span>.websock.onmessage = <span class="built_in">this</span>.websocketonmessage;                </span><br><span class="line">		<span class="built_in">this</span>.websock.onclose = <span class="built_in">this</span>.websocketclose;              </span><br><span class="line">	&#125;,              </span><br><span class="line">	<span class="attr">websocketonopen</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;                </span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;WebSocket连接成功...&quot;</span>);              </span><br><span class="line">	&#125;,              </span><br><span class="line">	<span class="attr">websocketonerror</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;                </span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;WebSocket连接发生错误...&quot;</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(e)              </span><br><span class="line">	&#125;,              </span><br><span class="line">	<span class="attr">websocketonmessage</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;                </span><br><span class="line">		<span class="built_in">console</span>.log(e.data);</span><br><span class="line">		<span class="keyword">var</span> alarm = <span class="built_in">JSON</span>.parse(e.data)</span><br><span class="line">		<span class="built_in">console</span>.log(alarm.alarmName)</span><br><span class="line">		<span class="keyword">if</span> (e.data !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">			<span class="built_in">this</span>.onlineUser = e.data</span><br><span class="line">		&#125;         </span><br><span class="line">	&#125;,              </span><br><span class="line">	<span class="attr">websocketclose</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;                </span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&quot;connection closed (&quot;</span> + e.code + <span class="string">&quot;)&quot;</span>);              </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="前端支付功能实现（如何唤起支付页面）"><a href="#前端支付功能实现（如何唤起支付页面）" class="headerlink" title="前端支付功能实现（如何唤起支付页面）"></a>前端支付功能实现（如何唤起支付页面）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">判断用户所属环境，根据环境不同，执行不同的支付程序</span><br><span class="line"><span class="keyword">if</span> (<span class="regexp">/MicroMessenger/</span>.test(<span class="built_in">window</span>.navigator.userAgent)) &#123;</span><br><span class="line">    <span class="comment">// alert(&#x27;微信&#x27;);</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="regexp">/AlipayClient/</span>.test(<span class="built_in">window</span>.navigator.userAgent)) &#123;</span><br><span class="line">    <span class="comment">//alert(&#x27;支付宝&#x27;);</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//alert(&#x27;其他浏览器&#x27;);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>、在H5中唤起微信支付和支付宝支付</span><br><span class="line"><span class="comment">//微信支付</span></span><br><span class="line">H5页面调起微信支付有两种办法，</span><br><span class="line">一是利用内置接口(WeixinJSBridge)，二是通过引用微信的js sdk(使用wx.chooseWXpay()调起支付页面),从写法上来看用内置对象方法比较简单</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>)内置接口(WeixinJSBridge),在从后台拿到签名、时间戳这些数据后，直接调用微信浏览器提供的内置接口WeixinJSBridge即可完成支付功能。</span><br><span class="line"><span class="function"><span class="title">getRequestPayment</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">onBridgeReady</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        WeixinJSBridge.invoke(</span><br><span class="line">            <span class="string">&quot;getBrandWCPayRequest&quot;</span>, &#123;</span><br><span class="line">                <span class="string">&quot;appId&quot;</span>: data.appId, <span class="comment">//公众号ID，由商户传入     </span></span><br><span class="line">                <span class="string">&quot;timeStamp&quot;</span>: data.timeStamp, <span class="comment">//时间戳，自1970年以来的秒数     </span></span><br><span class="line">                <span class="string">&quot;nonceStr&quot;</span>: data.nonceStr, <span class="comment">//随机串     </span></span><br><span class="line">                <span class="string">&quot;package&quot;</span>: data.package,</span><br><span class="line">                <span class="string">&quot;signType&quot;</span>: data.signType, <span class="comment">//微信签名方式：     </span></span><br><span class="line">                <span class="string">&quot;paySign&quot;</span>: data.paySign <span class="comment">//微信签名 </span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">                alert(<span class="built_in">JSON</span>.stringify(res));</span><br><span class="line">                <span class="comment">// get_brand_wcpay_request</span></span><br><span class="line">                <span class="keyword">if</span> (res.err_msg == <span class="string">&quot;get_brand_wcpay_request:ok&quot;</span>) &#123;</span><br><span class="line">                    <span class="comment">// 使用以上方式判断前端返回,微信团队郑重提示：</span></span><br><span class="line">                    <span class="comment">//res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> WeixinJSBridge == <span class="string">&quot;undefined&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">document</span>.addEventListener) &#123;</span><br><span class="line">            <span class="built_in">document</span>.addEventListener(</span><br><span class="line">                <span class="string">&quot;WeixinJSBridgeReady&quot;</span>,</span><br><span class="line">                onBridgeReady,</span><br><span class="line">                <span class="literal">false</span></span><br><span class="line">            );</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.attachEvent) &#123;</span><br><span class="line">            <span class="built_in">document</span>.attachEvent(<span class="string">&quot;WeixinJSBridgeReady&quot;</span>, onBridgeReady);</span><br><span class="line">            <span class="built_in">document</span>.attachEvent(<span class="string">&quot;onWeixinJSBridgeReady&quot;</span>, onBridgeReady);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        onBridgeReady();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// wxPay(userId,Id,grade_id)&#123;//发起请求，参数：价格、id、商品id、等自己写的方法，点击微信支付按钮调用&lt;br&gt;</span></span><br><span class="line"><span class="comment">//  $.ajax(&#123;</span></span><br><span class="line"><span class="comment">//    type: &quot;post&quot;,</span></span><br><span class="line"><span class="comment">//    url: URLS.WXPAY_URL,//后端给的接口</span></span><br><span class="line"><span class="comment">//    data: &#123;id: Id,user_id:userId,grade_id:grade_id&#125;,//传递后端需要的参数id什么的</span></span><br><span class="line"><span class="comment">//    success: function (res) &#123;</span></span><br><span class="line"><span class="comment">//            var resData = JSON.parse(res);//先转换一下格式&lt;br&gt;                               </span></span><br><span class="line"><span class="comment">//            window.location.href = resData.data //直接跳转到接口返回来的支付链接</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"><span class="comment">//  &#125;)</span></span><br><span class="line"><span class="comment">// &#125;,</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//支付宝支付</span></span><br><span class="line">支付宝支付相对于微信来说，前端这块工作更简单 ，后台会返回给前端一个form表单，我们要做的就是把这个表单进行提交(唤起支付宝)即可</span><br><span class="line"><span class="function"><span class="title">AliPay</span>(<span class="params">userId,Id,grade_id</span>)</span>&#123;<span class="comment">//自己写的点击事件，点击支付宝支付按钮调用</span></span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;post&quot;</span>,</span><br><span class="line">        <span class="attr">url</span>: URLS.ALIPAY_URL,<span class="comment">//后端给的支付宝支付请求接口</span></span><br><span class="line">        <span class="attr">data</span>: &#123;<span class="attr">id</span>: Id,<span class="attr">user_id</span>:userId,<span class="attr">grade_id</span>:grade_id&#125;,<span class="comment">//需要的参数</span></span><br><span class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> resData = <span class="built_in">JSON</span>.parse(res);<span class="comment">//转换一下格式 </span></span><br><span class="line">            <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)<span class="comment">//后端返回的数据类似一个form表单，创建一个div后执行表单的submit就OK了</span></span><br><span class="line">            div.id = <span class="string">&#x27;alipay&#x27;</span></span><br><span class="line">            div.innerHTML = resData.data</span><br><span class="line">            <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#alipay&#x27;</span>).children[<span class="number">0</span>].submit() <span class="comment">// 执行后会唤起支付宝</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// this.$api.alipayPay(data).then((res) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//     // console.log(&#x27;支付宝参数&#x27;, res.data)</span></span><br><span class="line"><span class="comment">//     if (res.code == 200) &#123;</span></span><br><span class="line"><span class="comment">//         var resData =res.data</span></span><br><span class="line"><span class="comment">//         const div = document.createElement(&#x27;div&#x27;)</span></span><br><span class="line"><span class="comment">//         div.id = &#x27;alipay&#x27;</span></span><br><span class="line"><span class="comment">//         div.innerHTML = resData</span></span><br><span class="line"><span class="comment">//         document.body.appendChild(div)</span></span><br><span class="line"><span class="comment">//         document.querySelector(&#x27;#alipay&#x27;).children[0].submit() // 执行后会唤起支付宝</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &#125;).catch((err) =&gt; &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、uniapp支付之微信支付和支付宝支付</span><br><span class="line">uni.requestPayment</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="支付如何用户重复点击"><a href="#支付如何用户重复点击" class="headerlink" title="支付如何用户重复点击"></a>支付如何用户重复点击</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、防抖</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、变量控制</span><br><span class="line">在按钮点击事件处理函数中，可以使用变量来控制按钮是否可以被点击。当按钮被点击后，设置变量为 <span class="literal">true</span>，在事件处理函数执行完毕后再将其设置为 <span class="literal">false</span>。这样可以防止用户重复点击按钮</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> buttonClicked = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (buttonClicked) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  buttonClicked = <span class="literal">true</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 执行其他代码...</span></span><br><span class="line">  </span><br><span class="line">  buttonClicked = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、禁用按钮</span><br><span class="line">在按钮点击事件处理函数中，可以将按钮设置为禁用状态，防止用户重复点</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> button = event.target;</span><br><span class="line">  button.disabled = <span class="literal">true</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 执行其他代码...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、使用定时器</span><br><span class="line">在按钮点击事件处理函数中，可以使用定时器延迟一段时间后再次启用按钮。这样可以确保用户不会在按钮被禁用期间重复点击</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> button = event.target;</span><br><span class="line">  button.disabled = <span class="literal">true</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 在 2 秒后启用按钮</span></span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    button.disabled = <span class="literal">false</span>;</span><br><span class="line">  &#125;, <span class="number">2000</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 执行其他代码...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后端返回大量数据到前端，前端如何展示-像地图热点图"><a href="#后端返回大量数据到前端，前端如何展示-像地图热点图" class="headerlink" title="后端返回大量数据到前端，前端如何展示(像地图热点图)"></a>后端返回大量数据到前端，前端如何展示(像地图热点图)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">普通</span><br><span class="line"><span class="number">1</span>、防抖节流</span><br><span class="line">该防抖函数可以实现 <span class="built_in">this</span>指向，参数，立即执行，取消功能，返回值</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, delay, immediate = <span class="literal">false</span>,resultCall</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> isInvoke = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="literal">null</span>;<span class="comment">//返回给元素的真正函数</span></span><br><span class="line">    <span class="keyword">const</span> _debounce = <span class="function"><span class="keyword">function</span> (<span class="params">...args</span>) </span>&#123;<span class="comment">//取消上一次的操作</span></span><br><span class="line">        <span class="keyword">if</span> (timer) <span class="built_in">clearTimeout</span>(timer);<span class="comment">//如果是第一次执行或者已经执行完的，采取立即执行</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (immediate &amp;&amp; !isInvoke) &#123;</span><br><span class="line">            result =fn.apply(<span class="built_in">this</span>, args);</span><br><span class="line">            <span class="keyword">if</span>(resultCall)&#123;</span><br><span class="line">                resultCall(result)</span><br><span class="line">            &#125;</span><br><span class="line">            isInvoke = <span class="literal">true</span>;&#125;<span class="comment">//开启防抖</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;<span class="comment">//执行真正的函数</span></span><br><span class="line">                result =fn.apply(<span class="built_in">this</span>, args);</span><br><span class="line">                <span class="keyword">if</span>(resultCall)&#123;</span><br><span class="line">                    resultCall(result)</span><br><span class="line">                &#125;</span><br><span class="line">                isInvoke = <span class="literal">false</span>;</span><br><span class="line">            &#125;, delay);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//取消事件</span></span><br><span class="line">    _debounce.cancel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (timer) <span class="built_in">clearTimeout</span>(timer);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> _debounce;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">该节流函数可以实现 <span class="built_in">this</span>指向，参数，立即执行，取消功能，返回值</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, interval, options = &#123; leading: <span class="literal">true</span>, trailing: <span class="literal">false</span> &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 1.记录上一次的开始时间</span></span><br><span class="line">    <span class="comment">//leading记录要不要第一次触发,即要不要同步执行</span></span><br><span class="line">    <span class="comment">//trailing记录要不要进行定时器触发</span></span><br><span class="line">    <span class="keyword">const</span> &#123; leading, trailing &#125; = optionslet </span><br><span class="line">    lastTime = 0<span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">    <span class="comment">// 2.事件触发时, 真正执行的函数</span></span><br><span class="line">    <span class="keyword">const</span> _throttle = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 2.1.获取当前事件触发时的时间</span></span><br><span class="line">        <span class="keyword">const</span> nowTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()<span class="comment">//要不要同步执行</span></span><br><span class="line">        <span class="keyword">if</span> (!lastTime &amp;&amp; !leading) lastTime = nowTime</span><br><span class="line">        <span class="comment">// 2.2.使用当前触发的时间和之前的时间间隔以及上一次开始的时间, 计算出还剩余多长事件需要去触发函数</span></span><br><span class="line">        <span class="keyword">const</span> remainTime = interval - (nowTime - lastTime)</span><br><span class="line">        <span class="keyword">if</span> (remainTime &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">                <span class="built_in">clearTimeout</span>(timer)timer = <span class="literal">null</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 2.3.真正触发函数</span></span><br><span class="line">            fn.apply(<span class="built_in">this</span>, args)</span><br><span class="line">            <span class="comment">// 2.4.保留上次触发的时间</span></span><br><span class="line">            lastTime = nowTimereturn</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (trailing &amp;&amp; !timer) &#123;</span><br><span class="line">            timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">                timer = nulllastTime = !leading ? <span class="number">0</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()</span><br><span class="line">                fn.apply(<span class="built_in">this</span>, args)&#125;</span><br><span class="line">            , remainTime)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    _throttle.cancel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(timer) <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        timer = nulllastTime = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _throttle</span><br><span class="line">&#125; </span><br><span class="line"><span class="number">2</span>、分页处理</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、懒加载</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、定时处理</span><br><span class="line">当我们接受到成千上万的数据要进行渲染时，可能较多的人会使用setTineout来作为定时器，通过分块的方式定时渲染。 但使用 _requestAnimationFrame_的效果是会比 <span class="built_in">setTimeout</span> 的性能更好，因为使用前者的时候浏览器会帮我们进行处理优化，在最优的时候进行调用，而不是像后者设置一个时间。</span><br><span class="line"></span><br><span class="line">另外，让我们往一个dom节点插入数据的时候，我们<span class="number">99</span>%都会使用<span class="built_in">document</span>.createELement,但是如果在该场景下，你插入一条数据都会造成DOM树的重新渲染，当插入的元素多时会造成没必要的开销。但是我们可以使用<span class="built_in">document</span>.Fragment来使用，它就像vue里面的template后者react的&lt;&gt;&lt;/&gt;，不是一个真实的元素标签。</span><br><span class="line"></span><br><span class="line">与_createElement_相比，它最大的好处就是不会触发DOM树的重新渲染，且不会对性能造成影响。因为所有的节点会被_一次性_插入到文档中，所以仅会发生一个重渲染的操作，而不是每个节点分别被插入到文档中从而发生多次重渲染的操作</span><br><span class="line"></span><br><span class="line">&lt;ul id=<span class="string">&quot;list&quot;</span>&gt;&lt;/ul&gt;</span><br><span class="line">      </span><br><span class="line"><span class="keyword">const</span> total = <span class="number">10000</span>;</span><br><span class="line"><span class="keyword">const</span> num = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">const</span> times = <span class="built_in">Math</span>.ceil(total / num);</span><br><span class="line"><span class="keyword">let</span> currentNums = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&quot;#list&quot;</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> frag = <span class="keyword">new</span> DocumentFragment();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> li = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">        li.innerHTML = <span class="built_in">Math</span>.floor(i + currentNums * num);</span><br><span class="line">        frag.appendChild(li);</span><br><span class="line">    &#125;</span><br><span class="line">    currentNums++;</span><br><span class="line">    ul.appendChild(frag);</span><br><span class="line">    <span class="keyword">if</span> (currentNums &lt; times) &#123;</span><br><span class="line">        <span class="built_in">window</span>.requestAnimationFrame(add);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.requestAnimationFrame(add); </span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、想全部展示，还不分页(例如热力图之类的)</span><br><span class="line">MapVGL，是一款基于WebGL的地理信息可视化库，可以用来展示大量基于3D的地理信息点线面数据</span><br></pre></td></tr></table></figure>
+<h3 id="ios开发H5页面怎么结合的-交互方法"><a href="#ios开发H5页面怎么结合的-交互方法" class="headerlink" title="ios开发H5页面怎么结合的 交互方法"></a>ios开发H5页面怎么结合的 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fec29596b8e7">交互方法</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">APP 可以通过 WebView 组件来嵌入 H5 页面。WebView 是一种原生组件，可以在 APP 中加载网页，并支持与网页的交互。</span><br><span class="line"></span><br><span class="line">在 Android 中，可以使用 Android 的 WebView 组件，</span><br><span class="line"></span><br><span class="line">在 iOS 中，可以使用 iOS 的 UIWebView 或者 WKWebView 组件。</span><br><span class="line"></span><br><span class="line">将 H5 页面嵌入 APP 中的一般流程如下：</span><br><span class="line"></span><br><span class="line">在 APP 中创建 WebView 组件，并将其放置在需要显示 H5 页面的位置。使用 WebView 的 loadUrl() 方法加载 H5 页面的 URL 地址。也可以使用 loadData() 方法加载页面的 HTML 内容。在 H5 页面中添加相应的 JavaScript 代码，通过 WebView 提供的接口来与 APP 进行交互。在 APP 中注册 JavaScript 接口，以便 H5 页面中的 JavaScript 代码可以调用。</span><br><span class="line"></span><br><span class="line">在 Android 中，可以使用 addJavascriptInterface() 方法注册接口；</span><br><span class="line"></span><br><span class="line">在 iOS 中，可以使用 WKWebView 的 WKScriptMessageHandler 接口。</span><br><span class="line"></span><br><span class="line">在 H5 页面中通过 JavaScript 接口调用 APP 提供的方法，实现与 APP 的交互</span><br></pre></td></tr></table></figure>
+<h3 id="elementui的表格嵌套表单内及校验-复杂表格校验"><a href="#elementui的表格嵌套表单内及校验-复杂表格校验" class="headerlink" title="elementui的表格嵌套表单内及校验(复杂表格校验)"></a>elementui的表格嵌套表单内及校验(复杂表格校验)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line">因为el-form是最外层的，所以formData是个对象，对象里放el-table用到的数组和rules</span><br><span class="line">这样定义是为了校验时用到rules</span><br><span class="line"></span><br><span class="line">el-form绑定: rules使用formData.rules整个对象，同时定义一个ref</span><br><span class="line">&lt;el-form :model=<span class="string">&quot;formData&quot;</span> :rules=<span class="string">&quot;formData.rules&quot;</span> ref=<span class="string">&quot;formRef&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">保证prop必须唯一</span><br><span class="line">自定义prop：使用 列表数据属性名+列的下标scope.$index+列的数据属性名</span><br><span class="line">注意：如果不是使用列表数据属性名tableData，会出现报错</span><br><span class="line"><span class="attr">Error</span>: please transfer a valid prop path to form item</span><br><span class="line">&lt;el-form-item :prop=<span class="string">&quot;&#x27;tableData.&#x27;+scope.$index+&#x27;.price&#x27;&quot;</span> :rules=<span class="string">&quot;formData.rules.price&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">保证每一个el-form-item都要配置rules属性</span><br><span class="line">rules使用formData.rules对应的属性的规则</span><br><span class="line"></span><br><span class="line">代码如下(参考：https:<span class="comment">//blog.csdn.net/m0_66722601/article/details/128254991)</span></span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">:model</span>=<span class="string">&quot;formData&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;formData.rules&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;formRef&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">         <span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">&quot;formData.tableData&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">el-table-column</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">            <span class="attr">label</span>=<span class="string">&quot;价格&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">:prop</span>=<span class="string">&quot;&#x27;tableData.&#x27;+scope.$index+&#x27;.price&#x27;&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;formData.rules.price&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;scope.row.price&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">el-table-column</span></span></span></span><br><span class="line"><span class="tag"><span class="xml">            <span class="attr">label</span>=<span class="string">&quot;数量&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">:prop</span>=<span class="string">&quot;&#x27;tableData.&#x27;+scope.$index+&#x27;.num&#x27;&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;formData.rules.price&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;scope.row.num&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span></span><br><span class="line"><span class="xml">              <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;submitForm(&#x27;formRef&#x27;)&quot;</span>&gt;</span>批量开票<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">  </span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="attr">name</span>: <span class="string">&quot;table&quot;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                <span class="attr">formData</span>:&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="attr">id</span>:<span class="number">1</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    ...,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    </span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="attr">rules</span>: &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="attr">price</span>: &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">required</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">message</span>: <span class="string">&#x27;单价不能为空&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">tirgger</span>: [<span class="string">&#x27;blur&#x27;</span>, <span class="string">&#x27;change&#x27;</span>]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="attr">num</span>: &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">required</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">message</span>: <span class="string">&#x27;数量不能为空&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">tirgger</span>: [<span class="string">&#x27;blur&#x27;</span>, <span class="string">&#x27;change&#x27;</span>]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="attr">selected</span>: &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">required</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">message</span>: <span class="string">&#x27;请选择&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">tirgger</span>: <span class="string">&#x27;change&#x27;</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="attr">tableData</span>:[ <span class="comment">//表格数据</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#123;  </span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="attr">num</span>:<span class="number">1</span>, <span class="comment">//数量</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="attr">price</span>:<span class="number">291.37</span>, <span class="comment">//价格</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#125;]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="function"><span class="title">submitForm</span>(<span class="params">formName</span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                <span class="built_in">this</span>.$refs[formName].validate(<span class="function">(<span class="params">valid</span>)=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="keyword">if</span>(valid)&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="built_in">console</span>.log(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">第二种没验证(参考:https:<span class="comment">//www.jianshu.com/p/f036aae3539b)</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"> <span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">     <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">       <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">:model</span>=<span class="string">&quot;forms&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;forms&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">         <span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">&quot;forms.voList&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">          <span class="tag">&lt;<span class="name">el-table-column</span></span></span></span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="javascript"><span class="xml">            <span class="attr">label</span>=<span class="string">&quot;价格&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">              <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">:prop</span>=<span class="string">&quot;&#x27;voList.&#x27;+scope.$index+&#x27;.unitPrice&#x27;&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules.unitPrice&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;scope.row.unitPrice&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">              <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">          <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">          <span class="tag">&lt;<span class="name">el-table-column</span></span></span></span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="javascript"><span class="xml">            <span class="attr">label</span>=<span class="string">&quot;数量&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">            <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">&quot;scope&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">              <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">:prop</span>=<span class="string">&quot;&#x27;voList.&#x27;+scope.$index+&#x27;.num&#x27;&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules.unitPrice&quot;</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">                <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;scope.row.num&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">              <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">          <span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">        <span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">      <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">      <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;save&quot;</span>&gt;</span>批量开票<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span></span><br><span class="line"><span class="xml"><span class="javascript"><span class="xml">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">  </span></span></span><br><span class="line"><span class="javascript"><span class="xml">  &lt;script&gt;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="attr">name</span>: <span class="string">&quot;table&quot;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">      <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="attr">forms</span>:&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          <span class="attr">id</span>:<span class="number">1</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         ...,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          <span class="attr">voList</span>:[</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">              <span class="attr">num</span>:<span class="number">1</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">              <span class="attr">unitPrice</span>:<span class="number">291.37</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          ]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="attr">rules</span>:&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          <span class="attr">num</span>:[&#123;<span class="attr">required</span>:<span class="literal">true</span>,<span class="attr">message</span>:<span class="string">&#x27;数量不能为空&#x27;</span>,<span class="attr">trigger</span>:<span class="string">&#x27;blur&#x27;</span>&#125;],</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          <span class="attr">unitPrice</span>:[&#123;<span class="attr">required</span>:<span class="literal">true</span>,<span class="attr">message</span>:<span class="string">&#x27;单价不能为空&#x27;</span>,<span class="attr">trigger</span>:<span class="string">&#x27;blur&#x27;</span>&#125;]</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">      &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">      <span class="function"><span class="title">save</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="built_in">this</span>.$refs[<span class="string">&#x27;forms&#x27;</span>].validate(<span class="function">(<span class="params">valid</span>)=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">          <span class="keyword">if</span>(valid)&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="built_in">console</span>.log(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">       &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">...补充中</span><br></pre></td></tr></table></figure>
+    </div>
+    
+        <div style="text-align:center;color: #000;font-size:16px;">------ The End ------</div>
+
+    
+    
+    
+    
+        <div class="reward-container">
+  <div>您的认可是我不断进步的动力！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="小川 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="小川 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/20/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98vue/" rel="prev" title="前端面试题-vue(补充中...)">
+      <i class="fa fa-chevron-left"></i> 前端面试题-vue(补充中...)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/25/chrome/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="next" title="谷歌浏览器插件下载">
+      谷歌浏览器插件下载 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E9%87%8C%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9D%80%E5%9B%9E%E8%BD%A6%E4%BC%9A%E5%8F%91%E7%94%9F%E9%82%A3%E4%BA%9B%E4%BA%8B%E6%83%85"><span class="nav-number">1.</span> <span class="nav-text">在地址栏里输入一个地址回车会发生那些事情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">浏览器缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%92%8CHTTPS%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">HTTP和HTTPS协议的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%BB%E8%A6%81%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">4.</span> <span class="nav-text">WebSocket 的应用场景主要有哪些</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">Webpack类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9Webpack%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%88Webpack%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">谈谈你对Webpack的理解（Webpack是什么？）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack%E7%9A%84%E6%89%93%E5%8C%85%E8%BF%87%E7%A8%8B-%E6%89%93%E5%8C%85%E5%8E%9F%E7%90%86-%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">Webpack的打包过程&#x2F;打包原理&#x2F;构建流程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#loader%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">loader的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84Loader%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%98%AF%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E7%9A%84%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">有哪些常见的Loader？他们是解决什么问题的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugin%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">plugin的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B8%B8%E8%A7%81%E7%9A%84Plugin%EF%BC%9F%E4%BB%96%E4%BB%AC%E6%98%AF%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%E7%9A%84%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">有哪些常见的Plugin？他们是解决什么问题的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack%E4%B8%ADLoader%E5%92%8CPlugin%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">Webpack中Loader和Plugin的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">如何解决循环依赖问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98Webpack%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6"><span class="nav-number">9.</span> <span class="nav-text">如何提高Webpack构建速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E4%BB%A3%E7%A0%81%E5%86%B2%E7%AA%81%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">Git代码冲突怎么处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts"><span class="nav-number"></span> <span class="nav-text">echarts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#echarts%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">echarts问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSocket"><span class="nav-number"></span> <span class="nav-text">WebSocket</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WebSocket%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF"><span class="nav-number">1.</span> <span class="nav-text">WebSocket即时通讯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%EF%BC%88%E5%A6%82%E4%BD%95%E5%94%A4%E8%B5%B7%E6%94%AF%E4%BB%98%E9%A1%B5%E9%9D%A2%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">前端支付功能实现（如何唤起支付页面）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E4%BB%98%E5%A6%82%E4%BD%95%E7%94%A8%E6%88%B7%E9%87%8D%E5%A4%8D%E7%82%B9%E5%87%BB"><span class="nav-number">3.</span> <span class="nav-text">支付如何用户重复点击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E8%BF%94%E5%9B%9E%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%88%B0%E5%89%8D%E7%AB%AF%EF%BC%8C%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E5%B1%95%E7%A4%BA-%E5%83%8F%E5%9C%B0%E5%9B%BE%E7%83%AD%E7%82%B9%E5%9B%BE"><span class="nav-number">4.</span> <span class="nav-text">后端返回大量数据到前端，前端如何展示(像地图热点图)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios%E5%BC%80%E5%8F%91H5%E9%A1%B5%E9%9D%A2%E6%80%8E%E4%B9%88%E7%BB%93%E5%90%88%E7%9A%84-%E4%BA%A4%E4%BA%92%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">ios开发H5页面怎么结合的 交互方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elementui%E7%9A%84%E8%A1%A8%E6%A0%BC%E5%B5%8C%E5%A5%97%E8%A1%A8%E5%8D%95%E5%86%85%E5%8F%8A%E6%A0%A1%E9%AA%8C-%E5%A4%8D%E6%9D%82%E8%A1%A8%E6%A0%BC%E6%A0%A1%E9%AA%8C"><span class="nav-number">6.</span> <span class="nav-text">elementui的表格嵌套表单内及校验(复杂表格校验)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="小川"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">小川</p>
+  <div class="site-description" itemprop="description">留一片空白，随时浓墨重彩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="GitHub → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="E-Mail → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Weibo → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.baidu.com/" title="Google → https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友链招募
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">QQ</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c-Aurora</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://unpkg.com/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'QEQDMymbqdYDItNVBzdBqnUn-gzGzoHsz',
+      appKey     : 'TaEvJ4eQniNlzT5ZSaiXfoxT',
+      placeholder: "ヾﾉ≧∀≦)o来啊,快活啊!",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- 鼠标点击显示字体效果 -->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- 雪花特效 -->
+  <!-- <script type="text/javascript" src="/js/snow.js"></script> -->
+</body>
+</html>
